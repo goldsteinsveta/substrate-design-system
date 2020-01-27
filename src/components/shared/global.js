@@ -1,5 +1,6 @@
 import { createGlobalStyle, css } from 'styled-components';
 import { color, typography } from './styles';
+import 'semantic-ui-css/semantic.min.css';
 
 export const bodyStyles = css`
   font-family: ${typography.type.primary};
