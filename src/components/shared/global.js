@@ -3,6 +3,21 @@ import { color, typography } from './styles';
 import 'semantic-ui-css/semantic.min.css';
 
 export const bodyStyles = css`
+  @font-face {
+    font-family: 'nomi';
+    src: url('https://github.com/goldsteinsveta/font-awesome-web3/blob/master/fonts/nomi.eot?raw=true'); /* IE9 Compat Modes */
+    src: url('https://github.com/goldsteinsveta/font-awesome-web3/blob/master/fonts/nomi.eot?raw=true?#iefix')
+        format('embedded-opentype'),
+      /* IE6-IE8 */
+        url('https://github.com/goldsteinsveta/font-awesome-web3/blob/master/fonts/nomi.woff?raw=true')
+        format('woff'),
+      /* Pretty Modern Browsers */
+        url('https://github.com/goldsteinsveta/font-awesome-web3/blob/master/fonts/nomi.ttf?raw=true')
+        format('truetype'),
+      /* Safari, Android, iOS */
+        url('https://raw.githubusercontent.com/goldsteinsveta/font-awesome-web3/master/fonts/nomi.svg#nomi')
+        format('svg'); /* Legacy iOS */
+  }
   font-family: ${typography.type.primary};
   font-size: ${typography.size.s3}px;
   color: ${color.darkest};
@@ -89,6 +104,10 @@ export const bodyStyles = css`
     color: ${color.darkest};
     border-radius: 3px;
     margin: 1rem 0;
+  }
+
+  .icon-nomi {
+    font-family: 'nomi';
   }
 
   &.ReactModal__Body--open {
