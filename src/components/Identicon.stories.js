@@ -1,20 +1,20 @@
 import React from 'react';
 
-import { Avatar } from './Avatar';
+import { Identicon } from './Identicon';
 
 export default {
-  title: 'Design System/Avatar',
+  title: 'Design System/Address/Identicon',
 
   parameters: {
-    component: Avatar,
+    component: Identicon,
   },
 };
 
 export const large = () => (
   <div>
-    <Avatar isLoading size="large" />
-    <Avatar size="large" username="Tom Coleman" />
-    <Avatar
+    <Identicon isLoading size="large" />
+    <Identicon size="large" username="Tom Coleman" />
+    <Identicon
       size="large"
       username="Tom Coleman"
       src="https://avatars2.githubusercontent.com/u/132554"
@@ -24,17 +24,17 @@ export const large = () => (
 
 export const medium = () => (
   <div>
-    <Avatar isLoading />
-    <Avatar username="Tom Coleman" />
-    <Avatar username="Tom Coleman" src="https://avatars2.githubusercontent.com/u/132554" />
+    <Identicon isLoading />
+    <Identicon username="Tom Coleman" />
+    <Identicon username="Tom Coleman" src="https://avatars2.githubusercontent.com/u/132554" />
   </div>
 );
 
 export const small = () => (
   <div>
-    <Avatar isLoading size="small" />
-    <Avatar size="small" username="Dominic Nguyen" />
-    <Avatar
+    <Identicon isLoading size="small" />
+    <Identicon size="small" username="Dominic Nguyen" />
+    <Identicon
       size="small"
       username="Dominic Nguyen"
       src="https://avatars2.githubusercontent.com/u/263385"
@@ -44,9 +44,9 @@ export const small = () => (
 
 export const tiny = () => (
   <div>
-    <Avatar isLoading size="tiny" />
-    <Avatar size="tiny" username="Dominic Nguyen" />
-    <Avatar
+    <Identicon isLoading size="tiny" />
+    <Identicon size="tiny" username="Dominic Nguyen" />
+    <Identicon
       size="tiny"
       username="Dominic Nguyen"
       src="https://avatars2.githubusercontent.com/u/263385"

@@ -6986,6 +6986,11 @@ follow-redirects@1.5.10:
   dependencies:
     debug "=3.1.0"
 
+font-awesome-web3@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.npmjs.org/font-awesome-web3/-/font-awesome-web3-1.0.1.tgz#28b721810295462b897dc125ed853c8aa513f14d"
+  integrity sha512-lCpI1AGRudRlh94pAOIgvCc165wiL+x4mkW2Nq9k26LgwHTMOWuc1jsWdJLrKEf47GV8BoYnwItl9Kz4sI14Xg==
+
 for-each@~0.3.3:
   version "0.3.3"
   resolved "https://registry.npmjs.org/for-each/-/for-each-0.3.3.tgz#69b447e88a0a5d32c3e7084f3f1710034b21376e"

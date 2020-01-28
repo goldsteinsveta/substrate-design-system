@@ -1,23 +1,9 @@
 import { createGlobalStyle, css } from 'styled-components';
 import { color, typography } from './styles';
 import 'semantic-ui-css/semantic.min.css';
+import 'font-awesome-web3/style.css';
 
 export const bodyStyles = css`
-  @font-face {
-    font-family: 'nomi';
-    src: url('https://github.com/goldsteinsveta/font-awesome-web3/blob/master/fonts/nomi.eot?raw=true'); /* IE9 Compat Modes */
-    src: url('https://github.com/goldsteinsveta/font-awesome-web3/blob/master/fonts/nomi.eot?raw=true?#iefix')
-        format('embedded-opentype'),
-      /* IE6-IE8 */
-        url('https://github.com/goldsteinsveta/font-awesome-web3/blob/master/fonts/nomi.woff?raw=true')
-        format('woff'),
-      /* Pretty Modern Browsers */
-        url('https://github.com/goldsteinsveta/font-awesome-web3/blob/master/fonts/nomi.ttf?raw=true')
-        format('truetype'),
-      /* Safari, Android, iOS */
-        url('https://raw.githubusercontent.com/goldsteinsveta/font-awesome-web3/master/fonts/nomi.svg#nomi')
-        format('svg'); /* Legacy iOS */
-  }
   font-family: ${typography.type.primary};
   font-size: ${typography.size.s3}px;
   color: ${color.darkest};
@@ -42,7 +28,7 @@ export const bodyStyles = css`
   h4,
   h5,
   h6 {
-    font-weight: ${typography.weight.regular};
+    font-weight: ${typography.weight.bold};
     margin: 0;
     padding: 0;
   }
@@ -93,7 +79,6 @@ export const bodyStyles = css`
     padding-left: 2px;
     padding-right: 2px;
     vertical-align: baseline;
-    color: ${color.secondary};
   }
 
   pre {
@@ -104,10 +89,6 @@ export const bodyStyles = css`
     color: ${color.darkest};
     border-radius: 3px;
     margin: 1rem 0;
-  }
-
-  .icon-nomi {
-    font-family: 'nomi';
   }
 
   &.ReactModal__Body--open {

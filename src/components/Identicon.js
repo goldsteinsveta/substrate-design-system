@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 import { color, typography } from './shared/styles';
 import { glow } from './shared/animation';
-import { Icon } from './Icon';
+import { IconWeb3 } from './IconWeb3';
 
 export const sizes = {
   large: 40,
@@ -20,9 +20,9 @@ const Image = styled.div`
   overflow: hidden;
   text-transform: uppercase;
 
-  height: ${sizes.medium}px;
-  width: ${sizes.medium}px;
-  line-height: ${sizes.medium}px;
+  height: ${sizes.large}px;
+  width: ${sizes.large}px;
+  line-height: ${sizes.large}px;
 
   ${props =>
     props.size === 'tiny' &&
@@ -41,11 +41,11 @@ const Image = styled.div`
     `}
 
   ${props =>
-    props.size === 'large' &&
+    props.size === 'medium' &&
     css`
-      height: ${sizes.large}px;
-      width: ${sizes.large}px;
-      line-height: ${sizes.large}px;
+      height: ${sizes.medium}px;
+      width: ${sizes.medium}px;
+      line-height: ${sizes.medium}px;
     `}
 
   ${props =>
@@ -60,16 +60,7 @@ const Image = styled.div`
     display: block;
   }
 
-  svg {
-    position: relative;
-    bottom: -2px;
-    height: 100%;
-    width: 100%;
-    vertical-align: top;
-  }
-
-  path {
-    fill: ${color.medium};
+  i {
     animation: ${glow} 1.5s ease-in-out infinite;
   }
 `;
@@ -99,20 +90,20 @@ const Initial = styled.div`
 `;
 
 /**
- * The `Avatar` component is where all your avatars come to play.
+ * The `Identicon` component is where all your avatars come to play.
  */
-export function Avatar({ isLoading, username, src, size, ...props }) {
-  let avatarFigure = <Icon icon="useralt" />;
+export function Identicon({ isLoading, username, src, size, ...props }) {
+  let identiconFigure = <IconWeb3 size={size} icon="identicon" />;
   const a11yProps = {};
 
   if (isLoading) {
     a11yProps['aria-busy'] = true;
     a11yProps['aria-label'] = 'Loading avatar ...';
   } else if (src) {
-    avatarFigure = <img src={src} alt={username} />;
+    identiconFigure = <img src={src} alt={username} />;
   } else {
     a11yProps['aria-label'] = username;
-    avatarFigure = (
+    identiconFigure = (
       <Initial size={size} aria-hidden="true">
         {username.substring(0, 1)}
       </Initial>
@@ -121,12 +112,12 @@ export function Avatar({ isLoading, username, src, size, ...props }) {
 
   return (
     <Image size={size} isLoading={isLoading} src={src} {...a11yProps} {...props}>
-      {avatarFigure}
+      {identiconFigure}
     </Image>
   );
 }
 
-Avatar.propTypes = {
+Identicon.propTypes = {
   isLoading: PropTypes.bool,
   /**
    The name of the user (not the nicename)
@@ -139,9 +130,9 @@ Avatar.propTypes = {
   size: PropTypes.oneOf(Object.keys(sizes)),
 };
 
-Avatar.defaultProps = {
+Identicon.defaultProps = {
   isLoading: false,
   username: 'loading',
   src: null,
-  size: 'medium',
+  size: 'large',
 };

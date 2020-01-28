@@ -27,10 +27,7 @@ export const buttons = () => (
   <>
     <Button appearance="primary">Primary</Button>
     <Button appearance="secondary">Secondary</Button>
-    <Button appearance="tertiary">Tertiary</Button>
     <Button appearance="outline">Outline</Button>
-    <Button appearance="primaryOutline">Outline primary</Button>
-    <Button appearance="secondaryOutline">Outline secondary</Button>
   </>
 );
 
@@ -39,6 +36,9 @@ export const sizes = () => (
     <Button appearance="primary">Default</Button>
     <Button appearance="primary" size="small">
       Small
+    </Button>
+    <Button appearance="outline" size="small">
+      Small Outline
     </Button>
   </>
 );
@@ -51,13 +51,7 @@ export const loading = () => (
     <Button appearance="secondary" isLoading>
       Secondary
     </Button>
-    <Button appearance="tertiary" isLoading>
-      Tertiary
-    </Button>
-    <Button appearance="outline" isLoading>
-      Outline
-    </Button>
-    <Button appearance="outline" isLoading loadingText="Custom...">
+    <Button appearance="outline" isLoading loadingText="Wait...">
       Outline
     </Button>
   </>
@@ -70,9 +64,6 @@ export const disabled = () => (
     </Button>
     <Button appearance="secondary" isDisabled>
       Secondary
-    </Button>
-    <Button appearance="tertiary" isDisabled>
-      Tertiary
     </Button>
     <Button appearance="outline" isDisabled>
       Outline

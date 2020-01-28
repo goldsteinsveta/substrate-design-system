@@ -2,12 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
-import { Avatar, sizes } from './Avatar';
+import { Identicon, sizes } from './Identicon';
 import WithTooltip from './tooltip/WithTooltip';
 import { TooltipNote } from './tooltip/TooltipNote';
 import { color, typography } from './shared/styles';
 
-const UserAvatar = styled(Avatar)`
+const UserIdenticon = styled(Identicon)`
   box-shadow: ${color.lightest} 0 0 0 2px;
   display: block;
 `;
@@ -56,11 +56,11 @@ const Users = styled.ul`
 `;
 
 // Either pass the full list of users, or a userCount if known
-export function AvatarList({ isLoading, users, userCount, size, ...props }) {
+export function IdenticonList({ isLoading, users, userCount, size, ...props }) {
   const count = userCount || users.length;
   return (
     <Users aria-label="users" {...props}>
-      {users.slice(0, 3).map(({ id, name, avatarUrl }) => (
+      {users.slice(0, 3).map(({ id, name, identiconUrl }) => (
         <User key={id}>
           <UserTooltipWrapper
             hasChrome={false}
@@ -68,7 +68,7 @@ export function AvatarList({ isLoading, users, userCount, size, ...props }) {
             trigger="hover"
             tooltip={<TooltipNote note={name} />}
           >
-            <UserAvatar size={size} username={name} src={avatarUrl} isLoading={isLoading} />
+            <UserIdenticon size={size} username={name} src={identiconUrl} isLoading={isLoading} />
           </UserTooltipWrapper>
         </User>
       ))}
@@ -79,13 +79,13 @@ export function AvatarList({ isLoading, users, userCount, size, ...props }) {
   );
 }
 
-AvatarList.propTypes = {
+IdenticonList.propTypes = {
   isLoading: PropTypes.bool,
   users: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.string.isRequired,
       name: PropTypes.string,
-      avatarUrl: PropTypes.string,
+      identiconUrl: PropTypes.string,
     })
   ),
   /**
@@ -95,12 +95,12 @@ AvatarList.propTypes = {
   size: PropTypes.oneOf(Object.keys(sizes)),
 };
 
-AvatarList.defaultProps = {
+IdenticonList.defaultProps = {
   isLoading: false,
   users: [
-    { id: 'loading', avatarUrl: null, name: 'loading' },
-    { id: 'loading2', avatarUrl: null, name: 'loading' },
-    { id: 'loading3', avatarUrl: null, name: 'loading' },
+    { id: 'loading', identiconUrl: null, name: 'loading' },
+    { id: 'loading2', identiconUrl: null, name: 'loading' },
+    { id: 'loading3', identiconUrl: null, name: 'loading' },
   ],
   userCount: null,
   size: 'medium',
