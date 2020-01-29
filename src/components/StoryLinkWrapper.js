@@ -31,7 +31,7 @@ StoryLinkWrapper.propTypes = {
 
 StoryLinkWrapper.defaultProps = {
   className: '',
-  href: null,
+  href: 'StoryLinkWrapper.href',
   onClick: () => {},
   to: null,
 };

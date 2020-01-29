@@ -33,6 +33,8 @@ const Arrow = styled.div`
   border-bottom-color: ${ifPlacementEquals('bottom', 'white', 'transparent')};
   border-left-color: ${ifPlacementEquals('left', 'white', 'transparent')};
   border-right-color: ${ifPlacementEquals('right', 'white', 'transparent')};
+
+  border-bottom-color: ${ifPlacementEquals('bottom-start', 'white', 'transparent')};
 `;
 
 const TooltipWrapper = styled.div`
@@ -42,12 +44,11 @@ const TooltipWrapper = styled.div`
   ${props =>
     !props.hasChrome &&
     css`
-      margin-bottom: ${ifPlacementEquals('top', 8)}px;
-      margin-bottom: ${ifPlacementEquals('top-start', 8)}px;
-      margin-top: ${ifPlacementEquals('bottom', 8)}px;
-      margin-top: ${ifPlacementEquals('bottom-start', 8)}px;
-      margin-left: ${ifPlacementEquals('right', 8)}px;
-      margin-right: ${ifPlacementEquals('left', 8)}px;
+      margin-bottom: ${ifPlacementEquals('top', ArrowSpacing)}px;
+      margin-bottom: ${ifPlacementEquals('top-start', ArrowSpacing)}px;
+      margin-top: ${ifPlacementEquals('bottom', ArrowSpacing)}px;
+      margin-left: ${ifPlacementEquals('right', ArrowSpacing)}px;
+      margin-right: ${ifPlacementEquals('left', ArrowSpacing)}px;
     `};
 
   ${props =>
@@ -67,6 +68,8 @@ const TooltipWrapper = styled.div`
       border-radius: 4px;
       font-size: ${typography.size.s1}px;
     `};
+
+  margin-top: ${ifPlacementEquals('bottom-start', 0)}px;
 `;
 
 export function Tooltip({

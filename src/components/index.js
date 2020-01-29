@@ -29,6 +29,7 @@ export * from './tooltip/TooltipLinkList';
 export { default as WithTooltip } from './tooltip/WithTooltip';
 
 export * from './MainMenu';
+export * from './ItemStats';
 
 export * from './modal/Modal';
 export { default as WithModal } from './modal/WithModal';
