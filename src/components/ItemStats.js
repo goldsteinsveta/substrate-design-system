@@ -15,6 +15,10 @@ const Title = styled.span`
 const ItemWrapper = styled.li`
   list-style: none;
   border-top: 1px solid ${color.mediumlight};
+  width: 100%;
+  &:not(:last-child) {
+    border-right: 1px solid ${color.mediumlight};
+  }
 `;
 
 const ItemInner = styled.span`

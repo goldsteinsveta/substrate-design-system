@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { ItemStats } from './ItemStats';
+import { color } from './shared/styles';
 
 const List = styled.ul`
   display: flex;
@@ -11,12 +12,14 @@ const List = styled.ul`
   margin: 0;
   padding: 0;
   list-style: none;
+  border: 1px solid ${color.mediumlight};
+  display: flex;
 `;
 
-export function NetworkCard({ links, LinkWrapper, ...rest }) {
+export function StatsList({ items }) {
   return (
-    <List {...rest}>
-      {links.map(({ title, value, onClick, active, ...linkRest }, index) => (
+    <List>
+      {items.map(({ title, value, onClick, active }, index) => (
         <ItemStats
           /* eslint-disable react/no-array-index-key */
           key={index}
@@ -24,16 +27,14 @@ export function NetworkCard({ links, LinkWrapper, ...rest }) {
           value={value}
           onClick={onClick}
           active={active}
-          LinkWrapper={LinkWrapper || null}
-          {...linkRest}
         />
       ))}
     </List>
   );
 }
 
-NetworkCard.propTypes = {
-  links: PropTypes.arrayOf(
+StatsList.propTypes = {
+  items: PropTypes.arrayOf(
     PropTypes.shape({
       title: PropTypes.string.isRequired,
       value: PropTypes.string,
@@ -41,9 +42,6 @@ NetworkCard.propTypes = {
       active: PropTypes.bool,
     }).isRequired
   ).isRequired,
-  LinkWrapper: PropTypes.func,
 };
 
-NetworkCard.defaultProps = {
-  LinkWrapper: ItemStats.defaultProps.LinkWrapper,
-};
+StatsList.defaultProps = {};
