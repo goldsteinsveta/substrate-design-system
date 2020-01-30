@@ -1,7 +1,7 @@
 import { createGlobalStyle, css } from 'styled-components';
 import { color, typography } from './styles';
-import 'semantic-ui-css/semantic.min.css';
 import 'font-awesome-web3/style.css';
+import 'font-awesome/css/font-awesome.min.css';
 
 export const bodyStyles = css`
   font-family: ${typography.type.primary};

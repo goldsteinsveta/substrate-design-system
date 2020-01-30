@@ -6,12 +6,19 @@ export const sizes = {
   large: 40,
   medium: 28,
   small: 20,
-  tiny: 16,
+  tiny: 11,
+};
+
+const LIBRARIES = {
+  FA: 'fa',
+  WEB3: 'web3',
 };
 
 const I = styled.i`
   display: ${props => (props.block ? 'block' : 'inline-block')};
   font-size: ${sizes.medium}px;
+  width: 1em;
+  height: 1em;
 
   ${props =>
     props.size === 'tiny' &&
@@ -31,17 +38,20 @@ const I = styled.i`
 
 `;
 
-export function IconWeb3({ icon, block, ...props }) {
-  return <I block={block} {...props} className={`fa-web3-${icon}`} />;
+export function IconFont({ icon, block, lib, ...props }) {
+  const libClass = lib === LIBRARIES.WEB3 ? '-web3' : '';
+  return <I block={block} {...props} className={`fa fa${libClass}-${icon}`} />;
 }
 
-IconWeb3.propTypes = {
+IconFont.propTypes = {
   icon: PropTypes.string.isRequired,
   block: PropTypes.bool,
   size: PropTypes.string,
+  lib: PropTypes.oneOf(Object.values(LIBRARIES)),
 };
 
-IconWeb3.defaultProps = {
+IconFont.defaultProps = {
   block: false,
   size: 'large',
+  lib: 'fa',
 };

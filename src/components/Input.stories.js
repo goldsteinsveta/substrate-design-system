@@ -12,13 +12,20 @@ export default {
 
 export const allInputs = () => (
   <form style={{ background: '#EEEEEE', padding: '3em' }}>
-    <Input id="Default" value="Default" label="Email" hideLabel icon="email" onChange={onChange} />
+    <Input
+      id="Default"
+      value="Default"
+      label="Email"
+      hideLabel
+      icon="envelope"
+      onChange={onChange}
+    />
     <Input
       id="Secondary"
       value="Secondary"
       label="Email"
       hideLabel
-      icon="email"
+      icon="envelope"
       appearance="secondary"
       onChange={onChange}
     />
@@ -26,7 +33,7 @@ export const allInputs = () => (
       id="Secondary-with-label"
       value="Secondary"
       label="Label secondary"
-      icon="email"
+      icon="envelope"
       appearance="secondary"
       onChange={onChange}
     />
@@ -35,7 +42,7 @@ export const allInputs = () => (
       value="Tertiary"
       label="Email"
       hideLabel
-      icon="email"
+      icon="envelope"
       appearance="tertiary"
       onChange={onChange}
     />
@@ -101,7 +108,7 @@ export const defaultStory = () => (
       value="Icon"
       label="Input with icon"
       hideLabel
-      icon="email"
+      icon="envelope"
       onChange={onChange}
     />
     <Input
@@ -117,7 +124,7 @@ export const defaultStory = () => (
       label="Input with error and icon"
       hideLabel
       placeholder="Error with icon"
-      icon="email"
+      icon="envelope"
       error="There's a snake in my boots"
       onChange={onChange}
     />
@@ -160,7 +167,7 @@ export const secondary = () => (
       value="Icon"
       label="Input with icon"
       hideLabel
-      icon="email"
+      icon="envelope"
       appearance="secondary"
       onChange={onChange}
     />
@@ -215,7 +222,7 @@ export const tertiary = () => (
       value="Icon"
       label="Input with icon"
       hideLabel
-      icon="email"
+      icon="envelope"
       appearance="tertiary"
       onChange={onChange}
     />

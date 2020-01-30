@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 import { color, typography } from './shared/styles';
 import { glow } from './shared/animation';
-import { IconWeb3 } from './IconWeb3';
+import { IconFont } from './IconFont';
 
 export const sizes = {
   large: 40,
@@ -93,7 +93,7 @@ const Initial = styled.div`
  * The `Identicon` component is where all your avatars come to play.
  */
 export function Identicon({ isLoading, username, src, size, ...props }) {
-  let identiconFigure = <IconWeb3 size={size} icon="identicon" />;
+  let identiconFigure = <IconFont lib="web3" size={size} icon="identicon" />;
   const a11yProps = {};
 
   if (isLoading) {

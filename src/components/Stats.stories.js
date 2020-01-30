@@ -4,7 +4,7 @@ import WithTooltip from './tooltip/WithTooltip';
 import { StatsList } from './StatsList';
 
 import { ListItem } from './tooltip/ListItem';
-import { Icon } from './Icon';
+import { IconFont } from './IconFont';
 
 export const itemsData = [
   { title: 'Last Block', value: '1.7s' },
@@ -22,7 +22,7 @@ export const Stats = () => <StatsList items={itemsData} />;
 
 export const asTooltip = () => (
   <WithTooltip placement="bottom-start" trigger="click" tooltip={Stats}>
-    <ListItem active title="Kusama" right={<Icon icon="chevrondown" />} />
+    <ListItem active title="Kusama" right={<IconFont icon="chevron-down" size="tiny" />} />
   </WithTooltip>
 );
 

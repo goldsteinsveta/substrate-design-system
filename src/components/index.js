@@ -5,12 +5,12 @@ import * as icons from './shared/icons';
 
 export { styles, global, animation, icons };
 
-export * from './Identicon';
+export { Identicon } from './Identicon';
 export * from './IdenticonList';
 export * from './Badge';
 export * from './Button';
 export * from './Highlight';
-export * from './Icon';
+export * from './IconFont';
 export * from './Link';
 export * from './Subheading';
 export * from './ProgressDots';

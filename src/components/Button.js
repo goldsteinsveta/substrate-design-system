@@ -145,6 +145,7 @@ const StyledButton = styled.button`
         margin: 0;
       }
       padding: ${props.size === SIZES.SMALL ? '7' : '12'}px;
+      border-radius: 50%;
     `}
 
   ${props =>

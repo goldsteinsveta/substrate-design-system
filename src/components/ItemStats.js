@@ -85,7 +85,9 @@ export function ItemStats({ title, value, subtitle, size, onClick, LinkWrapper, 
   const linkInner = (
     <ItemInner onClick={onClick} role="presentation">
       <Title size={size}>{title}</Title>
-      <Value size={size}>{value}</Value>
+      <Value size={size}>
+        <input type="text" name="name" value={value} />
+      </Value>
       <Subtitle size={size}>{subtitle}</Subtitle>
     </ItemInner>
   );

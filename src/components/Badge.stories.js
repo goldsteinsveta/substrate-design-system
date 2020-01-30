@@ -1,6 +1,6 @@
 import React from 'react';
 import { Badge } from './Badge';
-import { Icon } from './Icon';
+import { IconFont } from './IconFont';
 
 export default {
   title: 'Design System/Badge',
@@ -19,7 +19,7 @@ export const all = () => (
 
 export const withIcon = () => (
   <Badge status="warning">
-    <Icon icon="check" inline />
+    <IconFont icon="check" inline size="tiny" />
     with icon
   </Badge>
 );

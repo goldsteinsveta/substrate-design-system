@@ -3,8 +3,8 @@ import styled from 'styled-components';
 import { action } from '@storybook/addon-actions';
 
 import { Button } from './Button';
-import { Icon } from './Icon';
 import { StoryLinkWrapper } from './StoryLinkWrapper';
+import { IconFont } from './IconFont';
 
 const CustomButton = styled.button`
   border: 1px solid green;
@@ -73,11 +73,14 @@ export const disabled = () => (
 
 export const containsIcon = () => (
   <>
-    <Button appearance="outline" containsIcon>
-      <Icon icon="link" aria-label="Link" />
+    <Button appearance="primary" containsIcon size="small">
+      <IconFont lib="web3" icon="identicon" aria-label="identicon" size="tiny" />
     </Button>
-    <Button appearance="outline" size="small" containsIcon>
-      <Icon icon="link" aria-label="Link" />
+    <Button appearance="secondary" containsIcon>
+      <IconFont lib="web3" icon="identicon" aria-label="identicon" size="small" />
+    </Button>
+    <Button appearance="outline" containsIcon>
+      <IconFont lib="web3" icon="identicon" aria-label="identicon" size="large" />
     </Button>
   </>
 );
