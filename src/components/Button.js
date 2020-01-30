@@ -299,6 +299,6 @@ Button.defaultProps = {
   isDisabled: false,
   isUnclickable: false,
   containsIcon: false,
-  size: SIZES.MEDIUM,
+  size: SIZES.LARGE,
   ButtonWrapper: undefined,
 };

@@ -4,10 +4,30 @@ import styled, { css } from 'styled-components';
 import { color, typography } from './shared/styles';
 import { inlineGlow } from './shared/animation';
 
-const Value = styled.span``;
-const Subtitle = styled.span``;
-const Title = styled.span`
+export const SIZES = {
+  SMALL: 'small',
+  LARGE: 'large',
+};
+
+const Value = styled.span`
+  font-size: ${typography.size.m1}px;
   font-weight: ${typography.weight.bold};
+  margin: 8px 0 0;
+  ${props =>
+    props.size === SIZES.LARGE &&
+    `
+    font-size: ${typography.size.l1}px;
+    line-height: ${typography.size.l1}px;
+    margin: 16px 0 8px;
+    `}
+`;
+const Subtitle = styled.span`
+  font-size: ${typography.size.s2}px;
+  color: ${color.mediumdark};
+`;
+const Title = styled.span`
+  font-size: ${typography.size.s2}px;
+  font-family: ${typography.type.code};
   overflow: hidden;
   text-overflow: ellipsis;
 `;
@@ -61,12 +81,12 @@ const buildStyledLinkWrapper = LinkWrapper => styled(
   ${linkStyles}
 `;
 
-export function ItemStats({ title, value, subtitle, onClick, LinkWrapper, ...rest }) {
+export function ItemStats({ title, value, subtitle, size, onClick, LinkWrapper, ...rest }) {
   const linkInner = (
     <ItemInner onClick={onClick} role="presentation">
-      <Title>{title}</Title>
-      <Value>{value}</Value>
-      <Subtitle>{subtitle}</Subtitle>
+      <Title size={size}>{title}</Title>
+      <Value size={size}>{value}</Value>
+      <Subtitle size={size}>{subtitle}</Subtitle>
     </ItemInner>
   );
 
@@ -92,6 +112,7 @@ ItemStats.propTypes = {
   subtitle: PropTypes.string,
   LinkWrapper: PropTypes.func,
   onClick: PropTypes.func,
+  size: PropTypes.oneOf(Object.values(SIZES)),
 };
 
 ItemStats.defaultProps = {
@@ -101,4 +122,5 @@ ItemStats.defaultProps = {
   subtitle: 'item subtitle',
   LinkWrapper: undefined,
   onClick: undefined,
+  size: SIZES.SMALL,
 };

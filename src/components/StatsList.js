@@ -1,12 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { ItemStats } from './ItemStats';
+import { ItemStats, SIZES } from './ItemStats';
 import { color } from './shared/styles';
 
 const List = styled.ul`
   display: flex;
-  min-width: 180px;
+  min-width: 300px;
   border-radius: 4px;
   overflow: hidden;
   margin: 0;
@@ -14,19 +14,20 @@ const List = styled.ul`
   list-style: none;
   border: 1px solid ${color.mediumlight};
   display: flex;
+  background: ${color.lighter};
 `;
 
-export function StatsList({ items }) {
+export function StatsList({ items, size }) {
   return (
     <List>
-      {items.map(({ title, value, onClick, active }, index) => (
+      {items.map(({ title, value, active }, index) => (
         <ItemStats
           /* eslint-disable react/no-array-index-key */
           key={index}
           title={title}
           value={value}
-          onClick={onClick}
           active={active}
+          size={size}
         />
       ))}
     </List>
@@ -34,14 +35,16 @@ export function StatsList({ items }) {
 }
 
 StatsList.propTypes = {
+  size: PropTypes.oneOf(Object.values(SIZES)),
   items: PropTypes.arrayOf(
     PropTypes.shape({
       title: PropTypes.string.isRequired,
       value: PropTypes.string,
-      onClick: PropTypes.func,
       active: PropTypes.bool,
     }).isRequired
   ).isRequired,
 };
 
-StatsList.defaultProps = {};
+StatsList.defaultProps = {
+  size: SIZES.SMALL,
+};
