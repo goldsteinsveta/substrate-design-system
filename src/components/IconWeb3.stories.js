@@ -6,12 +6,16 @@ import { IconWeb3 } from './IconWeb3';
 const Meta = styled.div`
   color: #666;
   font-size: 12px;
+  margin-left: 10px;
+  min-width: 80px;
 `;
 
 const Item = styled.li`
   display: inline-flex;
-  flex-direction: row;
+  justify-content: space-evenly;
+  border: 1px solid;
   align-items: center;
+  padding: 10px;
 `;
 
 const List = styled.ul`
@@ -31,6 +35,10 @@ export const labels = () => (
       <IconWeb3 aria-hidden icon="identicon" />
       <Meta>Identicon</Meta>
     </Item>
+    <Item minimal>
+      <IconWeb3 lib="fa" icon="address-card" />
+      <Meta aria-hidden>Icon FA</Meta>
+    </Item>
   </List>
 );
 
@@ -38,6 +46,9 @@ export const noLabels = () => (
   <List>
     <Item minimal>
       <IconWeb3 aria-hidden icon="identicon" />
+    </Item>
+    <Item minimal>
+      <IconWeb3 lib="fa" icon="address-card" />
     </Item>
   </List>
 );

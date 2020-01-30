@@ -9,6 +9,11 @@ export const sizes = {
   tiny: 16,
 };
 
+const LIBRARIES = {
+  FA: 'fa',
+  WEB3: 'web3',
+};
+
 const I = styled.i`
   display: ${props => (props.block ? 'block' : 'inline-block')};
   font-size: ${sizes.medium}px;
@@ -31,17 +36,20 @@ const I = styled.i`
 
 `;
 
-export function IconWeb3({ icon, block, ...props }) {
-  return <I block={block} {...props} className={`fa-web3-${icon}`} />;
+export function IconWeb3({ icon, block, lib, ...props }) {
+  const libClass = lib === LIBRARIES.WEB3 ? '-web3' : '';
+  return <I block={block} {...props} className={`fa fa${libClass}-${icon}`} />;
 }
 
 IconWeb3.propTypes = {
   icon: PropTypes.string.isRequired,
   block: PropTypes.bool,
   size: PropTypes.string,
+  lib: PropTypes.oneOf(Object.values(LIBRARIES)),
 };
 
 IconWeb3.defaultProps = {
   block: false,
   size: 'large',
+  lib: 'web3',
 };
