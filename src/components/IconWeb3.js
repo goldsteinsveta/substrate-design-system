@@ -6,7 +6,7 @@ export const sizes = {
   large: 40,
   medium: 28,
   small: 20,
-  tiny: 16,
+  tiny: 11,
 };
 
 const LIBRARIES = {
@@ -17,6 +17,8 @@ const LIBRARIES = {
 const I = styled.i`
   display: ${props => (props.block ? 'block' : 'inline-block')};
   font-size: ${sizes.medium}px;
+  width: 1em;
+  height: 1em;
 
   ${props =>
     props.size === 'tiny' &&
@@ -51,5 +53,5 @@ IconWeb3.propTypes = {
 IconWeb3.defaultProps = {
   block: false,
   size: 'large',
-  lib: 'web3',
+  lib: 'fa',
 };

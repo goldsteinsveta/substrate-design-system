@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 import { darken } from 'polished';
 
-import { Icon } from './Icon';
+import { IconWeb3 } from './IconWeb3';
 import { color } from './shared/styles';
 
 const linkStyles = css`
@@ -24,7 +24,7 @@ const linkStyles = css`
     color: ${darken(0.1, color.secondary)};
   }
 
-  svg {
+  i {
     display: inline-block;
     height: 1em;
     width: 1em;
@@ -37,7 +37,7 @@ const linkStyles = css`
   ${props =>
     props.containsIcon &&
     css`
-      svg {
+      i {
         height: 1em;
         width: 1em;
         vertical-align: middle;
@@ -113,12 +113,13 @@ const linkStyles = css`
 `;
 
 const LinkInner = styled.span`
+  display: flex;
+  align-items: baseline;
   ${props =>
     props.withArrow &&
     css`
-      > svg:last-of-type {
-        height: 0.7em;
-        width: 0.7em;
+      > i:last-of-type {
+        font-size: 1em;
         margin-right: 0;
         margin-left: 0.25em;
         bottom: auto;
@@ -163,7 +164,7 @@ export function Link({ isButton, withArrow, LinkWrapper, children, ...rest }) {
     <>
       <LinkInner withArrow={withArrow}>
         {children}
-        {withArrow && <Icon icon="arrowright" />}
+        {withArrow && <IconWeb3 icon="arrow-right" />}
       </LinkInner>
     </>
   );

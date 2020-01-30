@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 import { color, typography } from './shared/styles';
 import { jiggle } from './shared/animation';
-import { Icon } from './Icon';
+import { IconWeb3 } from './IconWeb3';
 import { Spinner } from './Spinner';
 
 const Label = styled.label`
@@ -56,9 +56,18 @@ const Selector = styled.select`
 
 const OptionWrapper = styled.option``;
 
-const Arrow = styled(Icon).attrs({ icon: 'arrowdown' })``;
+const Arrow = styled(IconWeb3).attrs({ icon: 'chevron-down', size: 'small' })``;
 
-const SelectIcon = styled(Icon)``;
+const ArrowBox = styled.div`
+  position: absolute;
+  z-index: 1;
+  right: 1.2em;
+  top: 45%;
+  transform: translateY(-50%);
+  opacity: 0.5;
+`;
+
+const SelectIcon = styled(IconWeb3)``;
 
 const SelectSpinner = styled(Spinner)`
   right: 16px;
@@ -111,7 +120,7 @@ const SelectWrapper = styled.span`
 		z-index: 1;
 		pointer-events: none;
     border-radius: 4px;
-	}
+  }
 
   ${Arrow} {
     position: absolute;
@@ -170,7 +179,7 @@ const SelectWrapper = styled.span`
       &:before {
         content: none;
       }
-      ${Arrow} {
+      ${ArrowBox} {
         right: 0;
       }
     `}
@@ -190,7 +199,7 @@ const SelectWrapper = styled.span`
 			margin-top: -.5em;
 			z-index: 1;
 
-	    path { fill: ${color.mediumdark}; }
+      path { fill: ${color.mediumdark}; }
     }
     ${Selector}:focus + ${SelectIcon} path {
       fill: ${color.darker};
@@ -259,7 +268,12 @@ export function Select({
         data-error={error}
         disabled={disabled}
       >
-        {!inProgress && <Arrow />}
+        {!inProgress && (
+          <ArrowBox>
+            <IconWeb3 icon="chevron-down" size="tiny" />
+          </ArrowBox>
+        )}
+
         <Selector
           id={id}
           value={value}

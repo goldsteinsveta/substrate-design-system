@@ -45,22 +45,22 @@ export const labels = () => (
 export const noLabels = () => (
   <List>
     <Item minimal>
-      <IconWeb3 aria-hidden icon="identicon" />
+      <IconWeb3 lib="web3" aria-hidden icon="identicon" />
     </Item>
     <Item minimal>
-      <IconWeb3 lib="fa" icon="address-card" />
+      <IconWeb3 icon="address-card" />
     </Item>
   </List>
 );
 
 export const inline = () => (
   <>
-    this is an inline <IconWeb3 icon="identicon" aria-label="Identicon" /> icon (default)
+    this is an inline <IconWeb3 lib="web3" icon="identicon" aria-label="Identicon" /> icon (default)
   </>
 );
 
 export const block = () => (
   <>
-    this is a block <IconWeb3 icon="identicon" aria-label="Identicon" block /> icon
+    this is a block <IconWeb3 lib="web3" icon="identicon" aria-label="Identicon" block /> icon
   </>
 );

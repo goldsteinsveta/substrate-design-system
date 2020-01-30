@@ -3,7 +3,6 @@ import styled from 'styled-components';
 import { action } from '@storybook/addon-actions';
 
 import { Button } from './Button';
-import { Icon } from './Icon';
 import { StoryLinkWrapper } from './StoryLinkWrapper';
 import { IconWeb3 } from './IconWeb3';
 
@@ -74,23 +73,14 @@ export const disabled = () => (
 
 export const containsIcon = () => (
   <>
-    <Button appearance="primary" containsIcon>
-      <Icon icon="facehappy" aria-label="Link" />
+    <Button appearance="primary" containsIcon size="small">
+      <IconWeb3 lib="web3" icon="identicon" aria-label="identicon" size="tiny" />
     </Button>
     <Button appearance="secondary" containsIcon>
-      <Icon icon="link" aria-label="Link" />
+      <IconWeb3 lib="web3" icon="identicon" aria-label="identicon" size="small" />
     </Button>
     <Button appearance="outline" containsIcon>
-      <IconWeb3 icon="identicon" aria-label="identicon" size="medium" />
-    </Button>
-    <Button appearance="primary" size="small" containsIcon>
-      <Icon icon="facehappy" aria-label="Link" />
-    </Button>
-    <Button appearance="secondary" size="small" containsIcon>
-      <Icon icon="link" aria-label="Link" />
-    </Button>
-    <Button appearance="outline" size="small" containsIcon>
-      <IconWeb3 icon="identicon" aria-label="identicon" size="small" />
+      <IconWeb3 lib="web3" icon="identicon" aria-label="identicon" size="large" />
     </Button>
   </>
 );

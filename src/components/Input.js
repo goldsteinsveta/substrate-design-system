@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 import { color, typography } from './shared/styles';
 import { jiggle } from './shared/animation';
-import { Icon } from './Icon';
+import { IconWeb3 } from './IconWeb3';
 
 // prettier-ignore
 const Label = styled.label`
@@ -143,15 +143,16 @@ const InputWrapper = styled.div`
   }
 
   ${props => props.icon && css`
-    > svg {
+    > i {
       transition: all 150ms ease-out;
       position: absolute;
       top: 50%;
       height: 1em;
       width: 1em;
   		font-size: ${props.appearance === 'pill' ? 0.75 : 1 }em;
-  		margin-top: -.5em;
-  		z-index: 1;
+      margin: -.5em .5em auto;
+      z-index: 1;
+      opacity: 0.6;
 
       background: transparent;
 
@@ -161,17 +162,16 @@ const InputWrapper = styled.div`
       }
     }
 
-    ${InputText}:focus + svg path {
-      fill: ${color.darker};
-    }
-
     ${InputText} {
       padding-left: 2.75em;
 
       ${props.appearance === 'pill' && css` padding-left: 2.4em; `};
       ${props.appearance === 'tertiary' && css` padding-left: 1.75em; `};
     }
-    > svg { left: ${props.appearance === 'tertiary' ? 0 : 0.8 }em; }
+    > i { margin-left: ${props.appearance === 'tertiary' ? 0 : 0.8 }em; }
+    &:hover > i {
+      opacity: 1;
+    }
 
   `}
 
@@ -217,7 +217,7 @@ const InputWrapper = styled.div`
       }
     `};
 
-    svg {
+    i {
       animation: ${jiggle} 700ms ease-out;
       path { fill: ${color.negative}; }
     }
@@ -282,7 +282,7 @@ export function Input({
         appearance={appearance}
         focused={focused}
       >
-        {icon && <Icon icon={icon} aria-hidden />}
+        {icon && <IconWeb3 size="small" icon={icon} aria-hidden />}
         <InputText
           id={id}
           value={value}
