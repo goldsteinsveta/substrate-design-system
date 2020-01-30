@@ -16,7 +16,7 @@ export default {
   parameters: {
     subcomponents: { Identicon },
   },
-  excludeStories: ['accountData'],
+  excludeStories: /.*Data$/,
 };
 
 export const defaultAddressCard = () => <AddressCard {...accountData} />;

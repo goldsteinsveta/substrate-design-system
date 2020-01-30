@@ -5,7 +5,7 @@ import { Button } from './Button';
 export default {
   title: 'Design System/MainMenu',
   component: MainMenu,
-  excludeStories: ['tabsData'],
+  excludeStories: /.*Data$/,
 };
 
 export const tabsData = [<Button>Tab</Button>, <Button appearance="secondary">Tab2</Button>];
