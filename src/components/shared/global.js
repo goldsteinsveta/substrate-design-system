@@ -1,5 +1,7 @@
 import { createGlobalStyle, css } from 'styled-components';
 import { color, typography } from './styles';
+import 'semantic-ui-css/semantic.min.css';
+import 'font-awesome-web3/style.css';
 
 export const bodyStyles = css`
   font-family: ${typography.type.primary};
@@ -26,7 +28,7 @@ export const bodyStyles = css`
   h4,
   h5,
   h6 {
-    font-weight: ${typography.weight.regular};
+    font-weight: ${typography.weight.bold};
     margin: 0;
     padding: 0;
   }
@@ -77,7 +79,6 @@ export const bodyStyles = css`
     padding-left: 2px;
     padding-right: 2px;
     vertical-align: baseline;
-    color: ${color.secondary};
   }
 
   pre {

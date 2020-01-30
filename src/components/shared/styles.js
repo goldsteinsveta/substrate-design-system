@@ -11,7 +11,7 @@ export const background = {
 
 export const color = {
   // Palette
-  primary: '#FF4785', // coral
+  primary: '#E6007A', // polkapink
   secondary: '#1EA7FD', // ocean
   tertiary: '#DDDDDD',
 
@@ -32,6 +32,7 @@ export const color = {
   dark: '#666666',
   darker: '#444444',
   darkest: '#333333',
+  black: '#000000',
 
   border: 'rgba(0,0,0,.1)',
 
@@ -65,14 +66,14 @@ export const typography = {
     black: '900',
   },
   size: {
-    s1: '12',
-    s2: '14',
-    s3: '16',
-    m1: '20',
-    m2: '24',
-    m3: '28',
-    l1: '32',
-    l2: '40',
+    s1: '9',
+    s2: '12',
+    s3: '14',
+    m1: '16',
+    m2: '18',
+    m3: '22',
+    l1: '28',
+    l2: '32',
     l3: '48',
     code: '90',
   },

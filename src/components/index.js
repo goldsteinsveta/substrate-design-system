@@ -5,8 +5,8 @@ import * as icons from './shared/icons';
 
 export { styles, global, animation, icons };
 
-export * from './Avatar';
-export * from './AvatarList';
+export * from './Identicon';
+export * from './IdenticonList';
 export * from './Badge';
 export * from './Button';
 export * from './Highlight';
@@ -27,6 +27,9 @@ export * from './tooltip/TooltipMessage';
 export * from './tooltip/TooltipNote';
 export * from './tooltip/TooltipLinkList';
 export { default as WithTooltip } from './tooltip/WithTooltip';
+
+export * from './MainMenu';
+export * from './ItemStats';
 
 export * from './modal/Modal';
 export { default as WithModal } from './modal/WithModal';
