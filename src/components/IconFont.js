@@ -38,19 +38,19 @@ const I = styled.i`
 
 `;
 
-export function IconWeb3({ icon, block, lib, ...props }) {
+export function IconFont({ icon, block, lib, ...props }) {
   const libClass = lib === LIBRARIES.WEB3 ? '-web3' : '';
   return <I block={block} {...props} className={`fa fa${libClass}-${icon}`} />;
 }
 
-IconWeb3.propTypes = {
+IconFont.propTypes = {
   icon: PropTypes.string.isRequired,
   block: PropTypes.bool,
   size: PropTypes.string,
   lib: PropTypes.oneOf(Object.values(LIBRARIES)),
 };
 
-IconWeb3.defaultProps = {
+IconFont.defaultProps = {
   block: false,
   size: 'large',
   lib: 'fa',

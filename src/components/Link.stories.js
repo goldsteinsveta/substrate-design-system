@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { action } from '@storybook/addon-actions';
 
-import { IconWeb3 } from './IconWeb3';
+import { IconFont } from './IconFont';
 import { Link } from './Link';
 import { StoryLinkWrapper } from './StoryLinkWrapper';
 
@@ -47,13 +47,13 @@ export const withArrow = () => (
 
 export const containsIcon = () => (
   <Link containsIcon href="https://learnstorybook.com" aria-label="Toggle side bar">
-    <IconWeb3 icon="sitemap" aria-hidden />
+    <IconFont icon="sitemap" aria-hidden />
   </Link>
 );
 
 export const icon = () => (
   <Link href="https://learnstorybook.com">
-    <IconWeb3 icon="id-card" aria-hidden size="small" />
+    <IconFont icon="id-card" aria-hidden size="small" />
     Link with an icon in front
   </Link>
 );

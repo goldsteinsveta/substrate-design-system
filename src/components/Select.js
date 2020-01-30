@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 import { color, typography } from './shared/styles';
 import { jiggle } from './shared/animation';
-import { IconWeb3 } from './IconWeb3';
+import { IconFont } from './IconFont';
 import { Spinner } from './Spinner';
 
 const Label = styled.label`
@@ -56,7 +56,7 @@ const Selector = styled.select`
 
 const OptionWrapper = styled.option``;
 
-const Arrow = styled(IconWeb3).attrs({ icon: 'chevron-down', size: 'small' })``;
+const Arrow = styled(IconFont).attrs({ icon: 'chevron-down', size: 'small' })``;
 
 const ArrowBox = styled.div`
   position: absolute;
@@ -67,7 +67,7 @@ const ArrowBox = styled.div`
   opacity: 0.5;
 `;
 
-const SelectIcon = styled(IconWeb3)``;
+const SelectIcon = styled(IconFont)``;
 
 const SelectSpinner = styled(Spinner)`
   right: 16px;
@@ -270,7 +270,7 @@ export function Select({
       >
         {!inProgress && (
           <ArrowBox>
-            <IconWeb3 icon="chevron-down" size="tiny" />
+            <IconFont icon="chevron-down" size="tiny" />
           </ArrowBox>
         )}
 

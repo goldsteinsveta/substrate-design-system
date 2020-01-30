@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 import { color, typography } from './shared/styles';
 import { jiggle } from './shared/animation';
-import { IconWeb3 } from './IconWeb3';
+import { IconFont } from './IconFont';
 
 // prettier-ignore
 const Label = styled.label`
@@ -282,7 +282,7 @@ export function Input({
         appearance={appearance}
         focused={focused}
       >
-        {icon && <IconWeb3 size="small" icon={icon} aria-hidden />}
+        {icon && <IconFont size="small" icon={icon} aria-hidden />}
         <InputText
           id={id}
           value={value}

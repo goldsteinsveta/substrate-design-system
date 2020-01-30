@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { ListItem } from './ListItem';
-import { IconWeb3 } from '../IconWeb3';
+import { IconFont } from '../IconFont';
 import { StoryLinkWrapper } from '../StoryLinkWrapper';
 
 export default {
@@ -23,7 +23,7 @@ export const all = () => (
     <ListItem isLoading />
     <ListItem title="Default" />
     <ListItem title="lorem ipsum dolor sit amet consectatur" />
-    <ListItem title="Default icon" right={<IconWeb3 icon="eye" size="tiny" />} />
+    <ListItem title="Default icon" right={<IconFont icon="eye" size="tiny" />} />
     <ListItem left="left" title="title" center="center" right="right" />
     <ListItem active left="left" title="active" center="center" right="right" />
     <ListItem
@@ -32,21 +32,21 @@ export const all = () => (
       left="left"
       title="secondary active"
       center="center"
-      right={<IconWeb3 icon="eye" size="tiny" />}
+      right={<IconFont icon="eye" size="tiny" />}
     />
     <ListItem
       active
       left="left"
       title="active icon"
       center="center"
-      right={<IconWeb3 icon="eye" size="tiny" />}
+      right={<IconFont icon="eye" size="tiny" />}
     />
     <ListItem
       active
       left="✅"
       title="lorem ipsum dolor sit amet consectatur"
       center="center"
-      right={<IconWeb3 icon="eye" size="tiny" />}
+      right={<IconFont icon="eye" size="tiny" />}
     />
     <ListItem disabled left="left" title="disabled" center="center" right="right" />
   </div>
@@ -66,7 +66,7 @@ longTitle.story = {
 };
 
 export const defaultIcon = () => (
-  <ListItem title="Default icon" right={<IconWeb3 icon="eye" size="tiny" />} />
+  <ListItem title="Default icon" right={<IconFont icon="eye" size="tiny" />} />
 );
 
 defaultIcon.story = {
@@ -74,7 +74,7 @@ defaultIcon.story = {
 };
 
 export const activeIcon = () => (
-  <ListItem active title="active icon" right={<IconWeb3 icon="eye" size="tiny" />} />
+  <ListItem active title="active icon" right={<IconFont icon="eye" size="tiny" />} />
 );
 
 activeIcon.story = {
@@ -103,7 +103,7 @@ export const wPositionsActiveLongTitle = () => (
     left="✅"
     title="lorem ipsum dolor sit amet consectatur"
     center="center"
-    right={<IconWeb3 icon="eye" size="tiny" />}
+    right={<IconFont icon="eye" size="tiny" />}
   />
 );
 
@@ -127,7 +127,7 @@ export const withLinkWrapper = () => (
     <ListItem
       LinkWrapper={StoryLinkWrapper}
       title="Default icon"
-      right={<IconWeb3 icon="eye" size="tiny" />}
+      right={<IconFont icon="eye" size="tiny" />}
       to="http://www.google.com"
     />
   </>

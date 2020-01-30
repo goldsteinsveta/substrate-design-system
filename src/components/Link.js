@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 import { darken } from 'polished';
 
-import { IconWeb3 } from './IconWeb3';
+import { IconFont } from './IconFont';
 import { color } from './shared/styles';
 
 const linkStyles = css`
@@ -164,7 +164,7 @@ export function Link({ isButton, withArrow, LinkWrapper, children, ...rest }) {
     <>
       <LinkInner withArrow={withArrow}>
         {children}
-        {withArrow && <IconWeb3 icon="arrow-right" />}
+        {withArrow && <IconFont icon="arrow-right" />}
       </LinkInner>
     </>
   );

@@ -4,7 +4,7 @@ import styled from 'styled-components';
 import ReactModal from 'react-modal';
 
 import { Button } from '../Button';
-import { IconWeb3 } from '../IconWeb3';
+import { IconFont } from '../IconFont';
 import { pageMargins, breakpoint } from '../shared/styles';
 
 const Action = styled.div`
@@ -84,7 +84,7 @@ export function Modal({ isOpen, onClose, children }) {
       </CenteredWrapper>
       <Action>
         <Button containsIcon appearance="outline" onClick={onClose}>
-          <IconWeb3 icon="times" />
+          <IconFont icon="times" />
         </Button>
       </Action>
     </ReactModal>
