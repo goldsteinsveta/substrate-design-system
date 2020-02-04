@@ -2,11 +2,14 @@
 import React, { Component } from 'react';
 import { DragDropContext, Droppable, Draggable } from 'react-beautiful-dnd';
 
+// eslint-disable-next-line react/prop-types
+const itemContent = ({ k }) => <span>Address Card and details {k}</span>;
+
 // fake data generator
 const getItems = count =>
   Array.from({ length: count }, (v, k) => k).map(k => ({
     id: `item-${k}`,
-    content: `item ${k}`,
+    content: itemContent({ k }),
   }));
 
 // a little function to help us with reordering the result
@@ -43,12 +46,23 @@ export default class App extends Component {
   constructor(props, context) {
     super(props, context);
     this.state = {
-      items: getItems(10),
+      items: getItems(3),
     };
     this.onDragEnd = this.onDragEnd.bind(this);
   }
 
+  // TODO
+  // on drag
+  // if not controller
+  // cobinable = true
+
   onDragEnd(result) {
+    // combining item
+    if (result.combine) {
+      // TODO make draggable a controller of droppable
+      return;
+    }
+
     // dropped outside the list
     if (!result.destination) {
       return;
@@ -68,7 +82,7 @@ export default class App extends Component {
   render() {
     return (
       <DragDropContext onDragEnd={this.onDragEnd}>
-        <Droppable droppableId="droppable">
+        <Droppable droppableId="droppable" isCombineEnabled>
           {(droppableProvided, droppableSnapshot) => (
             <div
               ref={droppableProvided.innerRef}
