@@ -37,7 +37,7 @@ export const color = {
   border: 'rgba(0,0,0,.1)',
 
   // Status
-  positive: '#66BF3C',
+  positive: '#4DD18F',
   negative: '#FF4400',
   warning: '#E69D00',
 };

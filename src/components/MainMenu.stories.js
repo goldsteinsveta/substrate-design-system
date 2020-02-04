@@ -18,7 +18,7 @@ const LogoData = () => {
   return (
     <h3>
       NOM
-      <IconFont aria-hidden icon="bolt" />
+      <IconFont aria-hidden icon="bolt" color="white" />
       DOT
     </h3>
   );
@@ -39,8 +39,9 @@ const NetworkData = () => {
       <WithTooltip placement="bottom-start" trigger="click" tooltip={StatsData}>
         <ListItem
           title="Kusama"
-          left={<IconFont color="springgreen" icon="circle" />}
-          right={<IconFont icon="chevron-down" />}
+          left={<IconFont color="positive" icon="circle" />}
+          colors
+          right={<IconFont icon="chevron-down" color="white" />}
         />
       </WithTooltip>
     </>

@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
+import { color } from './shared/styles';
 
 export const sizes = {
   large: 56,
@@ -26,7 +27,7 @@ const I = styled.i`
   ${props =>
     props.color &&
     css`
-      color: ${props.color};
+      color: ${color[props.color]};
     `}
 `;
 
@@ -40,10 +41,12 @@ IconFont.propTypes = {
   block: PropTypes.bool,
   size: PropTypes.string,
   lib: PropTypes.oneOf(Object.values(LIBRARIES)),
+  color: PropTypes.oneOf(Object.values(color)),
 };
 
 IconFont.defaultProps = {
   block: false,
   size: '',
   lib: 'fa',
+  color: 'black',
 };
