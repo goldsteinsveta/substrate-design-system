@@ -39,7 +39,7 @@ const NetworkData = () => {
       <WithTooltip placement="bottom-start" trigger="click" tooltip={StatsData}>
         <ListItem
           title="Kusama"
-          left={<IconFont color="green" icon="circle" />}
+          left={<IconFont color="springgreen" icon="circle" />}
           right={<IconFont icon="chevron-down" />}
         />
       </WithTooltip>

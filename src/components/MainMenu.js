@@ -10,15 +10,15 @@ const BoxLogo = styled.div`
   color: white;
   display: flex;
   justify-content: space-between;
-  height: 38px;
-  padding: 0 calc(50vw - 400px);
+  height: 40px;
+  padding: 0 calc(50vw - 500px);
 `;
 
 const BoxTabs = styled.div`
   align-items: center;
   display: flex;
   background: ${color.light};
-  padding: 0 calc(50vw - 400px);
+  padding: 0 calc(50vw - 500px);
   box-shadow: inset 0 0 10px -8px;
 `;
 
