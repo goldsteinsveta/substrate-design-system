@@ -22,21 +22,17 @@ const BoxTabs = styled.div`
   box-shadow: inset 0 0 10px -8px;
 `;
 
-export const Logo = () => {
-  return <span>Nomidot</span>;
-};
-
 export const ContentRight = () => {
   return <div>Content Right</div>;
 };
 
 // Either pass the full list of users, or a userCount if known
-export function MainMenu({ tabs }) {
+export function MainMenu({ tabs, contentLeft, contentRight }) {
   return (
     <>
       <BoxLogo>
-        <Logo />
-        <ContentRight />
+        {contentLeft}
+        {contentRight}
       </BoxLogo>
       <BoxTabs>{tabs}</BoxTabs>
     </>
@@ -45,8 +41,12 @@ export function MainMenu({ tabs }) {
 
 MainMenu.propTypes = {
   tabs: PropTypes.oneOfType([PropTypes.instanceOf(Button), PropTypes.arrayOf(Button)]),
+  contentLeft: PropTypes.node,
+  contentRight: PropTypes.node,
 };
 
 MainMenu.defaultProps = {
   tabs: [],
+  contentLeft: '',
+  contentRight: '',
 };

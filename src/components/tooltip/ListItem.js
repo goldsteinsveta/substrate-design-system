@@ -4,7 +4,9 @@ import styled, { css } from 'styled-components';
 import { color, typography } from '../shared/styles';
 import { inlineGlow } from '../shared/animation';
 
-const Left = styled.span``;
+const Left = styled.span`
+  margin-right: 8px;
+`;
 const Title = styled.span`
   font-weight: ${typography.weight.bold};
   white-space: nowrap;
