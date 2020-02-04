@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { Button } from './Button';
-import { color } from './shared/styles';
+import { color, spacing } from './shared/styles';
 
 const BoxLogo = styled.div`
   align-items: center;
@@ -11,14 +11,14 @@ const BoxLogo = styled.div`
   display: flex;
   justify-content: space-between;
   height: 40px;
-  padding: 0 calc(50vw - 500px);
+  padding: ${spacing.max1000};
 `;
 
 const BoxTabs = styled.div`
   align-items: center;
   display: flex;
   background: ${color.light};
-  padding: 0 calc(50vw - 500px);
+  padding: ${spacing.max1000};
   box-shadow: inset 0 0 10px -8px;
 `;
 

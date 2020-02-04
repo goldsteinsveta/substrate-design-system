@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import { ItemStats, SIZES } from './ItemStats';
-import { color } from './shared/styles';
+import { color, spacing } from './shared/styles';
 
 const List = styled.ul`
   display: flex;
@@ -15,6 +15,7 @@ const List = styled.ul`
   border: 1px solid ${color.mediumlight};
   display: flex;
   background: ${color.lighter};
+  margin: ${spacing.max1000};
 `;
 
 export function StatsList({ items, size }) {

@@ -52,6 +52,7 @@ export const spacing = {
     small: 5,
     default: 10,
   },
+  max1000: '0 calc(50vw - 500px)',
 };
 
 export const typography = {
