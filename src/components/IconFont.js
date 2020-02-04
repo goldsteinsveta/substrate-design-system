@@ -16,26 +16,18 @@ const LIBRARIES = {
 
 const I = styled.i`
   display: ${props => (props.block ? 'block' : 'inline-block')};
-  font-size: ${sizes.medium}px;
-  width: 1em;
-  height: 1em;
+  font-size: 1em;
 
   ${props =>
-    props.size === 'tiny' &&
+    props.size &&
     css`
-      font-size: ${sizes.tiny}px;
+      font-size: ${sizes[props.size]}px;
     `}
   ${props =>
-    props.size === 'small' &&
+    props.color &&
     css`
-      font-size: ${sizes.small}px;
+      color: ${props.color};
     `}
-  ${props =>
-    props.size === 'large' &&
-    css`
-      font-size: ${sizes.large}px;
-    `}
-
 `;
 
 export function IconFont({ icon, block, lib, ...props }) {
@@ -52,6 +44,6 @@ IconFont.propTypes = {
 
 IconFont.defaultProps = {
   block: false,
-  size: 'large',
+  size: '',
   lib: 'fa',
 };
