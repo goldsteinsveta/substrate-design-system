@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 import styled, { css } from 'styled-components';
 
 export const sizes = {
-  large: 40,
-  medium: 28,
-  small: 20,
-  tiny: 11,
+  large: 56,
+  medium: 32,
+  small: 24,
+  tiny: 16,
 };
 
 const LIBRARIES = {
