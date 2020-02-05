@@ -10,17 +10,17 @@ export default {
   },
 };
 
-export const large = () => (
-  <div>
-    <Identicon size="large" />
-    <Identicon isLoading size="large" />
-  </div>
-);
-
 export const medium = () => (
   <div>
     <Identicon />
     <Identicon isLoading />
+  </div>
+);
+
+export const large = () => (
+  <div>
+    <Identicon size="large" />
+    <Identicon isLoading size="large" />
   </div>
 );
 
