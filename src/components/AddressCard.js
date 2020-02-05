@@ -1,27 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
-
+import tachyons from 'tachyons-components';
 import { Identicon } from './Identicon';
 
-const Box = styled.div`
-  display: inline-flex;
-  flex-wrap: nowrap;
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-end;
-  vertical-align: top;
-  margin: 0;
-  padding: 0;
-  list-style: none;
+const Box = tachyons('div')`
+  inline-flex items-center
 `;
-const InfoBox = styled.div`
-  margin-left: 8px;
+const InfoBox = tachyons('div')`
+  ml2
 `;
-const AddressTitle = styled.h3``;
-const Address = styled.code`
-  display: block;
-  margin-top: -2px;
+const AddressTitle = tachyons('div')`
+  f5 fw6
+`;
+const Address = tachyons('div')`
+  f7 code
 `;
 
 // Either pass the full list of users, or a userCount if known
@@ -47,5 +39,5 @@ AddressCard.propTypes = {
 };
 
 AddressCard.defaultProps = {
-  accountData: { name: 'N4m3', address: '4ddR355', network: 'network', isLoading: true },
+  accountData: { name: 'N4m3', address: '4ddR355', network: 'network', isLoading: false },
 };
