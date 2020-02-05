@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled, { css } from 'styled-components';
+import tachyons from 'tachyons-components';
 import { color } from './shared/styles';
 
 export const sizes = {
@@ -15,20 +15,12 @@ const LIBRARIES = {
   WEB3: 'web3',
 };
 
-const I = styled.i`
-  display: ${props => (props.block ? 'block' : 'inline-block')};
-  font-size: 1em;
-
-  ${props =>
-    props.size &&
-    css`
-      font-size: ${sizes[props.size]}px;
-    `}
-  ${props =>
-    props.color &&
-    css`
-      color: ${color[props.color]};
-    `}
+const I = tachyons('i')`
+  f1 items-center
+  ${props => (props.size === 'tiny' ? 'f7' : '')}
+  ${props => (props.size === 'small' ? 'f3' : '')}
+  ${props => (props.size === 'large' ? 'f-6' : '')}
+  ${props => (props.block ? 'flex' : 'inline-flex')}
 `;
 
 export function IconFont({ icon, block, lib, ...props }) {
@@ -46,7 +38,7 @@ IconFont.propTypes = {
 
 IconFont.defaultProps = {
   block: false,
-  size: '',
+  size: 'medium',
   lib: 'fa',
   color: 'black',
 };
