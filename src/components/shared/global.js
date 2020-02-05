@@ -1,5 +1,6 @@
 import { createGlobalStyle, css } from 'styled-components';
 import { color, typography } from './styles';
+import { glow } from './animation';
 import 'font-awesome-web3/style.css';
 import 'font-awesome/css/font-awesome.min.css';
 
@@ -89,6 +90,10 @@ export const bodyStyles = css`
     color: ${color.darkest};
     border-radius: 3px;
     margin: 1rem 0;
+  }
+
+  .ani-glow {
+    animation: ${glow} 1.5s ease-in-out infinite;
   }
 
   &.ReactModal__Body--open {
