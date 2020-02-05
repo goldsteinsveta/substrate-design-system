@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import tachyons from 'tachyons-components';
 import { color } from './shared/styles';
 
+// TODO: unify sizes
 export const sizes = {
   large: 56,
   medium: 32,
