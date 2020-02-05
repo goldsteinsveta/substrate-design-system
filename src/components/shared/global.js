@@ -42,6 +42,10 @@ export const bodyStyles = css`
     font-family: ${typography.type.primary};
   }
 
+  a {
+    cursor: pointer;
+  }
+
   sub,
   sup {
     font-size: 0.8em;
@@ -67,10 +71,10 @@ export const bodyStyles = css`
     margin-bottom: 1.25rem;
   }
 
+  .code,
   code,
   pre {
     font-family: ${typography.type.code};
-    font-size: ${typography.size.s2 - 1}px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
@@ -94,6 +98,16 @@ export const bodyStyles = css`
 
   .ani-glow {
     animation: ${glow} 1.5s ease-in-out infinite;
+  }
+
+  .cur-pointer {
+    cursor: pointer;
+  }
+  .cur-na {
+    cursor: not-allowed;
+  }
+  .cur-progress {
+    cursor: progress;
   }
 
   &.ReactModal__Body--open {

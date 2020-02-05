@@ -1,22 +1,7 @@
 import React from 'react';
-import styled from 'styled-components';
-import { action } from '@storybook/addon-actions';
 
 import { Button } from './Button';
-import { StoryLinkWrapper } from './StoryLinkWrapper';
 import { IconFont } from './IconFont';
-
-const CustomButton = styled.button`
-  border: 1px solid green;
-  background: lightgreen;
-  color: rebeccapurple;
-  padding: 1em;
-  font-size: 1.2em;
-`;
-
-function ButtonWrapper(props) {
-  return <CustomButton onClick={action('button action click')} {...props} />;
-}
 
 export default {
   title: 'Design System/Button',
@@ -34,11 +19,11 @@ export const buttons = () => (
 export const sizes = () => (
   <>
     <Button appearance="primary">Default</Button>
-    <Button appearance="primary" size="small">
-      Small
-    </Button>
     <Button appearance="outline" size="small">
       Small Outline
+    </Button>
+    <Button appearance="primary" size="tiny" shape="pill">
+      <IconFont icon="times" size="tiny" />
     </Button>
   </>
 );
@@ -71,44 +56,16 @@ export const disabled = () => (
   </>
 );
 
-export const containsIcon = () => (
+export const shapePill = () => (
   <>
-    <Button appearance="primary" containsIcon size="small">
-      <IconFont lib="web3" icon="identicon" aria-label="identicon" size="tiny" />
-    </Button>
-    <Button appearance="secondary" containsIcon>
+    <Button appearance="primary" shape="pill" size="small">
       <IconFont lib="web3" icon="identicon" aria-label="identicon" size="small" />
     </Button>
-    <Button appearance="outline" containsIcon>
-      <IconFont lib="web3" icon="identicon" aria-label="identicon" size="large" />
+    <Button appearance="secondary" shape="pill">
+      <IconFont lib="web3" icon="identicon" aria-label="identicon" size="medium" />
+    </Button>
+    <Button appearance="outline" shape="pill">
+      <IconFont lib="web3" icon="identicon" aria-label="identicon" size="medium" />
     </Button>
   </>
 );
-
-export const buttonWrapper = () => (
-  <div>
-    <ButtonWrapper>Original Button Wrapper</ButtonWrapper>
-    <br />
-    <Button ButtonWrapper={ButtonWrapper} appearance="primary">
-      Button that passes clicks through
-    </Button>
-  </div>
-);
-
-buttonWrapper.story = {
-  name: 'button wrapper',
-};
-
-export const anchorWrapper = () => (
-  <div>
-    <StoryLinkWrapper to="http://storybook.js.org">Original Link Wrapper</StoryLinkWrapper>
-    <br />
-    <Button ButtonWrapper={StoryLinkWrapper} appearance="primary" href="http://storybook.js.org">
-      Button that passes href through
-    </Button>
-  </div>
-);
-
-anchorWrapper.story = {
-  name: 'anchor wrapper',
-};
