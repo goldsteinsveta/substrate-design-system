@@ -19,7 +19,7 @@ const SIZES = {
 
 // TODO HOVERS
 
-const StyledButtonX = tachyons('a')`
+const StyledButton = tachyons('a')`
   inline-flex items-center
   white code 
   bg-black
@@ -34,9 +34,9 @@ export function Button({ isDisabled, isLoading, loadingText, children, ...props 
   const buttonInner = !isLoading ? children : loadingText || 'Loading...';
 
   return (
-    <StyledButtonX isLoading={isLoading} disabled={isDisabled} {...props}>
+    <StyledButton isLoading={isLoading} disabled={isDisabled} {...props}>
       {buttonInner}
-    </StyledButtonX>
+    </StyledButton>
   );
 }
 
