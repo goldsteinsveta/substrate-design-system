@@ -9,7 +9,7 @@ import { ListItem } from './tooltip/ListItem';
 import { StatsList } from './StatsList';
 
 export default {
-  title: 'Dummy/001',
+  title: 'Apps/Nomidot',
   component: MainMenu,
   excludeStories: /.*Data$/,
 };
