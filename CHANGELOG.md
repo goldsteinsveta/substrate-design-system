@@ -1,3 +1,56 @@
+# v4.0.0 (Thu Feb 06 2020)
+
+#### 💥  Breaking Change
+
+- Upgrade auto, node [#151](https://github.com/storybookjs/design-system/pull/151) ([@kylesuss](https://github.com/kylesuss))
+
+#### 🐛  Bug Fix
+
+- Font based icons [#2](https://github.com/storybookjs/design-system/pull/2) ([@kylesuss](https://github.com/kylesuss))
+- Nomidot elements [#1](https://github.com/storybookjs/design-system/pull/1) ([@kylesuss](https://github.com/kylesuss))
+- Upgrade to addon-essentials and main.js config [#141](https://github.com/storybookjs/design-system/pull/141) ([@shilman](https://github.com/shilman) [@domyen](https://github.com/domyen) [@kylesuss](https://github.com/kylesuss))
+
+#### ⚠️  Pushed to master
+
+- icon inherits font-size from parent  ([@goldsteinsveta](https://github.com/goldsteinsveta))
+- oopsx  ([@goldsteinsveta](https://github.com/goldsteinsveta))
+- tachyons 4 badge  ([@goldsteinsveta](https://github.com/goldsteinsveta))
+- tachyons 4 Identicon  ([@goldsteinsveta](https://github.com/goldsteinsveta))
+- tachyons 4 Icons  ([@goldsteinsveta](https://github.com/goldsteinsveta))
+- gloabl animation class  ([@goldsteinsveta](https://github.com/goldsteinsveta))
+- tachyons for AddressCard  ([@goldsteinsveta](https://github.com/goldsteinsveta))
+- add tachyons  ([@goldsteinsveta](https://github.com/goldsteinsveta))
+- Nomidot ComponentDummy  ([@goldsteinsveta](https://github.com/goldsteinsveta))
+- spacing for center and max-width 1000px  ([@goldsteinsveta](https://github.com/goldsteinsveta))
+- prop IconFont color  ([@goldsteinsveta](https://github.com/goldsteinsveta))
+- Storybook >> Substrate  ([@goldsteinsveta](https://github.com/goldsteinsveta))
+- dark tooltips/listItems  ([@goldsteinsveta](https://github.com/goldsteinsveta))
+- props: MainMenu – contentLeft & right  ([@goldsteinsveta](https://github.com/goldsteinsveta))
+- tachyons 4 button  ([@goldsteinsveta](https://github.com/goldsteinsveta))
+- cleanup: Identicon  ([@goldsteinsveta](https://github.com/goldsteinsveta))
+- rename/remove Icon componets dependencies  ([@goldsteinsveta](https://github.com/goldsteinsveta))
+- change all Icon to IconWeb3  ([@goldsteinsveta](https://github.com/goldsteinsveta))
+- prop: icon library @IconWeb3  ([@goldsteinsveta](https://github.com/goldsteinsveta))
+- chore: excludeStories: /.*Data$/  ([@goldsteinsveta](https://github.com/goldsteinsveta))
+- Stats & Stats.stories  ([@goldsteinsveta](https://github.com/goldsteinsveta))
+- rewriting/-naming  ([@goldsteinsveta](https://github.com/goldsteinsveta))
+- component: NetworkStats and it's tooltips  ([@goldsteinsveta](https://github.com/goldsteinsveta))
+- component: MainMenu  ([@goldsteinsveta](https://github.com/goldsteinsveta))
+- fa_web3, Identicon, AdressCard, Button styles  ([@goldsteinsveta](https://github.com/goldsteinsveta))
+- font nomi / font awsome web3  ([@goldsteinsveta](https://github.com/goldsteinsveta))
+- semantic ui and font awsome  ([@goldsteinsveta](https://github.com/goldsteinsveta))
+- add app-code in public  ([@ndelangen](https://github.com/ndelangen))
+
+#### Authors: 5
+
+- [@goldsteinsveta](https://github.com/goldsteinsveta)
+- Dominic Nguyen ([@domyen](https://github.com/domyen))
+- Kyle Suss ([@kylesuss](https://github.com/kylesuss))
+- Michael Shilman ([@shilman](https://github.com/shilman))
+- Norbert de Langen ([@ndelangen](https://github.com/ndelangen))
+
+---
+
 # v3.0.0 (Sun Jan 19 2020)
 
 #### 💥  Breaking Change
