@@ -4,7 +4,9 @@ import styled, { css } from 'styled-components';
 import { color, typography } from '../shared/styles';
 import { inlineGlow } from '../shared/animation';
 
-const Left = styled.span``;
+const Left = styled.span`
+  margin-right: 8px;
+`;
 const Title = styled.span`
   font-weight: ${typography.weight.bold};
   white-space: nowrap;
@@ -24,11 +26,13 @@ const ItemWrapper = styled.li`
 
 const ItemInner = styled.span`
   /* Layout */
-  line-height: 18px;
-  padding: 7px 15px;
+  line-height: 21px;
+  padding: 0 0 0 16px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  background: ${color.darkest};
+  min-height: 40px;
 
   ${Title} {
     display: block;
@@ -57,19 +61,21 @@ const ItemInner = styled.span`
     flex: none;
     text-align: right;
     margin-left: 10px;
+    padding: 13px;
+    background: ${color.dark};
   }
 `;
 
 const linkStyles = css`
-  font-size: ${typography.size.s1}px;
+  font-size: ${typography.size.s2}px;
   transition: all 150ms ease-out;
-  color: ${color.mediumdark};
+  color: ${color.light};
   text-decoration: none;
   display: block;
 
   /* Styling */
   ${Title} {
-    color: ${color.darker};
+    color: ${color.mediumlight};
   }
 
   ${Right} svg {

@@ -1,12 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled, { css } from 'styled-components';
+import tachyons from 'tachyons-components';
+import { color } from './shared/styles';
 
+// TODO: unify sizes
 export const sizes = {
-  large: 40,
-  medium: 28,
-  small: 20,
-  tiny: 11,
+  large: 56,
+  medium: 32,
+  small: 24,
+  tiny: 16,
 };
 
 const LIBRARIES = {
@@ -14,28 +16,13 @@ const LIBRARIES = {
   WEB3: 'web3',
 };
 
-const I = styled.i`
-  display: ${props => (props.block ? 'block' : 'inline-block')};
-  font-size: ${sizes.medium}px;
-  width: 1em;
-  height: 1em;
-
-  ${props =>
-    props.size === 'tiny' &&
-    css`
-      font-size: ${sizes.tiny}px;
-    `}
-  ${props =>
-    props.size === 'small' &&
-    css`
-      font-size: ${sizes.small}px;
-    `}
-  ${props =>
-    props.size === 'large' &&
-    css`
-      font-size: ${sizes.large}px;
-    `}
-
+const I = tachyons('i')`
+  items-center
+  ${props => (props.size === 'tiny' ? 'f7' : '')}
+  ${props => (props.size === 'small' ? 'f3' : '')}
+  ${props => (props.size === 'medium' ? 'f1' : '')}
+  ${props => (props.size === 'large' ? 'f-6' : '')}
+  ${props => (props.block ? 'flex' : 'inline-flex')}
 `;
 
 export function IconFont({ icon, block, lib, ...props }) {
@@ -48,10 +35,12 @@ IconFont.propTypes = {
   block: PropTypes.bool,
   size: PropTypes.string,
   lib: PropTypes.oneOf(Object.values(LIBRARIES)),
+  color: PropTypes.oneOf(Object.values(color)),
 };
 
 IconFont.defaultProps = {
   block: false,
-  size: 'large',
+  size: '',
   lib: 'fa',
+  color: 'black',
 };

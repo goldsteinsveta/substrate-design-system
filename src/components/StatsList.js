@@ -20,13 +20,13 @@ const List = styled.ul`
 export function StatsList({ items, size }) {
   return (
     <List>
-      {items.map(({ title, value, active }, index) => (
+      {items.map(({ title, value, subtitle }, index) => (
         <ItemStats
           /* eslint-disable react/no-array-index-key */
           key={index}
           title={title}
           value={value}
-          active={active}
+          subtitle={subtitle}
           size={size}
         />
       ))}
@@ -40,7 +40,7 @@ StatsList.propTypes = {
     PropTypes.shape({
       title: PropTypes.string.isRequired,
       value: PropTypes.string,
-      active: PropTypes.bool,
+      subtitle: PropTypes.string,
     }).isRequired
   ).isRequired,
 };

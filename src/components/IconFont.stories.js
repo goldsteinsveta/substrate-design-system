@@ -32,11 +32,11 @@ export default {
 export const labels = () => (
   <List>
     <Item minimal>
-      <IconFont lib="web3" aria-hidden icon="identicon" />
+      <IconFont lib="web3" aria-hidden icon="identicon" size="large" />
       <Meta>Identicon</Meta>
     </Item>
     <Item minimal>
-      <IconFont lib="fa" icon="address-card" />
+      <IconFont lib="fa" icon="address-card" size="large" />
       <Meta aria-hidden>Icon FA</Meta>
     </Item>
   </List>
@@ -45,10 +45,10 @@ export const labels = () => (
 export const noLabels = () => (
   <List>
     <Item minimal>
-      <IconFont lib="web3" aria-hidden icon="identicon" />
+      <IconFont lib="web3" aria-hidden icon="identicon" size="large" />
     </Item>
     <Item minimal>
-      <IconFont icon="address-card" />
+      <IconFont icon="address-card" size="large" />
     </Item>
   </List>
 );

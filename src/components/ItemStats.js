@@ -9,6 +9,7 @@ export const SIZES = {
   LARGE: 'large',
 };
 
+// TODO: tachyons
 const Value = styled.span`
   font-size: ${typography.size.m1}px;
   font-weight: ${typography.weight.bold};
@@ -85,9 +86,7 @@ export function ItemStats({ title, value, subtitle, size, onClick, LinkWrapper, 
   const linkInner = (
     <ItemInner onClick={onClick} role="presentation">
       <Title size={size}>{title}</Title>
-      <Value size={size}>
-        <input type="text" name="name" value={value} />
-      </Value>
+      <Value size={size}>{value}</Value>
       <Subtitle size={size}>{subtitle}</Subtitle>
     </ItemInner>
   );
@@ -120,8 +119,8 @@ ItemStats.propTypes = {
 ItemStats.defaultProps = {
   isLoading: false,
   title: <span>Loading</span>,
-  value: 'item value',
-  subtitle: 'item subtitle',
+  value: '',
+  subtitle: '',
   LinkWrapper: undefined,
   onClick: undefined,
   size: SIZES.SMALL,

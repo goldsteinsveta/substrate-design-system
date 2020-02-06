@@ -19,8 +19,7 @@ export const all = () => (
 
 export const withIcon = () => (
   <Badge status="warning">
-    <IconFont icon="check" inline size="tiny" />
-    with icon
+    <IconFont icon="check" inline size="tiny" /> with icon
   </Badge>
 );
 

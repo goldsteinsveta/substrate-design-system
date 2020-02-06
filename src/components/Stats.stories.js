@@ -7,9 +7,9 @@ import { ListItem } from './tooltip/ListItem';
 import { IconFont } from './IconFont';
 
 export const itemsData = [
-  { title: 'Last Block', value: '1.7s' },
-  { title: 'Epoch', value: '170' },
-  { title: 'Net Staked', value: '20982019 KSM' },
+  { title: 'Last Block', value: '1.7s', subtitle: '/ target 6s' },
+  { title: 'Epoch', value: '170', subtitle: '/ target 6s' },
+  { title: 'Net Staked', value: '20982019 KSM', subtitle: '/ target 6s' },
 ];
 
 export default {

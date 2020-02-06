@@ -10,46 +10,30 @@ export default {
   },
 };
 
-export const large = () => (
+export const medium = () => (
   <div>
-    <Identicon isLoading size="large" />
-    <Identicon size="large" username="Tom Coleman" />
-    <Identicon
-      size="large"
-      username="Tom Coleman"
-      src="https://avatars2.githubusercontent.com/u/132554"
-    />
+    <Identicon />
+    <Identicon isLoading />
   </div>
 );
 
-export const medium = () => (
+export const large = () => (
   <div>
-    <Identicon isLoading />
-    <Identicon username="Tom Coleman" />
-    <Identicon username="Tom Coleman" src="https://avatars2.githubusercontent.com/u/132554" />
+    <Identicon size="large" />
+    <Identicon isLoading size="large" />
   </div>
 );
 
 export const small = () => (
   <div>
+    <Identicon size="small" />
     <Identicon isLoading size="small" />
-    <Identicon size="small" username="Dominic Nguyen" />
-    <Identicon
-      size="small"
-      username="Dominic Nguyen"
-      src="https://avatars2.githubusercontent.com/u/263385"
-    />
   </div>
 );
 
 export const tiny = () => (
   <div>
+    <Identicon size="tiny" />
     <Identicon isLoading size="tiny" />
-    <Identicon size="tiny" username="Dominic Nguyen" />
-    <Identicon
-      size="tiny"
-      username="Dominic Nguyen"
-      src="https://avatars2.githubusercontent.com/u/263385"
-    />
   </div>
 );
