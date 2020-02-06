@@ -17,11 +17,12 @@ export default {
   excludeStories: /.*Data$/,
 };
 
-const itemsData = [
+// TODO: find place for mockup data
+const nomiData = [
   { title: 'total funds', value: '17906,868 KSM', subtitle: '~ 26’000’12 USD' },
-  { title: 'at stake', value: '20’001 KSM', subtitle: '~ 26’00’12 USD' },
+  { title: 'at stake', value: '20001,005 KSM', subtitle: '~ 26’00’12 USD' },
   { title: 'in the period of', value: '365 Days', subtitle: '' },
-  { title: 'est. returns', value: '760.5 KSM', subtitle: '~ 2600’12 USD' },
+  { title: 'est. returns', value: '760,588 KSM', subtitle: '~ 2600’12 USD' },
 ];
 
 const networkData = [
@@ -30,12 +31,14 @@ const networkData = [
   { title: 'Net Staked', value: '20982019 KSM', subtitle: '/ target 6s' },
 ];
 
-const StatsData = () => <StatsList items={networkData} />;
-
-const NetworkData = () => {
+const NetworkInfo = () => {
   return (
     <>
-      <WithTooltip placement="bottom-start" trigger="click" tooltip={StatsData}>
+      <WithTooltip
+        placement="bottom-start"
+        trigger="click"
+        tooltip={<StatsList items={networkData} />}
+      >
         <ListItem
           title="Kusama"
           left={<IconFont color="positive" icon="circle" />}
@@ -47,15 +50,16 @@ const NetworkData = () => {
   );
 };
 
-const Layout = tachyons('div')`center flex mw8 flex-column mv4`;
+// TODO: components for this kind of things
+const LayoutBox = tachyons('div')`center flex box1000 flex-column mv4`;
 
-export const tabsData = [<Button>Tab</Button>, <Button appearance="secondary">Tab2</Button>];
+const tabsData = [<Button>Tab</Button>, <Button appearance="secondary">Tab2</Button>];
 
 export const start = () => (
   <>
-    <MainMenu contentLeft={<NomidotLogo />} contentRight={<NetworkData />} tabs={tabsData} />
-    <Layout>
-      <StatsList items={itemsData} size="large" />
-    </Layout>
+    <MainMenu contentLeft={<NomidotLogo />} contentRight={<NetworkInfo />} tabs={tabsData} />
+    <LayoutBox>
+      <StatsList items={nomiData} size="large" />
+    </LayoutBox>
   </>
 );
