@@ -1,27 +1,18 @@
 import React from 'react';
 import { MainMenu } from './MainMenu';
 import { Button } from './Button';
-
 import { IconFont } from './IconFont';
 
 import WithTooltip from './tooltip/WithTooltip';
 import { ListItem } from './tooltip/ListItem';
 import { StatsList } from './StatsList';
 
+import { NomidotLogo } from './Views/Nomidot/NomidotLogo';
+
 export default {
   title: 'Design System/MainMenu',
   component: MainMenu,
   excludeStories: /.*Data$/,
-};
-
-const LogoData = () => {
-  return (
-    <h3>
-      NOM
-      <IconFont aria-hidden icon="bolt" color="white" />
-      DOT
-    </h3>
-  );
 };
 
 const itemsData = [
@@ -50,12 +41,12 @@ const NetworkData = () => {
 
 export const tabsData = [<Button>Tab</Button>, <Button appearance="secondary">Tab2</Button>];
 
-export const justStripe = () => <MainMenu contentLeft={<LogoData />} />;
+export const justStripe = () => <MainMenu contentLeft={<NomidotLogo />} />;
 
 export const withContent = () => (
-  <MainMenu contentLeft={<LogoData />} contentRight={<NetworkData />} />
+  <MainMenu contentLeft={<NomidotLogo />} contentRight={<NetworkData />} />
 );
 
 export const withContentAndTabs = () => (
-  <MainMenu contentLeft={<LogoData />} tabs={tabsData} contentRight="helloWorld" />
+  <MainMenu contentLeft={<NomidotLogo />} tabs={tabsData} contentRight="helloWorld" />
 );

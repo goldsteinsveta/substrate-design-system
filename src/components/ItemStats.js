@@ -9,6 +9,7 @@ export const SIZES = {
   LARGE: 'large',
 };
 
+// TODO: tachyons
 const Value = styled.span`
   font-size: ${typography.size.m1}px;
   font-weight: ${typography.weight.bold};
@@ -118,8 +119,8 @@ ItemStats.propTypes = {
 ItemStats.defaultProps = {
   isLoading: false,
   title: <span>Loading</span>,
-  value: 'item value',
-  subtitle: 'item subtitle',
+  value: '',
+  subtitle: '',
   LinkWrapper: undefined,
   onClick: undefined,
   size: SIZES.SMALL,
