@@ -1,4 +1,5 @@
 import React from 'react';
+import tachyons from 'tachyons-components';
 import { MainMenu } from './MainMenu';
 import { Button } from './Button';
 
@@ -47,11 +48,15 @@ const NetworkData = () => {
   );
 };
 
+const Layout = tachyons('div')`center flex mw8 flex-column mv4`;
+
 export const tabsData = [<Button>Tab</Button>, <Button appearance="secondary">Tab2</Button>];
 
 export const app = () => (
   <>
     <MainMenu contentLeft={<LogoData />} contentRight={<NetworkData />} tabs={tabsData} />
-    <StatsList items={itemsData} size="large" />
+    <Layout>
+      <StatsList items={itemsData} size="large" />
+    </Layout>
   </>
 );

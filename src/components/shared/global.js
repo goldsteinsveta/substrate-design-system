@@ -1,5 +1,6 @@
 import { createGlobalStyle, css } from 'styled-components';
-import { color, typography } from './styles';
+import { color, typography, spacing } from './styles';
+import { glow } from './animation';
 import 'font-awesome-web3/style.css';
 import 'font-awesome/css/font-awesome.min.css';
 
@@ -41,6 +42,10 @@ export const bodyStyles = css`
     font-family: ${typography.type.primary};
   }
 
+  a {
+    cursor: pointer;
+  }
+
   sub,
   sup {
     font-size: 0.8em;
@@ -66,10 +71,10 @@ export const bodyStyles = css`
     margin-bottom: 1.25rem;
   }
 
+  .code,
   code,
   pre {
     font-family: ${typography.type.code};
-    font-size: ${typography.size.s2 - 1}px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
   }
@@ -89,6 +94,25 @@ export const bodyStyles = css`
     color: ${color.darkest};
     border-radius: 3px;
     margin: 1rem 0;
+  }
+
+  .ani-glow {
+    animation: ${glow} 1.5s ease-in-out infinite;
+  }
+
+  .cur-pointer {
+    cursor: pointer;
+  }
+  .cur-na {
+    cursor: not-allowed;
+  }
+  .cur-progress {
+    cursor: progress;
+  }
+
+  .box1000 {
+    padding-left: ${spacing.max1000};
+    padding-right: ${spacing.max1000};
   }
 
   &.ReactModal__Body--open {

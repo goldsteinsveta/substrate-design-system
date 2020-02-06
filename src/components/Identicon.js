@@ -1,8 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled, { css } from 'styled-components';
-import { color } from './shared/styles';
-import { glow } from './shared/animation';
+import tachyons from 'tachyons-components';
 import { IconFont } from './IconFont';
 
 // TODO: unify w sizes from IconFont
@@ -12,48 +10,10 @@ export const sizes = {
   small: 24,
   tiny: 16,
 };
-
-const Image = styled.div`
-  background: ${color.light};
-  border-radius: 50%;
-  display: inline-block;
-  vertical-align: top;
-  overflow: hidden;
-  text-transform: uppercase;
-
-  height: ${sizes.medium}px;
-  width: ${sizes.medium}px;
-  line-height: ${sizes.medium}px;
-
-  ${props =>
-    props.size === 'tiny' &&
-    css`
-      height: ${sizes.tiny}px;
-      width: ${sizes.tiny}px;
-      line-height: ${sizes.tiny}px;
-    `}
-
-  ${props =>
-    props.size === 'small' &&
-    css`
-      height: ${sizes.small}px;
-      width: ${sizes.small}px;
-      line-height: ${sizes.small}px;
-    `}
-
-  ${props =>
-    props.size === 'large' &&
-    css`
-      height: ${sizes.large}px;
-      width: ${sizes.large}px;
-      line-height: ${sizes.large}px;
-    `}
-
-  ${props =>
-    props.isLoading &&
-    css`
-      animation: ${glow} 1.5s ease-in-out infinite;
-    `}
+const Box = tachyons('div')`
+  inline-flex br-100
+  justify-center overflow-hidden
+  bg-near-white
 `;
 
 export function Identicon({ isLoading, size }) {
@@ -70,9 +30,9 @@ export function Identicon({ isLoading, size }) {
   //  identiconFigure = generate(address, network);
 
   return (
-    <Image size={size} isLoading={isLoading}>
+    <Box size={size} isLoading={isLoading}>
       {identiconFigure}
-    </Image>
+    </Box>
   );
 }
 

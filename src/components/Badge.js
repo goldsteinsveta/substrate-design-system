@@ -1,58 +1,20 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled, { css } from 'styled-components';
-import { background, color, typography } from './shared/styles';
+import tachyons from 'tachyons-components';
 
-const BadgeWrapper = styled.div`
-  display: inline-block;
-  vertical-align: top;
-  font-size: 11px;
-  line-height: 12px;
-  padding: 4px 12px;
-  border-radius: 3em;
-  font-weight: ${typography.weight.bold};
+const statuses = {
+  positive: 'dark-green bg-light-green',
+  negative: 'dark-red bg-washed-red',
+  error: 'white bg-dark-red',
+  warning: 'washed-yellow bg-orange',
+  neutral: 'gray bg-light-gray',
+};
 
-  svg {
-    height: 12px;
-    width: 12px;
-    margin-right: 4px;
-    margin-top: -2px;
-  }
-
-  ${props =>
-    props.status === 'positive' &&
-    css`
-      color: ${color.positive};
-      background: ${background.positive};
-    `};
-
-  ${props =>
-    props.status === 'negative' &&
-    css`
-      color: ${color.negative};
-      background: ${background.negative};
-    `};
-
-  ${props =>
-    props.status === 'warning' &&
-    css`
-      color: ${color.warning};
-      background: ${background.warning};
-    `};
-
-  ${props =>
-    props.status === 'error' &&
-    css`
-      color: ${color.lightest};
-      background: ${color.negative};
-    `};
-
-  ${props =>
-    props.status === 'neutral' &&
-    css`
-      color: ${color.dark};
-      background: ${color.mediumlight};
-    `};
+const BadgeWrapper = tachyons('div')`
+  inline-flex br-pill
+  pv1 ph3 
+  f7 fw7
+  ${props => (props.status ? statuses[props.status] : statuses.neutral)}
 `;
 
 /**
@@ -62,7 +24,7 @@ export function Badge({ ...props }) {
   return <BadgeWrapper {...props} />;
 }
 Badge.propTypes = {
-  status: PropTypes.oneOf(['positive', 'negative', 'neutral', 'error', 'warning']),
+  status: PropTypes.oneOf(Object.keys(statuses)),
 };
 
 Badge.defaultProps = {
