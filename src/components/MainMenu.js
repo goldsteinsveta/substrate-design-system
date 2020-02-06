@@ -1,40 +1,28 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import tachyons from 'tachyons-components';
 import { Button } from './Button';
-import { color, spacing } from './shared/styles';
 
-const BoxLogo = styled.div`
-  align-items: center;
-  background: ${color.black};
-  color: white;
-  display: flex;
-  justify-content: space-between;
-  height: 40px;
-  padding: ${spacing.max1000};
+const BoxLogoX = tachyons('div')`
+  flex justify-between items center
+  box1000 pv2 white
+  bg-black
+  
 `;
-
-const BoxTabs = styled.div`
-  align-items: center;
-  display: flex;
-  background: ${color.light};
-  padding: ${spacing.max1000};
-  box-shadow: inset 0 0 10px -8px;
+const BoxTabsX = tachyons('div')`
+  flex items-center
+  box1000 bg-near-white shadow-1
 `;
-
-export const ContentRight = () => {
-  return <div>Content Right</div>;
-};
 
 // Either pass the full list of users, or a userCount if known
 export function MainMenu({ tabs, contentLeft, contentRight }) {
   return (
     <>
-      <BoxLogo>
+      <BoxLogoX>
         {contentLeft}
         {contentRight}
-      </BoxLogo>
-      <BoxTabs>{tabs}</BoxTabs>
+      </BoxLogoX>
+      <BoxTabsX>{tabs}</BoxTabsX>
     </>
   );
 }

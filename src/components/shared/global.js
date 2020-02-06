@@ -1,5 +1,5 @@
 import { createGlobalStyle, css } from 'styled-components';
-import { color, typography } from './styles';
+import { color, typography, spacing } from './styles';
 import { glow } from './animation';
 import 'font-awesome-web3/style.css';
 import 'font-awesome/css/font-awesome.min.css';
@@ -108,6 +108,11 @@ export const bodyStyles = css`
   }
   .cur-progress {
     cursor: progress;
+  }
+
+  .box1000 {
+    padding-left: ${spacing.max1000};
+    padding-right: ${spacing.max1000};
   }
 
   &.ReactModal__Body--open {
