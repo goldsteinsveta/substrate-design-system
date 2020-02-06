@@ -17,9 +17,10 @@ const LIBRARIES = {
 };
 
 const I = tachyons('i')`
-  f1 items-center
+  items-center
   ${props => (props.size === 'tiny' ? 'f7' : '')}
   ${props => (props.size === 'small' ? 'f3' : '')}
+  ${props => (props.size === 'medium' ? 'f1' : '')}
   ${props => (props.size === 'large' ? 'f-6' : '')}
   ${props => (props.block ? 'flex' : 'inline-flex')}
 `;
@@ -39,7 +40,7 @@ IconFont.propTypes = {
 
 IconFont.defaultProps = {
   block: false,
-  size: 'medium',
+  size: '',
   lib: 'fa',
   color: 'black',
 };

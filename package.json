@@ -1,15 +1,15 @@
 {
-  "name": "@storybook/design-system",
-  "version": "3.0.0",
-  "description": "Storybook design system",
+  "name": "@substrate/design-system",
+  "version": "1.0.0",
+  "description": "Substrate design system",
   "repository": {
     "type": "git",
-    "url": "https://github.com/storybookjs/design-system.git"
+    "url": "https://github.com/goldsteinsveta/substrate-design-system"
   },
   "license": "MIT",
   "author": {
-    "name": "Michael Shilman",
-    "email": "michael@lab80.co"
+    "name": "Sveta Goldstein",
+    "email": "sveta@parity.io"
   },
   "files": [
     "dist"
@@ -117,9 +117,5 @@
       "npm",
       "released"
     ]
-  },
-  "collective": {
-    "type": "opencollective",
-    "url": "https://opencollective.com/storybook"
   }
 }
