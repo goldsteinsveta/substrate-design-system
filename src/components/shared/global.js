@@ -114,6 +114,12 @@ export const bodyStyles = css`
     padding-left: ${spacing.max1000};
     padding-right: ${spacing.max1000};
   }
+  @media screen and (max-width: 60em) {
+    .box1000 {
+      padding-left: 1.5em;
+      padding-right: 1.5em;
+    }
+  }
 
   &.ReactModal__Body--open {
     overflow: hidden;
