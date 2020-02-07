@@ -1,26 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import tachyons from 'tachyons-components';
 import { ItemStats, SIZES } from './ItemStats';
-import { color } from './shared/styles';
 
-const List = styled.ul`
-  display: flex;
-  min-width: 300px;
-  border-radius: 4px;
-  overflow: hidden;
-  margin: 0;
-  padding: 0;
-  list-style: none;
-  border: 1px solid ${color.mediumlight};
-  display: flex;
-  background: ${color.lighter};
+const List = tachyons('ul')`
+  flex mw-100
+  ma0 pa0 
+  ba b--light-gray
+  br2
 `;
 
 export function StatsList({ items, size }) {
   return (
     <List>
-      {items.map(({ title, value, subtitle }, index) => (
+      {items.map(({ title, value, subtitle, onClick }, index) => (
         <ItemStats
           /* eslint-disable react/no-array-index-key */
           key={index}
@@ -28,6 +21,7 @@ export function StatsList({ items, size }) {
           value={value}
           subtitle={subtitle}
           size={size}
+          onClick={onClick}
         />
       ))}
     </List>
@@ -35,16 +29,10 @@ export function StatsList({ items, size }) {
 }
 
 StatsList.propTypes = {
-  size: PropTypes.oneOf(Object.values(SIZES)),
-  items: PropTypes.arrayOf(
-    PropTypes.shape({
-      title: PropTypes.string.isRequired,
-      value: PropTypes.string,
-      subtitle: PropTypes.string,
-    }).isRequired
-  ).isRequired,
+  size: PropTypes.oneOf(Object.keys(SIZES)),
+  items: PropTypes.arrayOf(PropTypes.shape(ItemStats.propTypes)).isRequired,
 };
 
 StatsList.defaultProps = {
-  size: SIZES.SMALL,
+  size: 'small',
 };

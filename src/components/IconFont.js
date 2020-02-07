@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import tachyons from 'tachyons-components';
-import { color } from './shared/styles';
 
 // TODO: unify sizes
 export const sizes = {
@@ -27,7 +26,7 @@ const I = tachyons('i')`
 
 export function IconFont({ icon, block, lib, ...props }) {
   const libClass = lib === LIBRARIES.WEB3 ? '-web3' : '';
-  return <I block={block} {...props} className={`fa fa${libClass}-${icon}`} />;
+  return <I block={block.toString()} {...props} className={`fa fa${libClass}-${icon}`} />;
 }
 
 IconFont.propTypes = {
@@ -35,7 +34,7 @@ IconFont.propTypes = {
   block: PropTypes.bool,
   size: PropTypes.string,
   lib: PropTypes.oneOf(Object.values(LIBRARIES)),
-  color: PropTypes.oneOf(Object.values(color)),
+  color: PropTypes.string,
 };
 
 IconFont.defaultProps = {

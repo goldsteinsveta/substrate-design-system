@@ -7,7 +7,7 @@ export const accountData = {
   name: 'N4m3',
   address: '4ddR355',
   network: 'network',
-  isLoading: 'true',
+  isLoading: true,
 };
 
 export default {

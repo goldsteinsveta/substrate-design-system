@@ -9,6 +9,7 @@ const APPEARANCES = {
 
 const SHAPES = {
   pill: 'br-pill',
+  rect: '',
 };
 
 const SIZES = {
@@ -24,6 +25,7 @@ const StyledButton = tachyons('a')`
   white code 
   bg-black
   ${props => APPEARANCES[props.appearance]}
+  ${props => (props.disabled ? 'cur-na' : '')}
   ${props => SHAPES[props.shape]}
   ${props => SIZES[props.size]}
   ${props => (props.isLoading ? 'o-50 cur-progress' : '')}
@@ -56,5 +58,5 @@ Button.defaultProps = {
   appearance: APPEARANCES.PRIMARY,
   isDisabled: false,
   size: 'medium',
-  shape: '',
+  shape: 'rect',
 };
