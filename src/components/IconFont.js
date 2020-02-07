@@ -21,7 +21,7 @@ const I = tachyons('i')`
   ${props => (props.size === 'small' ? 'f3' : '')}
   ${props => (props.size === 'medium' ? 'f1' : '')}
   ${props => (props.size === 'large' ? 'f-6' : '')}
-  ${props => (props.block ? 'flex' : 'inline-flex')}
+  ${props => (props.block === 'true' ? 'flex' : 'inline-flex')}
 `;
 
 export function IconFont({ icon, block, lib, ...props }) {

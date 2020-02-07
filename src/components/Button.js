@@ -18,12 +18,11 @@ const SIZES = {
   medium: 'ph3 pv3 f6 fw6',
 };
 
-// TODO HOVERS
-
 const StyledButton = tachyons('a')`
   inline-flex items-center
   white code 
   bg-black
+  dim pointer
   ${props => APPEARANCES[props.appearance]}
   ${props => (props.disabled ? 'cur-na' : '')}
   ${props => SHAPES[props.shape]}

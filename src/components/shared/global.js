@@ -3,6 +3,7 @@ import { color, typography, spacing } from './styles';
 import { glow } from './animation';
 import 'font-awesome-web3/style.css';
 import 'font-awesome/css/font-awesome.min.css';
+import 'tachyons/css/tachyons.min.css';
 
 export const bodyStyles = css`
   font-family: ${typography.type.primary};
@@ -62,6 +63,12 @@ export const bodyStyles = css`
   b,
   em {
     font-weight: ${typography.weight.bold};
+  }
+
+  i:before {
+    height: 1em;
+    width: 1em;
+    text-align: center;
   }
 
   hr {

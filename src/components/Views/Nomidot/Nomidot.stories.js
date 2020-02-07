@@ -49,14 +49,23 @@ const NetworkInfo = () => {
   );
 };
 
+const tabsData = [<Button>Tab</Button>, <Button appearance="secondary">Tab2</Button>];
+
+const contentRight = (
+  <div className="flex items-center">
+    <NetworkInfo />
+    <Button className="ml2" appearance="secondary" shape="pill">
+      <IconFont icon="info" color="white" />
+    </Button>
+  </div>
+);
+
 // TODO: components for this kind of things
 const LayoutBox = tachyons('div')`center flex box1000 flex-column mv4`;
 
-const tabsData = [<Button>Tab</Button>, <Button appearance="secondary">Tab2</Button>];
-
 export const start = () => (
   <>
-    <MainMenu contentLeft={<NomidotLogo />} contentRight={<NetworkInfo />} tabs={tabsData} />
+    <MainMenu contentLeft={<NomidotLogo />} contentRight={contentRight} tabs={tabsData} />
     <LayoutBox>
       <StatsList items={nomiData} size="large" />
     </LayoutBox>
