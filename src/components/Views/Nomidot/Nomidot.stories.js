@@ -41,8 +41,7 @@ const NetworkInfo = () => {
       >
         <ListItem
           title="Kusama"
-          left={<IconFont color="positive" icon="circle" />}
-          colors
+          left={<IconFont color="green" icon="circle" />}
           right={<IconFont icon="chevron-down" color="white" />}
         />
       </WithTooltip>

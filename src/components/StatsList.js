@@ -29,8 +29,8 @@ export function StatsList({ items, size }) {
 }
 
 StatsList.propTypes = {
-  size: PropTypes.oneOf(Object.values(SIZES)),
-  items: PropTypes.shape(ItemStats.propTypes).isRequired,
+  size: PropTypes.oneOf(Object.keys(SIZES)),
+  items: PropTypes.arrayOf(PropTypes.shape(ItemStats.propTypes)).isRequired,
 };
 
 StatsList.defaultProps = {

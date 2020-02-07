@@ -10,7 +10,7 @@ export default {
 
 export const buttons = () => (
   <>
-    <Button appearance="primary">Primary</Button>
+    <Button>Default</Button>
     <Button appearance="secondary">Secondary</Button>
     <Button appearance="outline">Outline</Button>
   </>
@@ -18,11 +18,11 @@ export const buttons = () => (
 
 export const sizes = () => (
   <>
-    <Button appearance="primary">Default</Button>
+    <Button>Default</Button>
     <Button appearance="outline" size="small">
       Small Outline
     </Button>
-    <Button appearance="primary" size="tiny" shape="pill">
+    <Button size="tiny" shape="pill">
       <IconFont icon="times" size="tiny" />
     </Button>
   </>
@@ -30,9 +30,7 @@ export const sizes = () => (
 
 export const loading = () => (
   <>
-    <Button appearance="primary" isLoading>
-      Primary
-    </Button>
+    <Button isLoading>Default</Button>
     <Button appearance="secondary" isLoading>
       Secondary
     </Button>
@@ -44,9 +42,7 @@ export const loading = () => (
 
 export const disabled = () => (
   <>
-    <Button appearance="primary" isDisabled>
-      Primary
-    </Button>
+    <Button isDisabled>Default</Button>
     <Button appearance="secondary" isDisabled>
       Secondary
     </Button>
@@ -58,7 +54,7 @@ export const disabled = () => (
 
 export const shapePill = () => (
   <>
-    <Button appearance="primary" shape="pill" size="small">
+    <Button shape="pill" size="small">
       <IconFont lib="web3" icon="identicon" aria-label="identicon" size="small" />
     </Button>
     <Button appearance="secondary" shape="pill">
