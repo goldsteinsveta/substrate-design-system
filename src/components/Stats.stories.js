@@ -20,12 +20,6 @@ export default {
 
 export const Stats = () => <StatsList items={itemsData} />;
 
-export const asTooltip = () => (
-  <WithTooltip placement="bottom-start" trigger="click" tooltip={Stats}>
-    <ListItem active title="Kusama" right={<IconFont icon="chevron-down" size="tiny" />} />
-  </WithTooltip>
-);
-
 export const sizes = () => (
   <>
     <StatsList items={itemsData} />
@@ -34,5 +28,10 @@ export const sizes = () => (
   </>
 );
 
-// TODO:
-export const editable = () => <StatsList items={itemsData} />;
+export const asTooltip = () => (
+  <WithTooltip placement="bottom-start" trigger="click" tooltip={Stats}>
+    <ListItem active title="Kusama" right={<IconFont icon="chevron-down" size="tiny" />} />
+  </WithTooltip>
+);
+
+// TODO: Editable

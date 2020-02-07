@@ -18,9 +18,10 @@ const Title = tachyons('span')`
   f7 code
 `;
 const ItemInner = tachyons('li')`
-  w-100 list 
+  w-100 w-50-m
+  list 
   ph3 pv2
-  bl b--light-gray
+  br bb b--light-gray
 `;
 
 export function ItemStats({ title, value, subtitle, size, onClick }) {

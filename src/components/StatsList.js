@@ -4,7 +4,9 @@ import tachyons from 'tachyons-components';
 import { ItemStats, SIZES } from './ItemStats';
 
 const List = tachyons('ul')`
-  flex mw-100
+  flex
+  flex-wrap flex-nowrap-l
+  mw-100
   ma0 pa0 
   ba b--light-gray
   br2
