@@ -9,37 +9,46 @@ export default {
 
 const columns = [
   {
-    Header: 'Name',
+    Header: 'Account',
     columns: [
       {
-        Header: 'First Name',
-        accessor: 'firstName',
+        Header: 'Stash',
+        accessor: 'accountStash',
       },
       {
-        Header: 'Last Name',
-        accessor: 'lastName',
+        Header: 'Controller',
+        accessor: 'accountController',
       },
     ],
   },
   {
-    Header: 'Info',
+    Header: 'Bond',
     columns: [
       {
-        Header: 'Age',
-        accessor: 'age',
+        Header: 'Bond',
+        accessor: 'bondValue',
       },
       {
-        Header: 'Visits',
-        accessor: 'visits',
+        Header: 'Est. Returns',
+        accessor: 'bondReturns',
+      },
+    ],
+  },
+  {
+    Header: 'Funds',
+    columns: [
+      {
+        Header: 'Total',
+        accessor: 'fundsTotal',
       },
       {
-        Header: 'Profile Progress',
-        accessor: 'progress',
+        Header: 'Transferable',
+        accessor: 'fundsTransferable',
       },
     ],
   },
 ];
 
-const data = makeData(20);
+const data = makeData(5);
 
 export const all = () => <Table columns={columns} data={data} />;

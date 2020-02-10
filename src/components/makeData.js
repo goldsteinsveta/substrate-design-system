@@ -9,12 +9,19 @@ const range = len => {
 };
 
 const newPerson = () => {
+  function randomBet(min, max) {
+    return parseFloat((Math.random() * (max - min + 1) + min).toFixed(3));
+  }
+  const total = randomBet(0, 10000);
+  const bond = randomBet(0, total);
+
   return {
-    firstName: namor.generate({ words: 1, numbers: 0 }),
-    lastName: namor.generate({ words: 1, numbers: 0 }),
-    age: Math.floor(Math.random() * 30),
-    visits: Math.floor(Math.random() * 100),
-    progress: Math.floor(Math.random() * 100),
+    accountStash: namor.generate({ words: 1 }),
+    accountController: namor.generate({ words: 1 }),
+    bondValue: bond,
+    bondReturns: bond / 300,
+    fundsTotal: total,
+    fundsTransferable: total - bond,
   };
 };
 
