@@ -1,6 +1,6 @@
 import React from 'react';
 import { Table } from './Table';
-import { makeAccounts, accountsColumns } from './dataMockup/accounts';
+import { makeAccounts, accountsColumns } from './dataMockup/accountsData';
 
 export default {
   title: 'Design System/Table',

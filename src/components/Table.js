@@ -14,7 +14,7 @@ function Cell({ header, cellRender, cellData }) {
     return <AddressCard accountData={{ address: cellData.value }} />;
   }
   if (header === 'Controller' && !cellData) {
-    // TODO:
+    // TODO: data for it
     return 'select controller';
   }
   if (header === 'Bond') {

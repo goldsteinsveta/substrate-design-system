@@ -8,7 +8,7 @@ const range = len => {
   return arr;
 };
 
-const newPerson = () => {
+const newAccount = () => {
   function randomBet(min, max) {
     return parseFloat((Math.random() * (max - min + 1) + min).toFixed(3));
   }
@@ -30,7 +30,7 @@ export function makeAccounts(...lens) {
     const len = lens[depth];
     return range(len).map(() => {
       return {
-        ...newPerson(),
+        ...newAccount(),
         subRows: lens[depth + 1] ? makeDataLevel(depth + 1) : undefined,
       };
     });
