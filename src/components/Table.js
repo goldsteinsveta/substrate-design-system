@@ -5,12 +5,16 @@ import { useTable, useSortBy } from 'react-table';
 import { AddressCard } from './AddressCard';
 
 function Cell({ header, cellRender, cellData }) {
-  const StyleBox = tachyons('span')`fw6 f4 block relative`;
+  const StyleBox = tachyons('span')`
+    dib w-100
+    tc fw6 f5
+  `;
 
   if (header === 'Stash' || header === 'Controller') {
     return <AddressCard accountData={{ address: cellData.value }} />;
   }
   if (header === 'Controller' && !cellData) {
+    // TODO:
     return 'select controller';
   }
   if (header === 'Bond') {
@@ -43,18 +47,22 @@ export function Table({ columns, data }) {
     useSortBy
   );
 
+  const TableEl = tachyons('table')`w-100 ba b--light-silver br3 collapse`;
+  const Th = tachyons('th')`bg-near-white ba b--light-silver code f7 fw5 pv1`;
+  const Td = tachyons('td')`b--light-silver ba ph2 pv1`;
+
   return (
-    <table>
+    <TableEl>
       <thead>
         {headerGroups.map(headerGroup => (
           <tr {...headerGroup.getHeaderGroupProps()}>
             {headerGroup.headers.map(column => (
-              <th {...column.getHeaderProps(column.getSortByToggleProps())}>
+              <Th {...column.getHeaderProps(column.getSortByToggleProps())}>
                 {column.render('Header')}
                 {/* TODO: */}
                 {/* eslint-disable-next-line no-nested-ternary */}
                 <span>{column.isSorted ? (column.isSortedDesc ? ' 🔽' : ' 🔼') : ''}</span>
-              </th>
+              </Th>
             ))}
           </tr>
         ))}
@@ -66,20 +74,20 @@ export function Table({ columns, data }) {
             <tr {...row.getRowProps()}>
               {row.cells.map(cell => {
                 return (
-                  <td>
+                  <Td>
                     <Cell
                       header={cell.column.Header}
                       cellData={cell}
                       cellRender={cell.render('Cell')}
                     />
-                  </td>
+                  </Td>
                 );
               })}
             </tr>
           );
         })}
       </tbody>
-    </table>
+    </TableEl>
   );
 }
 
