@@ -14,6 +14,7 @@ const columns = [
       {
         Header: 'Stash',
         accessor: 'accountStash',
+        sortable: false,
       },
       {
         Header: 'Controller',

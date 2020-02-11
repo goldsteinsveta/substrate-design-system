@@ -1,39 +1,28 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { useTable } from 'react-table';
+import tachyons from 'tachyons-components';
+import { useTable, useSortBy } from 'react-table';
+import { AddressCard } from './AddressCard';
 
 function Cell({ header, cellRender, cellData }) {
-  let x = '';
+  const StyleBox = tachyons('span')`fw6 f4 block relative`;
+
   if (header === 'Stash' || header === 'Controller') {
-    x = 'account card for';
-    // return
-    // <AccountCard accountAddress="value">
+    return <AddressCard accountData={{ address: cellData.value }} />;
   }
   if (header === 'Controller' && !cellData) {
-    // return
-    // <SelectController>
+    return 'select controller';
   }
   if (header === 'Bond') {
-    x = 'big text and control icons';
-    // return
-    // <>
-    //   <BondCard
-    //   bondData={
-    //     account:
-    //     controller:
-    //   }
-    //   >
-    // </>
+    // TODO: action layer: bond-unbond, manage validators
+    return <StyleBox>{cellData.value}</StyleBox>;
   }
   if (header === 'Est. Returns') {
-    x = 'big text';
-    // <ReturnsCard>
+    // TODO: action layer: bond-unbond, manage validators
+    return <StyleBox>{cellData.value}</StyleBox>;
   }
-  return (
-    <>
-      {x} {cellRender}
-    </>
-  );
+
+  return <>{cellRender}</>;
 }
 
 Cell.propTypes = {
@@ -46,18 +35,26 @@ Cell.propTypes = {
 
 export function Table({ columns, data }) {
   // Use the state and functions returned from useTable to build your UI
-  const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } = useTable({
-    columns,
-    data,
-  });
+  const { getTableBodyProps, headerGroups, rows, prepareRow } = useTable(
+    {
+      columns,
+      data,
+    },
+    useSortBy
+  );
 
   return (
-    <table {...getTableProps()}>
+    <table>
       <thead>
         {headerGroups.map(headerGroup => (
           <tr {...headerGroup.getHeaderGroupProps()}>
             {headerGroup.headers.map(column => (
-              <th {...column.getHeaderProps()}>{column.render('Header')}</th>
+              <th {...column.getHeaderProps(column.getSortByToggleProps())}>
+                {column.render('Header')}
+                {/* TODO: */}
+                {/* eslint-disable-next-line no-nested-ternary */}
+                <span>{column.isSorted ? (column.isSortedDesc ? ' 🔽' : ' 🔼') : ''}</span>
+              </th>
             ))}
           </tr>
         ))}

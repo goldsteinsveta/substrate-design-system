@@ -19,9 +19,9 @@ const newPerson = () => {
     accountStash: namor.generate({ words: 1 }),
     accountController: namor.generate({ words: 1 }),
     bondValue: bond,
-    bondReturns: bond / 300,
+    bondReturns: parseFloat((bond / 300).toFixed(3)),
     fundsTotal: total,
-    fundsTransferable: total - bond,
+    fundsTransferable: (total - bond).toFixed(3),
   };
 };
 
