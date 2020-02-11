@@ -38,6 +38,26 @@
 
 ---
 
+# v1.0.3 (Tue Feb 11 2020)
+
+#### 🐛  Bug Fix
+
+- Fixed React Warnings [#6](https://github.com/goldsteinsveta/substrate-design-system/pull/6) ([@goldsteinsveta](https://github.com/goldsteinsveta))
+- Substrate, Tachyons & Nomidot [#5](https://github.com/goldsteinsveta/substrate-design-system/pull/5) ([@goldsteinsveta](https://github.com/goldsteinsveta) [@yjkimjunior](https://github.com/yjkimjunior))
+- Nomidot View Example [#4](https://github.com/goldsteinsveta/substrate-design-system/pull/4) ([@goldsteinsveta](https://github.com/goldsteinsveta))
+- Moved styled components to tachyon [#3](https://github.com/goldsteinsveta/substrate-design-system/pull/3) ([@goldsteinsveta](https://github.com/goldsteinsveta) [@yjkimjunior](https://github.com/yjkimjunior))
+
+#### ⚠️  Pushed to master
+
+- netlifly  ([@goldsteinsveta](https://github.com/goldsteinsveta))
+
+#### Authors: 2
+
+- [@goldsteinsveta](https://github.com/goldsteinsveta)
+- YJ ([@yjkimjunior](https://github.com/yjkimjunior))
+
+---
+
 # v1.0.1 (Thu Feb 06 2020)
 
 #### 🐛  Bug Fix
