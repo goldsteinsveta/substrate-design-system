@@ -15,13 +15,17 @@ const newAccount = () => {
   const total = randomBet(0, 10000);
   const bond = randomBet(0, total);
 
+  const controllerTotal = randomBet(0, 1000);
+
   return {
     accountStash: namor.generate({ words: 1 }),
     accountController: namor.generate({ words: 1 }),
     bondValue: bond,
     bondReturns: parseFloat((bond / 300).toFixed(3)),
-    fundsTotal: total,
-    fundsTransferable: (total - bond).toFixed(3),
+    stashFundsTotal: total,
+    stashFundsTransferable: (total - bond).toFixed(3),
+    controllerFundsTotal: controllerTotal,
+    controllerFundsTransferable: randomBet(0, controllerTotal),
   };
 };
 
@@ -72,11 +76,24 @@ export const accountsColumns = [
     columns: [
       {
         Header: 'Total',
-        accessor: 'fundsTotal',
+        accessor: 'stashFundsTotal',
       },
       {
         Header: 'Transferable',
-        accessor: 'fundsTransferable',
+        accessor: 'stashFundsTransferable',
+      },
+    ],
+  },
+  {
+    Header: 'ControllerFunds',
+    columns: [
+      {
+        Header: 'ControllerTotal',
+        accessor: 'controllerFundsTotal',
+      },
+      {
+        Header: 'ControllerTransferable',
+        accessor: 'controllerFundsTransferable',
       },
     ],
   },
