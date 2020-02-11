@@ -25,7 +25,7 @@ const newPerson = () => {
   };
 };
 
-export default function makeData(...lens) {
+export function makeAccounts(...lens) {
   const makeDataLevel = (depth = 0) => {
     const len = lens[depth];
     return range(len).map(() => {
@@ -38,3 +38,46 @@ export default function makeData(...lens) {
 
   return makeDataLevel();
 }
+
+export const accountsColumns = [
+  {
+    Header: 'Account',
+    columns: [
+      {
+        Header: 'Stash',
+        accessor: 'accountStash',
+        sortable: false,
+      },
+      {
+        Header: 'Controller',
+        accessor: 'accountController',
+      },
+    ],
+  },
+  {
+    Header: 'Bond',
+    columns: [
+      {
+        Header: 'Bond',
+        accessor: 'bondValue',
+      },
+      {
+        Header: 'Est. Returns',
+        accessor: 'bondReturns',
+      },
+    ],
+  },
+  {
+    Header: 'Funds',
+    columns: [
+      {
+        Header: 'Total',
+        accessor: 'fundsTotal',
+      },
+      {
+        Header: 'Transferable',
+        accessor: 'fundsTransferable',
+      },
+    ],
+  },
+];
