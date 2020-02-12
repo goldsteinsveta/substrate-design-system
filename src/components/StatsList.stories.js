@@ -7,13 +7,13 @@ import { ListItem } from './tooltip/ListItem';
 import { IconFont } from './IconFont';
 
 export const itemsData = [
-  { title: 'Last Block', value: '1.7s', subtitle: '/ target 6s' },
+  { title: 'Title', value: 'Value', subtitle: 'subtitle' },
   { title: 'Epoch', value: '170', subtitle: '/ target 6s' },
   { title: 'Net Staked', value: '20982019 KSM', subtitle: '/ target 6s' },
 ];
 
 export default {
-  title: 'Design System/Stats',
+  title: 'Design System/StatsList',
   component: StatsList,
   excludeStories: /.*Data$/,
 };
