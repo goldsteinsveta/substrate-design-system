@@ -1,11 +1,11 @@
-// TODO: on the data to table level
+// TODO:
 /* eslint-disable consistent-return */
 /* eslint-disable react/prop-types */
 import React from 'react';
 import PropTypes from 'prop-types';
 import tachyons from 'tachyons-components';
 import { useTable, useSortBy } from 'react-table';
-import { AddressCard } from './AddressCard';
+import { AddressCard } from '../AddressCard';
 
 function Row({ row }) {
   return (
@@ -85,7 +85,7 @@ Cell.propTypes = {
   cellData: PropTypes.object.isRequired,
 };
 
-export function Table({ columns, data }) {
+export function TableAccounts({ columns, data }) {
   // Use the state and functions returned from useTable to build your UI
   const { getTableBodyProps, headerGroups, rows, prepareRow } = useTable(
     {
@@ -95,11 +95,11 @@ export function Table({ columns, data }) {
     useSortBy
   );
 
-  const TableEl = tachyons('table')`w-100 ba b--light-silver br3 collapse`;
+  const Table = tachyons('table')`w-100 ba b--light-silver br3 collapse`;
   const Th = tachyons('th')`bg-near-white ba b--light-silver code f7 fw5 pv1`;
 
   return (
-    <TableEl>
+    <Table>
       <thead>
         {headerGroups.map(headerGroup => (
           <tr {...headerGroup.getHeaderGroupProps()}>
@@ -125,15 +125,21 @@ export function Table({ columns, data }) {
           return <Row {...row.getRowProps()} row={row} />;
         })}
       </tbody>
-    </TableEl>
+    </Table>
   );
 }
 
-Table.propTypes = {
+TableAccounts.propTypes = {
   columns: PropTypes.arrayOf(
     PropTypes.shape({
       Header: PropTypes.string,
-      columns: PropTypes.array,
+      columns: PropTypes.arrayOf(
+        PropTypes.shape({
+          Header: PropTypes.string,
+          accessor: PropTypes.string,
+          sortable: PropTypes.bool,
+        })
+      ),
     })
   ).isRequired,
   data: PropTypes.arrayOf(
@@ -142,10 +148,13 @@ Table.propTypes = {
       accountController: PropTypes.string,
       bondValue: PropTypes.number,
       bondReturns: PropTypes.number,
-      fundTotal: PropTypes.number,
-      fundTransferable: PropTypes.number,
+      stashFundsTotal: PropTypes.number,
+      stashFundsTransferable: PropTypes.number,
+      controllerFundsTotal: PropTypes.number,
+      controllerFundsTransferable: PropTypes.number,
     })
   ).isRequired,
 };
 
-Table.defaultProps = {};
+// TODO default empty state
+TableAccounts.defaultProps = {};

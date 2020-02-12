@@ -8,7 +8,7 @@ const range = len => {
   return arr;
 };
 
-const newAccount = () => {
+const newBond = () => {
   function randomBet(min, max) {
     return parseFloat((Math.random() * (max - min + 1) + min).toFixed(3));
   }
@@ -23,18 +23,18 @@ const newAccount = () => {
     bondValue: bond,
     bondReturns: parseFloat((bond / 300).toFixed(3)),
     stashFundsTotal: total,
-    stashFundsTransferable: (total - bond).toFixed(3),
+    stashFundsTransferable: parseFloat((total - bond).toFixed(3)),
     controllerFundsTotal: controllerTotal,
     controllerFundsTransferable: randomBet(0, controllerTotal),
   };
 };
 
-export function makeAccounts(...lens) {
+export function mockupBondData(...lens) {
   const makeDataLevel = (depth = 0) => {
     const len = lens[depth];
     return range(len).map(() => {
       return {
-        ...newAccount(),
+        ...newBond(),
         subRows: lens[depth + 1] ? makeDataLevel(depth + 1) : undefined,
       };
     });
@@ -43,7 +43,7 @@ export function makeAccounts(...lens) {
   return makeDataLevel();
 }
 
-export const accountsColumns = [
+export const bondsColumns = [
   {
     Header: 'Account',
     columns: [
