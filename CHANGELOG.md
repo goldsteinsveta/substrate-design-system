@@ -1,3 +1,19 @@
+# v1.0.5 (Wed Feb 12 2020)
+
+#### 🐛  Bug Fix
+
+- explicit PropTypes for elements used in Nomidot [#10](https://github.com/goldsteinsveta/substrate-design-system/pull/10) ([@goldsteinsveta](https://github.com/goldsteinsveta))
+- merge [#9](https://github.com/goldsteinsveta/substrate-design-system/pull/9) ([@goldsteinsveta](https://github.com/goldsteinsveta))
+- component: TableAccounts [#8](https://github.com/goldsteinsveta/substrate-design-system/pull/8) ([@goldsteinsveta](https://github.com/goldsteinsveta))
+- Responsive Nomidot [#7](https://github.com/goldsteinsveta/substrate-design-system/pull/7) ([@goldsteinsveta](https://github.com/goldsteinsveta))
+- Fixed React Warnings [#6](https://github.com/goldsteinsveta/substrate-design-system/pull/6) ([@goldsteinsveta](https://github.com/goldsteinsveta))
+
+#### Authors: 1
+
+- [@goldsteinsveta](https://github.com/goldsteinsveta)
+
+---
+
 # v1.0.3 (Tue Feb 11 2020)
 
 #### 🐛  Bug Fix
