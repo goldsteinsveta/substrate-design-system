@@ -1,7 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import tachyons from 'tachyons-components';
-import { ItemStats, SIZES } from './ItemStats';
+import { ItemStats } from './ItemStats';
+
+const SIZES = {
+  small: 'f5',
+  large: 'f3',
+};
 
 const List = tachyons('ul')`
   flex
@@ -32,7 +37,15 @@ export function StatsList({ items, size }) {
 
 StatsList.propTypes = {
   size: PropTypes.oneOf(Object.keys(SIZES)),
-  items: PropTypes.arrayOf(PropTypes.shape(ItemStats.propTypes)).isRequired,
+  items: PropTypes.arrayOf(
+    PropTypes.shape({
+      title: PropTypes.node,
+      value: PropTypes.string,
+      subtitle: PropTypes.string,
+      size: PropTypes.oneOf(Object.keys(SIZES)),
+      onClick: PropTypes.func,
+    })
+  ).isRequired,
 };
 
 StatsList.defaultProps = {
