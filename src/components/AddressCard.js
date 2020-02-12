@@ -31,6 +31,7 @@ export function AddressCard({ accountData, ...props }) {
 
 AddressCard.propTypes = {
   accountData: PropTypes.shape({
+    // TODO name is read or generated? where does networkd data is coming from?
     name: PropTypes.string,
     address: PropTypes.string,
     network: PropTypes.string,

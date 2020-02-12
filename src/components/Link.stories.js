@@ -15,7 +15,7 @@ export const all = () => (
       Color
     </Link>
     <Link appearance="inverted" href="https://parity.io">
-      Inverted <IconFont icon="times" size="tiny" />
+      Inverted <IconFont block={false} icon="times" size="tiny" />
     </Link>
   </>
 );

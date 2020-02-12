@@ -3,6 +3,7 @@ import { color, typography, spacing } from './styles';
 import { glow } from './animation';
 import 'font-awesome-web3/style.css';
 import 'font-awesome/css/font-awesome.min.css';
+import 'tachyons/css/tachyons.min.css';
 
 export const bodyStyles = css`
   font-family: ${typography.type.primary};
@@ -64,6 +65,12 @@ export const bodyStyles = css`
     font-weight: ${typography.weight.bold};
   }
 
+  i:before {
+    height: 1em;
+    width: 1em;
+    text-align: center;
+  }
+
   hr {
     border: none;
     border-top: 1px solid ${color.border};
@@ -113,6 +120,12 @@ export const bodyStyles = css`
   .box1000 {
     padding-left: ${spacing.max1000};
     padding-right: ${spacing.max1000};
+  }
+  @media screen and (max-width: 60em) {
+    .box1000 {
+      padding-left: 1.5em;
+      padding-right: 1.5em;
+    }
   }
 
   &.ReactModal__Body--open {

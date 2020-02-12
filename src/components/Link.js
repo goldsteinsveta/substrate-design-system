@@ -7,9 +7,9 @@ const APPEARANCES = {
   color: 'blue no-underline',
   inverted: 'bg-black white ph1 no-underline',
 };
-// TODO HOVERS
 
 const StyledLink = tachyons('a')`
+  dim
   ${props => APPEARANCES[props.appearance]}
 `;
 
