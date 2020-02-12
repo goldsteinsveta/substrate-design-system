@@ -8,32 +8,39 @@ import { useTable, useSortBy } from 'react-table';
 import { AddressCard } from './AddressCard';
 
 function Row({ row }) {
-  // TODO
-  // const isBond = row.cells[1].value !== '';
-
   return (
     <>
-      <tr {...row.getRowProps()}>
+      <tr>
         {row.cells.map(cell => {
-          if (cell.column.Header === 'Controller') return <td />;
+          if (cell.column.Header === 'Controller') return <td {...cell.getCellProps()} />;
           if (cell.column.Header === 'ControllerTotal') return;
           if (cell.column.Header === 'ControllerTransferable') return;
 
           return (
-            <Cell header={cell.column.Header} cellData={cell} cellRender={cell.render('Cell')} />
+            <Cell
+              header={cell.column.Header}
+              cellData={cell}
+              cellRender={cell.render('Cell')}
+              {...cell.getCellProps()}
+            />
           );
         })}
       </tr>
-      <tr {...row.getRowProps()}>
+      <tr>
         {row.cells.map(cell => {
-          if (cell.column.Header === 'Stash') return <td />;
+          if (cell.column.Header === 'Stash') return <td {...cell.getCellProps()} />;
           if (cell.column.Header === 'Bond') return;
           if (cell.column.Header === 'Est. Returns') return;
           if (cell.column.Header === 'Total') return;
           if (cell.column.Header === 'Transferable') return;
 
           return (
-            <Cell header={cell.column.Header} cellData={cell} cellRender={cell.render('Cell')} />
+            <Cell
+              header={cell.column.Header}
+              cellData={cell}
+              cellRender={cell.render('Cell')}
+              {...cell.getCellProps()}
+            />
           );
         })}
       </tr>
@@ -46,7 +53,7 @@ function Cell({ header, cellRender, cellData }) {
     tc fw6 f5
   `;
   const Td = tachyons('td')`b--light-silver ba ph2 pv1`;
-  const tdProps = { rowspan: 1 };
+  const tdProps = { rowSpan: 1 };
 
   let content = cellRender;
 
@@ -58,16 +65,15 @@ function Cell({ header, cellRender, cellData }) {
     content = 'select controller';
   }
   if (header === 'Bond') {
-    tdProps.rowspan = 2;
+    tdProps.rowSpan = 2;
     // TODO: action layer: bond-unbond, manage validators
     content = <StyleBox>{cellData.value}</StyleBox>;
   }
   if (header === 'Est. Returns') {
-    tdProps.rowspan = 2;
+    tdProps.rowSpan = 2;
     // TODO: action layer: bond-unbond, manage validators
     content = <StyleBox>{cellData.value}</StyleBox>;
   }
-
   return <Td {...tdProps}>{content}</Td>;
 }
 
@@ -116,7 +122,7 @@ export function Table({ columns, data }) {
       <tbody {...getTableBodyProps()}>
         {rows.map(row => {
           prepareRow(row);
-          return <Row row={row} />;
+          return <Row {...row.getRowProps()} row={row} />;
         })}
       </tbody>
     </TableEl>
