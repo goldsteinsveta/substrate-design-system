@@ -14,6 +14,7 @@ const Box = tachyons('div')`
   inline-flex br-100
   justify-center overflow-hidden
   bg-near-white
+  ${props => (props.isLoading ? 'ani-glow' : '')}
 `;
 
 export function Identicon({ isLoading, size }) {
@@ -30,7 +31,7 @@ export function Identicon({ isLoading, size }) {
   //  identiconFigure = generate(address, network);
 
   return (
-    <Box size={size} isLoading={isLoading}>
+    <Box size={size} {...a11yProps}>
       {identiconFigure}
     </Box>
   );

@@ -1,3 +1,79 @@
+# v1.0.5 (Wed Feb 12 2020)
+
+#### 🐛  Bug Fix
+
+- explicit PropTypes for elements used in Nomidot [#10](https://github.com/goldsteinsveta/substrate-design-system/pull/10) ([@goldsteinsveta](https://github.com/goldsteinsveta))
+- merge [#9](https://github.com/goldsteinsveta/substrate-design-system/pull/9) ([@goldsteinsveta](https://github.com/goldsteinsveta))
+- component: TableAccounts [#8](https://github.com/goldsteinsveta/substrate-design-system/pull/8) ([@goldsteinsveta](https://github.com/goldsteinsveta))
+- Responsive Nomidot [#7](https://github.com/goldsteinsveta/substrate-design-system/pull/7) ([@goldsteinsveta](https://github.com/goldsteinsveta))
+- Fixed React Warnings [#6](https://github.com/goldsteinsveta/substrate-design-system/pull/6) ([@goldsteinsveta](https://github.com/goldsteinsveta))
+
+#### Authors: 1
+
+- [@goldsteinsveta](https://github.com/goldsteinsveta)
+
+---
+
+# v1.0.3 (Tue Feb 11 2020)
+
+#### 🐛  Bug Fix
+
+- Fixed React Warnings [#6](https://github.com/goldsteinsveta/substrate-design-system/pull/6) ([@goldsteinsveta](https://github.com/goldsteinsveta))
+- Substrate, Tachyons & Nomidot [#5](https://github.com/goldsteinsveta/substrate-design-system/pull/5) ([@goldsteinsveta](https://github.com/goldsteinsveta) [@yjkimjunior](https://github.com/yjkimjunior))
+- Nomidot View Example [#4](https://github.com/goldsteinsveta/substrate-design-system/pull/4) ([@goldsteinsveta](https://github.com/goldsteinsveta))
+- Moved styled components to tachyon [#3](https://github.com/goldsteinsveta/substrate-design-system/pull/3) ([@goldsteinsveta](https://github.com/goldsteinsveta) [@yjkimjunior](https://github.com/yjkimjunior))
+
+#### ⚠️  Pushed to master
+
+- netlifly  ([@goldsteinsveta](https://github.com/goldsteinsveta))
+
+#### Authors: 2
+
+- [@goldsteinsveta](https://github.com/goldsteinsveta)
+- YJ ([@yjkimjunior](https://github.com/yjkimjunior))
+
+---
+
+# v1.0.3 (Tue Feb 11 2020)
+
+#### 🐛  Bug Fix
+
+- Fixed React Warnings [#6](https://github.com/goldsteinsveta/substrate-design-system/pull/6) ([@goldsteinsveta](https://github.com/goldsteinsveta))
+- Substrate, Tachyons & Nomidot [#5](https://github.com/goldsteinsveta/substrate-design-system/pull/5) ([@goldsteinsveta](https://github.com/goldsteinsveta) [@yjkimjunior](https://github.com/yjkimjunior))
+- Nomidot View Example [#4](https://github.com/goldsteinsveta/substrate-design-system/pull/4) ([@goldsteinsveta](https://github.com/goldsteinsveta))
+- Moved styled components to tachyon [#3](https://github.com/goldsteinsveta/substrate-design-system/pull/3) ([@goldsteinsveta](https://github.com/goldsteinsveta) [@yjkimjunior](https://github.com/yjkimjunior))
+
+#### ⚠️  Pushed to master
+
+- netlifly  ([@goldsteinsveta](https://github.com/goldsteinsveta))
+
+#### Authors: 2
+
+- [@goldsteinsveta](https://github.com/goldsteinsveta)
+- YJ ([@yjkimjunior](https://github.com/yjkimjunior))
+
+---
+
+# v1.0.3 (Tue Feb 11 2020)
+
+#### 🐛  Bug Fix
+
+- Fixed React Warnings [#6](https://github.com/goldsteinsveta/substrate-design-system/pull/6) ([@goldsteinsveta](https://github.com/goldsteinsveta))
+- Substrate, Tachyons & Nomidot [#5](https://github.com/goldsteinsveta/substrate-design-system/pull/5) ([@goldsteinsveta](https://github.com/goldsteinsveta) [@yjkimjunior](https://github.com/yjkimjunior))
+- Nomidot View Example [#4](https://github.com/goldsteinsveta/substrate-design-system/pull/4) ([@goldsteinsveta](https://github.com/goldsteinsveta))
+- Moved styled components to tachyon [#3](https://github.com/goldsteinsveta/substrate-design-system/pull/3) ([@goldsteinsveta](https://github.com/goldsteinsveta) [@yjkimjunior](https://github.com/yjkimjunior))
+
+#### ⚠️  Pushed to master
+
+- netlifly  ([@goldsteinsveta](https://github.com/goldsteinsveta))
+
+#### Authors: 2
+
+- [@goldsteinsveta](https://github.com/goldsteinsveta)
+- YJ ([@yjkimjunior](https://github.com/yjkimjunior))
+
+---
+
 # v1.0.1 (Thu Feb 06 2020)
 
 #### 🐛  Bug Fix
