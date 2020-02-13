@@ -7,7 +7,7 @@ import 'tachyons/css/tachyons.min.css';
 
 export const bodyStyles = css`
   font-family: ${typography.type.primary};
-  font-size: ${typography.size.s3}px;
+  font-size: ${typography.size.m1}px;
   color: ${color.darkest};
 
   margin: 0;

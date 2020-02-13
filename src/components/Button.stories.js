@@ -16,6 +16,10 @@ export const buttons = () => (
   </>
 );
 
+const wrapProps = { className: 'w-100 justify-center' };
+
+export const wrap = () => <Button wrapProps={wrapProps}>Default</Button>;
+
 export const sizes = () => (
   <>
     <Button>Default</Button>

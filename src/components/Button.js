@@ -19,7 +19,8 @@ const SIZES = {
 };
 
 const StyledButton = tachyons('a')`
-  inline-flex items-center
+  flex items-center
+  mh1
   white code 
   bg-black
   dim pointer
@@ -27,17 +28,22 @@ const StyledButton = tachyons('a')`
   ${props => (props.disabled ? 'cur-na' : '')}
   ${props => SHAPES[props.shape]}
   ${props => SIZES[props.size]}
+  ${props => (props.size === 'tiny' && props.shape === 'pill' ? 'bt bb' : '')}
   ${props => (props.isLoading ? 'o-50 cur-progress' : '')}
   ${props => (props.disabled ? 'cur-na' : '')}
 `;
 
-export function Button({ isDisabled, isLoading, loadingText, children, ...props }) {
+const ButtonWrap = tachyons('div')`inline-flex`;
+
+export function Button({ wrapProps, isDisabled, isLoading, loadingText, children, ...props }) {
   const buttonInner = !isLoading ? children : loadingText || 'Loading...';
 
   return (
-    <StyledButton isLoading={isLoading} disabled={isDisabled} {...props}>
-      {buttonInner}
-    </StyledButton>
+    <ButtonWrap {...wrapProps}>
+      <StyledButton isLoading={isLoading} disabled={isDisabled} {...props}>
+        {buttonInner}
+      </StyledButton>
+    </ButtonWrap>
   );
 }
 
@@ -49,6 +55,7 @@ Button.propTypes = {
   isLoading: PropTypes.bool,
   loadingText: PropTypes.node,
   isDisabled: PropTypes.bool,
+  wrapProps: PropTypes.shape,
 };
 
 Button.defaultProps = {
@@ -58,4 +65,5 @@ Button.defaultProps = {
   isDisabled: false,
   size: 'medium',
   shape: 'rect',
+  wrapProps: { className: 'button-wrap' },
 };
