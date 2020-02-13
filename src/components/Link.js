@@ -19,7 +19,7 @@ export function Link({ children, ...props }) {
 
 Link.propTypes = {
   children: PropTypes.node.isRequired,
-  appearance: PropTypes.oneOf(Object.keys(APPEARANCES)),
+  appearance: PropTypes.oneOf(['underline', 'color', 'inverted']),
 };
 
 Link.defaultProps = {
