@@ -108,13 +108,13 @@ export const bodyStyles = css`
   }
 
   .cur-pointer {
-    cursor: pointer;
+    cursor: pointer !important;
   }
   .cur-na {
-    cursor: not-allowed;
+    cursor: not-allowed !important;
   }
   .cur-progress {
-    cursor: progress;
+    cursor: progress !important;
   }
 
   .box1000 {
