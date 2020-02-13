@@ -4,10 +4,10 @@ import tachyons from 'tachyons-components';
 
 // TODO: unify sizes
 export const sizes = {
-  large: 56,
-  medium: 32,
-  small: 24,
-  tiny: 16,
+  large: 'f-6',
+  medium: 'f1',
+  small: 'f4',
+  tiny: 'f7',
 };
 
 const LIBRARIES = {
@@ -17,10 +17,8 @@ const LIBRARIES = {
 
 const I = tachyons('i')`
   items-center justify-center
-  ${props => (props.size === 'tiny' ? 'f7' : '')}
-  ${props => (props.size === 'small' ? 'f3' : '')}
-  ${props => (props.size === 'medium' ? 'f1' : '')}
-  ${props => (props.size === 'large' ? 'f-6' : '')}
+  
+  ${props => (props.size ? sizes[props.size] : sizes.medium)}
   ${props => (props.block === 'true' ? 'flex' : 'inline-flex')}
 `;
 
@@ -31,15 +29,15 @@ export function IconFont({ icon, block, lib, ...props }) {
 
 IconFont.propTypes = {
   icon: PropTypes.string.isRequired,
-  block: PropTypes.bool,
-  size: PropTypes.string,
   lib: PropTypes.oneOf(Object.values(LIBRARIES)),
+  block: PropTypes.bool,
+  size: PropTypes.oneOf(['large', 'medium', 'small', 'tiny']),
   color: PropTypes.string,
 };
 
 IconFont.defaultProps = {
-  block: false,
-  size: '',
   lib: 'fa',
+  block: false,
+  size: 'medium',
   color: 'black',
 };
