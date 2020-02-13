@@ -16,12 +16,12 @@ const LIBRARIES = {
 };
 
 const I = tachyons('i')`
-  items-center
+  items-center justify-center
   ${props => (props.size === 'tiny' ? 'f7' : '')}
   ${props => (props.size === 'small' ? 'f3' : '')}
   ${props => (props.size === 'medium' ? 'f1' : '')}
   ${props => (props.size === 'large' ? 'f-6' : '')}
-  ${props => (props.block === 'true' ? 'flex' : 'mh1')}
+  ${props => (props.block === 'true' ? 'flex' : 'inline-flex')}
 `;
 
 export function IconFont({ icon, block, lib, ...props }) {

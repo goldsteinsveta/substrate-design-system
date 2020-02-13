@@ -31,6 +31,7 @@ export const colors = () => (
 
 export const withIconNode = () => (
   <Badge status="positive">
-    <IconFont icon="check" inline size="tiny" /> with icon
+    <IconFont icon="check" inline size="tiny" />
+    with icon
   </Badge>
 );

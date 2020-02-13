@@ -7,8 +7,7 @@ import 'tachyons/css/tachyons.min.css';
 
 export const bodyStyles = css`
   font-family: ${typography.type.primary};
-  // TODO:
-  font-size: 8px;
+  // TODO: font-size
   color: ${color.darkest};
 
   margin: 0;
@@ -66,10 +65,12 @@ export const bodyStyles = css`
     font-weight: ${typography.weight.bold};
   }
 
-  i:before {
+  i {
     height: 1em;
     width: 1em;
-    text-align: center;
+  }
+  i:before {
+    font-size: 0.8em;
   }
 
   hr {
