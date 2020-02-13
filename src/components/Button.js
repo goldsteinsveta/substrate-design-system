@@ -14,7 +14,7 @@ const SHAPES = {
 };
 
 const SIZES = {
-  tiny: 'bl br b--black f7',
+  tiny: 'bl br b--black',
   small: 'ph2 pv2 f6 fw4',
   medium: 'ph3 pv3 f5 fw6',
 };
@@ -30,6 +30,7 @@ const StyledButton = tachyons('a')`
   ${props => SHAPES[props.shape]}
   ${props => SIZES[props.size]}
   ${props => (props.size === 'tiny' && props.shape === 'pill' ? 'bt bb' : '')}
+  ${props => (props.size === 'tiny' && props.appearance === 'outline' ? 'pa1' : '')}
   ${props => (props.isloading ? 'o-50 cur-progress' : '')}
   ${props => (props.disabled ? 'cur-na' : '')}
 `;

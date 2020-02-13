@@ -10,7 +10,7 @@ export default {
   decorators: [withKnobs],
 };
 
-export const Knobs = () => {
+export const KnobbedButton = () => {
   const children = text('Button Content', 'Click Me!');
 
   // select args: label, options, default, *groupID*
@@ -54,6 +54,9 @@ export const sizes = () => (
       Tiny Outline
     </Button>
     <Button size="tiny" shape="pill">
+      <IconFont icon="times" size="tiny" />
+    </Button>
+    <Button appearance="outline" size="tiny" shape="pill">
       <IconFont icon="times" size="tiny" />
     </Button>
   </>
