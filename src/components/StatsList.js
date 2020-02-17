@@ -36,7 +36,6 @@ export function StatsList({ items, size }) {
 }
 
 StatsList.propTypes = {
-  size: PropTypes.oneOf(Object.keys(SIZES)),
   items: PropTypes.arrayOf(
     PropTypes.shape({
       title: PropTypes.node,
@@ -46,6 +45,7 @@ StatsList.propTypes = {
       onClick: PropTypes.func,
     })
   ).isRequired,
+  size: PropTypes.oneOf(Object.keys(SIZES)),
 };
 
 StatsList.defaultProps = {

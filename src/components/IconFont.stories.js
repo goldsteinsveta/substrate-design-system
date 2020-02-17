@@ -1,6 +1,8 @@
 import React from 'react';
 import styled from 'styled-components';
 
+import { withKnobs, text, select, boolean } from '@storybook/addon-knobs';
+
 import { IconFont } from './IconFont';
 
 const Meta = styled.div`
@@ -27,6 +29,21 @@ const List = styled.ul`
 export default {
   title: 'Design System/IconFont',
   component: IconFont,
+  decorators: [withKnobs],
+};
+
+export const knobbedIconFont = () => {
+  const icon = text('icon', 'address-card');
+  const lib = select('lib', ['fa', 'web3'], 'fa');
+  const block = boolean('block', false);
+  const size = select('size', ['large', 'medium', 'small', 'tiny'], 'large');
+  // TODO: color
+
+  return (
+    <>
+      <IconFont lib={lib} icon={icon} block={block} size={size} /> IconFont
+    </>
+  );
 };
 
 export const labels = () => (

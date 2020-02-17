@@ -1,4 +1,5 @@
 import React from 'react';
+import { withKnobs, select, object } from '@storybook/addon-knobs';
 import WithTooltip from './tooltip/WithTooltip';
 
 import { StatsList } from './StatsList';
@@ -16,6 +17,14 @@ export default {
   title: 'Design System/StatsList',
   component: StatsList,
   excludeStories: /.*Data$/,
+  decorators: [withKnobs],
+};
+
+export const KnobbedStatsList = () => {
+  const size = select('size', ['small', 'large'], 'small');
+  const items = object('items', itemsData);
+
+  return <StatsList items={items} size={size} />;
 };
 
 export const Stats = () => <StatsList items={itemsData} />;

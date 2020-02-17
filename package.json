@@ -48,6 +48,7 @@
     "@fortawesome/fontawesome-svg-core": "^1.2.26",
     "@fortawesome/free-solid-svg-icons": "^5.12.0",
     "@fortawesome/react-fontawesome": "^0.1.8",
+    "@storybook/addon-knobs": "^5.3.13",
     "font-awesome": "^4.7.0",
     "font-awesome-web3": "^1.0.1",
     "keycode": "^2.2.0",

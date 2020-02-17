@@ -7,7 +7,7 @@ import 'tachyons/css/tachyons.min.css';
 
 export const bodyStyles = css`
   font-family: ${typography.type.primary};
-  font-size: ${typography.size.s3}px;
+  // TODO: font-size
   color: ${color.darkest};
 
   margin: 0;
@@ -65,10 +65,12 @@ export const bodyStyles = css`
     font-weight: ${typography.weight.bold};
   }
 
-  i:before {
+  i {
     height: 1em;
     width: 1em;
-    text-align: center;
+  }
+  i:before {
+    font-size: 0.8em;
   }
 
   hr {
@@ -108,13 +110,13 @@ export const bodyStyles = css`
   }
 
   .cur-pointer {
-    cursor: pointer;
+    cursor: pointer !important;
   }
   .cur-na {
-    cursor: not-allowed;
+    cursor: not-allowed !important;
   }
   .cur-progress {
-    cursor: progress;
+    cursor: progress !important;
   }
 
   .box1000 {
