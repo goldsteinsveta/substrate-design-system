@@ -1,5 +1,5 @@
 import React from 'react';
-import { withKnobs, select } from '@storybook/addon-knobs';
+import { withKnobs, text, select } from '@storybook/addon-knobs';
 import { Badge } from './Badge';
 import { IconFont } from './IconFont';
 
@@ -10,13 +10,9 @@ export default {
 };
 
 export const knobbedBadge = () => {
-  const status = select(
-    'status',
-    ['positive', 'negative', 'neutral', 'error', 'warning'],
-    'error',
-    'warning'
-  );
-  return <Badge status={status}>Positive</Badge>;
+  const children = text('Badge Content', '123');
+  const status = select('status', ['positive', 'negative', 'neutral', 'error', 'warning'], 'error');
+  return <Badge status={status}>{children}</Badge>;
 };
 
 export const colors = () => (
