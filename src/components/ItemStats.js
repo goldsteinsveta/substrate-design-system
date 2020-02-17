@@ -46,7 +46,7 @@ ItemStats.propTypes = {
 
 ItemStats.defaultProps = {
   // isLoading: false,
-  title: <span>Loading</span>,
+  title: '',
   value: '',
   subtitle: '',
   size: SIZES.SMALL,
