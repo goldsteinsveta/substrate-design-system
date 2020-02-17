@@ -130,6 +130,31 @@ export const bodyStyles = css`
     }
   }
 
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+  }
+  th,
+  td {
+    border: 1px solid ${color.medium};
+  }
+  th {
+    position: relative;
+    background-color: ${color.light};
+    font-family: ${typography.type.code};
+    font-size: ${typography.size.s2}px;
+    font-weight: ${typography.weight.regular};
+    line-height: 1.2rem;
+  }
+  th i {
+    position: absolute;
+    right: 0.5rem;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+  }
+
   &.ReactModal__Body--open {
     overflow: hidden;
     &.hide-intercom #intercom-container {
