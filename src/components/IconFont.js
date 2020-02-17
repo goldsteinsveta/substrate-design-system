@@ -18,7 +18,7 @@ const LIBRARIES = {
 const I = tachyons('i')`
   items-center justify-center
   
-  ${props => (props.size ? sizes[props.size] : sizes.medium)}
+  ${props => (props.size ? sizes[props.size] : '')}
   ${props => (props.block === 'true' ? 'flex' : 'inline-flex')}
 `;
 
@@ -38,6 +38,6 @@ IconFont.propTypes = {
 IconFont.defaultProps = {
   lib: 'fa',
   block: false,
-  size: 'medium',
+  size: '',
   color: 'black',
 };

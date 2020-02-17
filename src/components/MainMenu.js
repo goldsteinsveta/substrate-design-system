@@ -4,7 +4,7 @@ import tachyons from 'tachyons-components';
 import { Button } from './Button';
 
 const BoxLogo = tachyons('div')`
-  flex justify-between items center
+  flex justify-between items-center h3
   box1000 pv2 white ph5-m
   bg-black
   
