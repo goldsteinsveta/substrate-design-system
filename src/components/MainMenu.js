@@ -3,12 +3,14 @@ import PropTypes from 'prop-types';
 import tachyons from 'tachyons-components';
 import { Button } from './Button';
 
-const BoxLogo = tachyons('div')`
+const BoxTop = tachyons('div')`
   flex justify-between items-center h3
   box1000 pv2 white ph5-m
   bg-black
-  
 `;
+
+const Div = tachyons('dic')``;
+
 const BoxTabs = tachyons('div')`
   flex items-center
   box1000 bg-near-white shadow-1
@@ -18,10 +20,10 @@ const BoxTabs = tachyons('div')`
 export function MainMenu({ tabs, contentLeft, contentRight }) {
   return (
     <>
-      <BoxLogo>
-        {contentLeft}
-        {contentRight}
-      </BoxLogo>
+      <BoxTop>
+        <Div>{contentLeft}</Div>
+        <Div>{contentRight}</Div>
+      </BoxTop>
       <BoxTabs>{tabs}</BoxTabs>
     </>
   );
