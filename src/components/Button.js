@@ -21,7 +21,6 @@ const SIZES = {
 
 const StyledButton = tachyons('a')`
   flex items-center
-  mh1
   white code 
   bg-black
   pointer
@@ -38,7 +37,7 @@ const StyledButton = tachyons('a')`
   ${props => (props.disabled ? 'cur-na' : '')}
 `;
 
-const ButtonWrap = tachyons('div')`inline-flex`;
+const ButtonWrap = tachyons('div')`inline-flex mh1`;
 
 export function Button({
   children,

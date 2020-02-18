@@ -148,15 +148,14 @@ export const bodyStyles = css`
   table {
     width: 100%;
     border-collapse: collapse;
-    table-layout: fixed;
   }
   th,
   td {
+    position: relative;
     border: 1px solid ${color.medium};
     text-align: center;
   }
   th {
-    position: relative;
     background-color: ${color.light};
     font-family: ${typography.type.code};
     font-size: ${typography.size.s2}px;
