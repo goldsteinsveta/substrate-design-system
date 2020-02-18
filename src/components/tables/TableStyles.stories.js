@@ -25,7 +25,7 @@ export const CellControls = () => {
         <Button size="tiny" shape="pill">
           <IconFont icon="check" size="tiny" />
         </Button>
-        <Button size="small" shape="pill" appearance="secondary">
+        <Button size="small" shape="pill" appearance="none">
           <IconFont icon="edit" size="small" />
         </Button>
       </>
@@ -58,16 +58,16 @@ export const CellControls = () => {
   const controlsAmount = () => {
     return (
       <>
-        <Button appearance="outline" size="tiny">
+        <Button appearance="outlineColor" size="tiny">
           25%
         </Button>
-        <Button appearance="outline" size="tiny">
+        <Button appearance="outlineColor" size="tiny">
           50%
         </Button>
-        <Button appearance="outline" size="tiny">
+        <Button appearance="outlineColor" size="tiny">
           75%
         </Button>
-        <Button appearance="outline" size="tiny">
+        <Button appearance="outlineColor" size="tiny">
           100%
         </Button>
       </>

@@ -43,6 +43,11 @@ export const appearances = () => (
     <Button>Default</Button>
     <Button appearance="secondary">Secondary</Button>
     <Button appearance="outline">Outline</Button>
+    <Button appearance="outlineColor">Outline Color</Button>
+    <Button appearance="none">
+      <IconFont icon="times" />
+      None
+    </Button>
   </>
 );
 
@@ -52,14 +57,17 @@ export const sizes = () => (
     <Button appearance="outline" size="small">
       Small Outline
     </Button>
-    <Button appearance="outline" size="tiny">
-      Tiny Outline
+    <Button appearance="outlineColor" size="tiny">
+      Tiny Outline Color
     </Button>
     <Button size="tiny" shape="pill">
       <IconFont icon="times" size="tiny" />
     </Button>
     <Button appearance="outline" size="tiny" shape="pill">
       <IconFont icon="times" size="tiny" />
+    </Button>
+    <Button appearance="none" size="large">
+      <IconFont icon="times" size="large" />
     </Button>
   </>
 );
