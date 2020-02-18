@@ -47,6 +47,10 @@ export const bodyStyles = css`
     cursor: pointer;
   }
 
+  .f8 {
+    font-size 9px;
+  }
+
   sub,
   sup {
     font-size: 0.8em;
@@ -128,6 +132,17 @@ export const bodyStyles = css`
       padding-left: 1.5em;
       padding-right: 1.5em;
     }
+  }
+
+  .boxFT[toggled='false'] .T,
+  .boxFT[toggled='true'] .F,
+  .boxFT[toggled='false']:hover .F,
+  .boxFT[toggled='true']:hover .T {
+    display: none;
+  }
+  .boxFT[toggled='false']:hover .T,
+  .boxFT[toggled='true']:hover .F {
+    display: block;
   }
 
   table {

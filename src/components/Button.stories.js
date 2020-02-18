@@ -12,6 +12,7 @@ export default {
 
 export const KnobbedButton = () => {
   const children = text('Button Content', 'Click Me!');
+  const toggleTo = text('toggleTo', '');
 
   // select args: label, options, default, *groupID*
   const appearance = select('appearance', ['primary', 'secondary', 'outline'], 'primary');
@@ -26,6 +27,7 @@ export const KnobbedButton = () => {
     <Button
       appearance={appearance}
       size={size}
+      toggleTo={toggleTo}
       isDisabled={isDisabled}
       isLoading={isLoading}
       loadingText={loadingText}
@@ -99,3 +101,22 @@ export const shapePill = () => (
     </Button>
   </>
 );
+
+export const toggleFromTo = () => {
+  return (
+    <>
+      <Button shape="pill" size="small" toggleTo="good bye" appearance="secondary">
+        hello
+      </Button>
+      <Button
+        shape="pill"
+        size="small"
+        toggleTo={<IconFont icon="circle" size="small" />}
+        toggled
+        appearance="secondary"
+      >
+        <IconFont lib="web3" icon="identicon" aria-label="identicon" size="small" />
+      </Button>
+    </>
+  );
+};

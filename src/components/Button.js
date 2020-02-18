@@ -4,7 +4,7 @@ import tachyons from 'tachyons-components';
 
 const APPEARANCES = {
   primary: '',
-  secondary: 'bg-light-gray gray',
+  secondary: 'bg-light-gray near-black',
   outline: 'ba bg-transparent black',
 };
 
@@ -14,8 +14,8 @@ const SHAPES = {
 };
 
 const SIZES = {
-  tiny: 'bl br b--black',
-  small: 'ph2 pv2 f6 fw4',
+  tiny: 'bl br b--black f8',
+  small: 'ph1 pv1 f6 fw4',
   medium: 'ph3 pv3 f5 fw6',
 };
 
@@ -24,7 +24,10 @@ const StyledButton = tachyons('a')`
   mh1
   white code 
   bg-black
-  dim pointer
+  pointer
+  dim
+  boxFT
+
   ${props => APPEARANCES[props.appearance]}
   ${props => (props.disabled ? 'cur-na' : '')}
   ${props => SHAPES[props.shape]}
@@ -37,15 +40,35 @@ const StyledButton = tachyons('a')`
 
 const ButtonWrap = tachyons('div')`inline-flex`;
 
-export function Button({ wrapProps, isDisabled, isLoading, loadingText, children, ...props }) {
-  const buttonInner = !isLoading ? children : loadingText || 'Loading...';
+export function Button({
+  children,
+  wrapProps,
+  toggled,
+  toggleTo,
+  isLoading,
+  loadingText,
+  isDisabled,
+  ...props
+}) {
+  let buttonInner = !isLoading ? children : loadingText || 'Loading...';
+
+  if (toggleTo !== Button.defaultProps.toggleTo) {
+    buttonInner = (
+      <>
+        <div className="F">{buttonInner}</div>
+        <div className="T">{toggleTo}</div>
+      </>
+    );
+  }
 
   return (
-    <ButtonWrap {...wrapProps}>
-      <StyledButton isloading={isLoading} disabled={isDisabled} {...props}>
-        {buttonInner}
-      </StyledButton>
-    </ButtonWrap>
+    <div className="boxFT" toggled={toggled.toString()}>
+      <ButtonWrap {...wrapProps}>
+        <StyledButton isloading={isLoading} disabled={isDisabled} {...props}>
+          {buttonInner}
+        </StyledButton>
+      </ButtonWrap>
+    </div>
   );
 }
 
@@ -54,6 +77,8 @@ Button.propTypes = {
   appearance: PropTypes.oneOf(Object.keys(APPEARANCES)),
   size: PropTypes.oneOf(Object.keys(SIZES)),
   shape: PropTypes.oneOf(Object.keys(SHAPES)),
+  toggled: PropTypes.bool,
+  toggleTo: PropTypes.node,
   isLoading: PropTypes.bool,
   loadingText: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   isDisabled: PropTypes.bool,
@@ -65,6 +90,8 @@ Button.defaultProps = {
   isLoading: false,
   loadingText: 'Loading...',
   appearance: 'primary',
+  toggled: false,
+  toggleTo: '',
   isDisabled: false,
   size: 'medium',
   shape: 'rect',

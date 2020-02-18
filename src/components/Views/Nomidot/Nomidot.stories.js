@@ -10,7 +10,7 @@ import WithTooltip from '../../tooltip/WithTooltip';
 import { ListItem } from '../../tooltip/ListItem';
 import { StatsList } from '../../StatsList';
 
-import { TableAccounts } from '../../Tables/TableAccounts';
+import { TableAccounts } from '../../tables/TableAccounts';
 import { mockupBondData, bondsColumns } from '../../dataMockups/accountBonds';
 
 export default {
