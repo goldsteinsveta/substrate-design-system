@@ -5,7 +5,7 @@ import tachyons from 'tachyons-components';
 // TODO: unify sizes
 export const sizes = {
   large: 'f-6',
-  medium: 'f1',
+  medium: 'f2',
   small: 'f4',
   tiny: 'f7',
 };

@@ -1,5 +1,6 @@
 import React from 'react';
 import { IconFont } from '../IconFont';
+import { AddressCard } from '../AddressCard';
 
 export default {
   title: 'Design System/Table',
@@ -22,10 +23,24 @@ const tableData = () => (
     </thead>
     <tbody>
       <tr>
-        <td>Stash Card</td>
-        <td>Controller Card</td>
-        <td>XXX.X</td>
-        <td>X.X</td>
+        <td className="tl">
+          <AddressCard />
+        </td>
+        <td />
+        <td rowSpan="2" className="f4 fw6 center ph4 pv1">
+          XXX.X
+        </td>
+        <td rowSpan="2" className="f4 fw6 center ph4 pv1">
+          X.X
+        </td>
+        <td>xxx.x</td>
+        <td>x.x</td>
+      </tr>
+      <tr>
+        <td />
+        <td className="tl">
+          <AddressCard />
+        </td>
         <td>xxx.x</td>
         <td>x.x</td>
       </tr>

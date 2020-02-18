@@ -138,6 +138,7 @@ export const bodyStyles = css`
   th,
   td {
     border: 1px solid ${color.medium};
+    text-align: center;
   }
   th {
     position: relative;
@@ -153,6 +154,9 @@ export const bodyStyles = css`
     top: 0;
     bottom: 0;
     margin: auto;
+  }
+  td {
+    padding: 0 0.5rem;
   }
 
   &.ReactModal__Body--open {
