@@ -64,7 +64,7 @@ export function Button({
   }
 
   return (
-    <span className="boxFT" toggled={toggled ? 'true' : undefined}>
+    <span className="boxFT" toggled={toggled ? 'true' : 'false'}>
       <ButtonWrap {...wrapProps}>
         <StyledButton isloading={isLoading ? 'true' : undefined} disabled={isDisabled} {...props}>
           {buttonInner}
