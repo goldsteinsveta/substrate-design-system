@@ -10,8 +10,7 @@ import WithTooltip from '../../tooltip/WithTooltip';
 import { ListItem } from '../../tooltip/ListItem';
 import { StatsList } from '../../StatsList';
 
-import { TableAccounts } from '../../tables/TableAccounts';
-import { mockupBondData, bondsColumns } from '../../dataMockups/accountBonds';
+import { CellControlsInContext } from '../../tables/TableCell.stories';
 
 export default {
   title: 'Apps/Nomidot',
@@ -72,7 +71,7 @@ export const start = () => (
       <StatsList items={nomiData} size="large" />
     </LayoutBox>
     <LayoutBox>
-      <TableAccounts columns={bondsColumns} data={mockupBondData(5)} />
+      <CellControlsInContext />
     </LayoutBox>
   </>
 );

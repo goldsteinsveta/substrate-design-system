@@ -5,15 +5,13 @@ import { AddressCard } from '../AddressCard';
 import { Button } from '../Button';
 
 export default {
-  title: 'Design System/Table',
+  title: 'Apps/Nomidot/TableCell',
   excludeStories: /.*Data$/,
 };
 
 export const CellControls = () => {
-  const BoxPosition = tachyons('div')`absolute w-100 h-100 top-0 left-0`;
-  const Box = tachyons('div')`flex w-100 h-100 flex-column`;
   const RowEdit = tachyons('div')`flex w-100 h-100 justify-end`;
-  const RowBond = tachyons('div')`flex w-100 h-100 justify-between items-center`;
+  const RowBond = tachyons('div')`flex w-100 h-100 justify-between items-center mv2`;
   const RowSum = tachyons('div')`flex w-100 h-100 justify-center items-center`;
 
   const controlsEdit = () => {
@@ -25,7 +23,7 @@ export const CellControls = () => {
         <Button size="tiny" shape="pill">
           <IconFont icon="check" size="tiny" />
         </Button>
-        <Button size="small" shape="pill" appearance="none">
+        <Button size="small" shape="pill" appearance="none" wrapProps={{ className: 'nt1' }}>
           <IconFont icon="edit" size="small" />
         </Button>
       </>
@@ -43,6 +41,7 @@ export const CellControls = () => {
         >
           <IconFont icon="hand-scissors-o" aria-label="identicon" size="small" />
         </Button>
+        9477133.53
         <Button
           shape="pill"
           size="small"
@@ -75,18 +74,16 @@ export const CellControls = () => {
   };
 
   return (
-    <BoxPosition>
-      <Box>
-        <RowEdit>{controlsEdit()}</RowEdit>
-        <RowBond>{controlsBond()}</RowBond>
-        <RowSum>{controlsAmount()}</RowSum>
-      </Box>
-    </BoxPosition>
+    <>
+      <RowEdit>{controlsEdit()}</RowEdit>
+      <RowBond>{controlsBond()}</RowBond>
+      <RowSum>{controlsAmount()}</RowSum>
+    </>
   );
 };
 
-export const InContext = () => (
-  <table>
+export const CellControlsInContext = () => (
+  <table className="substrateTable">
     <thead>
       <th>
         Stash <IconFont icon="chevron-down" size="tiny" />
@@ -101,15 +98,14 @@ export const InContext = () => (
     </thead>
     <tbody>
       <tr>
-        <td className="tl">
+        <td className="tl ph2">
           <AddressCard />
         </td>
         <td />
-        <td rowSpan="2" className="f5 fw6 center ph4 pv1">
+        <td rowSpan="2" className="f5 fw6 center pa0">
           {CellControls()}
-          9477133.53
         </td>
-        <td rowSpan="2" className="f4 fw6 center ph4 pv1">
+        <td rowSpan="2" className="f5 fw6 center ph4 pv1">
           X.X
         </td>
         <td>xxx.x</td>
@@ -117,7 +113,7 @@ export const InContext = () => (
       </tr>
       <tr>
         <td />
-        <td className="tl">
+        <td className="tl ph2">
           <AddressCard />
         </td>
         <td>xxx.x</td>

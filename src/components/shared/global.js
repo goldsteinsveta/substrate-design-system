@@ -145,32 +145,32 @@ export const bodyStyles = css`
     display: block;
   }
 
-  table {
+  table.substrateTable {
     width: 100%;
     border-collapse: collapse;
   }
-  th,
-  td {
+  .substrateTable th,
+  .substrateTable td {
     position: relative;
     border: 1px solid ${color.medium};
+  }
+  .substrateTable td:not(.tl) {
     text-align: center;
   }
-  th {
+  .substrateTable th {
     background-color: ${color.light};
     font-family: ${typography.type.code};
     font-size: ${typography.size.s2}px;
     font-weight: ${typography.weight.regular};
     line-height: 1.2rem;
+    padding: 0 1rem;
   }
-  th i {
+  .substrateTable th i {
     position: absolute;
     right: 0.5rem;
     top: 0;
     bottom: 0;
     margin: auto;
-  }
-  td {
-    padding: 0 0.5rem;
   }
 
   &.ReactModal__Body--open {
