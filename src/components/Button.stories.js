@@ -12,6 +12,7 @@ export default {
 
 export const KnobbedButton = () => {
   const children = text('Button Content', 'Click Me!');
+  const toggleTo = text('toggleTo', '');
 
   // select args: label, options, default, *groupID*
   const appearance = select('appearance', ['primary', 'secondary', 'outline'], 'primary');
@@ -26,6 +27,7 @@ export const KnobbedButton = () => {
     <Button
       appearance={appearance}
       size={size}
+      toggleTo={toggleTo}
       isDisabled={isDisabled}
       isLoading={isLoading}
       loadingText={loadingText}
@@ -41,6 +43,11 @@ export const appearances = () => (
     <Button>Default</Button>
     <Button appearance="secondary">Secondary</Button>
     <Button appearance="outline">Outline</Button>
+    <Button appearance="outlineColor">Outline Color</Button>
+    <Button appearance="none">
+      <IconFont icon="times" />
+      None
+    </Button>
   </>
 );
 
@@ -50,14 +57,17 @@ export const sizes = () => (
     <Button appearance="outline" size="small">
       Small Outline
     </Button>
-    <Button appearance="outline" size="tiny">
-      Tiny Outline
+    <Button appearance="outlineColor" size="tiny">
+      Tiny Outline Color
     </Button>
     <Button size="tiny" shape="pill">
       <IconFont icon="times" size="tiny" />
     </Button>
     <Button appearance="outline" size="tiny" shape="pill">
       <IconFont icon="times" size="tiny" />
+    </Button>
+    <Button appearance="none" size="large">
+      <IconFont icon="times" size="large" />
     </Button>
   </>
 );
@@ -99,3 +109,22 @@ export const shapePill = () => (
     </Button>
   </>
 );
+
+export const toggleFromTo = () => {
+  return (
+    <>
+      <Button shape="pill" size="small" toggleTo="good bye" appearance="secondary">
+        hello
+      </Button>
+      <Button
+        shape="pill"
+        size="small"
+        toggleTo={<IconFont icon="circle" size="small" />}
+        toggled
+        appearance="secondary"
+      >
+        <IconFont lib="web3" icon="identicon" aria-label="identicon" size="small" />
+      </Button>
+    </>
+  );
+};

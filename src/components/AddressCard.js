@@ -4,7 +4,7 @@ import tachyons from 'tachyons-components';
 import { Identicon } from './Identicon';
 
 const Box = tachyons('div')`
-  inline-flex items-center
+  inline-flex items-center mv2
 `;
 const InfoBox = tachyons('div')`
   ml2

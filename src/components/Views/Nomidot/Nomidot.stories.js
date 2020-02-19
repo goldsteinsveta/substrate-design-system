@@ -10,8 +10,7 @@ import WithTooltip from '../../tooltip/WithTooltip';
 import { ListItem } from '../../tooltip/ListItem';
 import { StatsList } from '../../StatsList';
 
-import { TableAccounts } from '../../Tables/TableAccounts';
-import { mockupBondData, bondsColumns } from '../../dataMockups/accountBonds';
+import { CellControlsInContext } from '../../tables/TableCell.stories';
 
 export default {
   title: 'Apps/Nomidot',
@@ -56,8 +55,8 @@ const tabsData = [<Button>Tab</Button>, <Button appearance="secondary">Tab2</But
 const contentRight = (
   <div className="flex items-center">
     <NetworkInfo />
-    <Button className="ml2" appearance="secondary" shape="pill">
-      <IconFont icon="info" color="white" />
+    <Button className="ml2" appearance="secondary" shape="pill" size="small">
+      <IconFont icon="info" color="white" size="small" />
     </Button>
   </div>
 );
@@ -72,7 +71,10 @@ export const start = () => (
       <StatsList items={nomiData} size="large" />
     </LayoutBox>
     <LayoutBox>
-      <TableAccounts columns={bondsColumns} data={mockupBondData(5)} />
+      <CellControlsInContext />
     </LayoutBox>
+    <Button shape="pill" wrapProps={{ className: 'absolute right-2 bottom-2' }}>
+      <IconFont icon="space-shuttle" size="medium" />
+    </Button>
   </>
 );

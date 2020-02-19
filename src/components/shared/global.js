@@ -47,6 +47,10 @@ export const bodyStyles = css`
     cursor: pointer;
   }
 
+  .f8 {
+    font-size 9px;
+  }
+
   sub,
   sup {
     font-size: 0.8em;
@@ -128,6 +132,45 @@ export const bodyStyles = css`
       padding-left: 1.5em;
       padding-right: 1.5em;
     }
+  }
+
+  .boxFT[toggled='false'] .T,
+  .boxFT[toggled='true'] .F,
+  .boxFT[toggled='false']:hover .F,
+  .boxFT[toggled='true']:hover .T {
+    display: none;
+  }
+  .boxFT[toggled='false']:hover .T,
+  .boxFT[toggled='true']:hover .F {
+    display: block;
+  }
+
+  table.substrateTable {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .substrateTable th,
+  .substrateTable td {
+    position: relative;
+    border: 1px solid ${color.medium};
+  }
+  .substrateTable td:not(.tl) {
+    text-align: center;
+  }
+  .substrateTable th {
+    background-color: ${color.light};
+    font-family: ${typography.type.code};
+    font-size: ${typography.size.s2}px;
+    font-weight: ${typography.weight.regular};
+    line-height: 1.2rem;
+    padding: 0 1rem;
+  }
+  .substrateTable th i {
+    position: absolute;
+    right: 0.5rem;
+    top: 0;
+    bottom: 0;
+    margin: auto;
   }
 
   &.ReactModal__Body--open {

@@ -7,7 +7,7 @@ import tachyons from 'tachyons-components';
 import { useTable, useSortBy } from 'react-table';
 import { AddressCard } from '../AddressCard';
 
-function Row({ row }) {
+export function Row({ row }) {
   return (
     <>
       <tr>
@@ -47,7 +47,7 @@ function Row({ row }) {
     </>
   );
 }
-function Cell({ header, cellRender, cellData }) {
+export function Cell({ header, cellRender, cellData }) {
   const StyleBox = tachyons('span')`
     dib w-100
     tc fw6 f5

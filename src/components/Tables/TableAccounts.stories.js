@@ -5,18 +5,16 @@ import { TableAccounts } from './TableAccounts';
 import { mockupBondData, bondsColumns } from '../dataMockups/accountBonds';
 
 export default {
-  title: 'Design System/TableAccounts',
+  title: 'Apps/Nomidot/TableAccounts',
   component: TableAccounts,
   decorators: [withKnobs],
 };
 
-export const knobbedTableAccounts = () => {
+export const knobbedBonds = () => {
   const data = object('data', mockupBondData(1));
   const columns = object('columns', bondsColumns);
 
   return <TableAccounts columns={columns} data={data} />;
 };
 
-export const tableAccounts = () => (
-  <TableAccounts columns={bondsColumns} data={mockupBondData(5)} />
-);
+export const Bonds = () => <TableAccounts columns={bondsColumns} data={mockupBondData(5)} />;

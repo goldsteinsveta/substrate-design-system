@@ -18,6 +18,7 @@ const Title = tachyons('span')`
   f7 code
 `;
 const ItemInner = tachyons('li')`
+  flex flex-column justify-between
   w-100 w-50-m
   list 
   ph3 pv2
@@ -27,8 +28,10 @@ const ItemInner = tachyons('li')`
 export function ItemStats({ title, value, subtitle, size, onClick }) {
   return (
     <ItemInner onClick={onClick} role="presentation">
-      <Title size={size}>{title}</Title>
-      <Value size={size}>{value}</Value>
+      <div>
+        <Title size={size}>{title}</Title>
+        <Value size={size}>{value}</Value>
+      </div>
       <Subtitle size={size}>{subtitle}</Subtitle>
     </ItemInner>
   );
@@ -46,7 +49,7 @@ ItemStats.propTypes = {
 
 ItemStats.defaultProps = {
   // isLoading: false,
-  title: <span>Loading</span>,
+  title: '',
   value: '',
   subtitle: '',
   size: SIZES.SMALL,
