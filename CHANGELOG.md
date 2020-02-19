@@ -1,3 +1,17 @@
+# v1.0.7 (Wed Feb 19 2020)
+
+#### 🐛  Bug Fix
+
+- Toggled css attribute [#16](https://github.com/goldsteinsveta/substrate-design-system/pull/16) ([@goldsteinsveta](https://github.com/goldsteinsveta))
+- fixes #13 [#15](https://github.com/goldsteinsveta/substrate-design-system/pull/15) ([@goldsteinsveta](https://github.com/goldsteinsveta))
+- Nomidot Components [#14](https://github.com/goldsteinsveta/substrate-design-system/pull/14) ([@goldsteinsveta](https://github.com/goldsteinsveta))
+
+#### Authors: 1
+
+- [@goldsteinsveta](https://github.com/goldsteinsveta)
+
+---
+
 # v1.0.6 (Mon Feb 17 2020)
 
 #### 🐛  Bug Fix
