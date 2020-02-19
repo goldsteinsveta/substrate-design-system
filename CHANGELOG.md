@@ -1,3 +1,16 @@
+# v1.0.6 (Mon Feb 17 2020)
+
+#### 🐛  Bug Fix
+
+- Storybook Knobs [#12](https://github.com/goldsteinsveta/substrate-design-system/pull/12) ([@goldsteinsveta](https://github.com/goldsteinsveta))
+- merge [#11](https://github.com/goldsteinsveta/substrate-design-system/pull/11) ([@goldsteinsveta](https://github.com/goldsteinsveta))
+
+#### Authors: 1
+
+- [@goldsteinsveta](https://github.com/goldsteinsveta)
+
+---
+
 # v1.0.5 (Wed Feb 12 2020)
 
 #### 🐛  Bug Fix
