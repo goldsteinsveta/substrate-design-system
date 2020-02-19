@@ -40,7 +40,7 @@ const Users = styled.ul`
   ${User} {
     position: relative;
 
-    &:not(:first-child) {
+    &:not(:first-of-type) {
       margin-left: -6px;
     }
     &:nth-child(1) {

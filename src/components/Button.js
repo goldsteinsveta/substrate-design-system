@@ -16,7 +16,7 @@ const SHAPES = {
 };
 
 const SIZES = {
-  tiny: 'bl br b--black f8',
+  tiny: 'bl br f8',
   small: 'ph1 pv1 f6 fw4',
   medium: 'ph3 pv3 f5 fw6',
 };
@@ -33,7 +33,7 @@ const StyledButton = tachyons('a')`
   ${props => (props.disabled ? 'cur-na' : '')}
   ${props => SHAPES[props.shape]}
   ${props => SIZES[props.size]}
-  ${props => (props.size === 'tiny' && props.shape === 'pill' ? 'bt bb' : '')}
+  ${props => (props.size === 'tiny' && props.shape === 'pill' ? 'bt bb b--black' : '')}
   ${props => (props.size === 'tiny' && props.appearance === 'outline' ? 'pa1' : '')}
   ${props => (props.size === 'tiny' && props.appearance === 'outlineColor' ? 'pa1' : '')}
   ${props => (props.isloading ? 'o-50 cur-progress' : '')}
@@ -64,9 +64,9 @@ export function Button({
   }
 
   return (
-    <span className="boxFT" toggled={toggled.toString()}>
+    <span className="boxFT" toggled={toggled ? 'true' : undefined}>
       <ButtonWrap {...wrapProps}>
-        <StyledButton isloading={isLoading} disabled={isDisabled} {...props}>
+        <StyledButton isloading={isLoading ? 'true' : undefined} disabled={isDisabled} {...props}>
           {buttonInner}
         </StyledButton>
       </ButtonWrap>
