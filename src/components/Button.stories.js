@@ -66,7 +66,7 @@ export const sizes = () => (
     <Button appearance="outline" size="tiny" shape="pill">
       <IconFont icon="times" size="tiny" />
     </Button>
-    <Button appearance="none" size="large">
+    <Button appearance="none">
       <IconFont icon="times" size="large" />
     </Button>
   </>
@@ -113,9 +113,6 @@ export const shapePill = () => (
 export const toggleFromTo = () => {
   return (
     <>
-      <Button shape="pill" size="small" toggleTo="good bye" appearance="secondary">
-        hello
-      </Button>
       <Button
         shape="pill"
         size="small"
@@ -124,6 +121,12 @@ export const toggleFromTo = () => {
         appearance="secondary"
       >
         <IconFont lib="web3" icon="identicon" aria-label="identicon" size="small" />
+      </Button>
+      <Button shape="pill" size="small" toggleTo="good bye" appearance="secondary">
+        hello
+      </Button>
+      <Button shape="pill" size="small" toggled toggleTo="good bye" appearance="secondary">
+        hello
       </Button>
     </>
   );

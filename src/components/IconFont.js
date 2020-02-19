@@ -31,7 +31,7 @@ IconFont.propTypes = {
   icon: PropTypes.string.isRequired,
   lib: PropTypes.oneOf(Object.values(LIBRARIES)),
   block: PropTypes.bool,
-  size: PropTypes.oneOf(['large', 'medium', 'small', 'tiny']),
+  size: PropTypes.oneOf(['large', 'medium', 'small', 'tiny', '']),
   color: PropTypes.string,
 };
 

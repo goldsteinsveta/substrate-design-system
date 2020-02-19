@@ -19,7 +19,7 @@ const Right = styled.span``;
 const ItemWrapper = styled.li`
   list-style: none;
 
-  &:not(:first-child) {
+  &:not(:first-of-type) {
     border-top: 1px solid ${color.mediumlight};
   }
 `;
