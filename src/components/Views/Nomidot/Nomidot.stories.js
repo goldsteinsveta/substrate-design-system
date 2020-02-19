@@ -55,8 +55,8 @@ const tabsData = [<Button>Tab</Button>, <Button appearance="secondary">Tab2</But
 const contentRight = (
   <div className="flex items-center">
     <NetworkInfo />
-    <Button className="ml2" appearance="secondary" shape="pill">
-      <IconFont icon="info" color="white" />
+    <Button className="ml2" appearance="secondary" shape="pill" size="small">
+      <IconFont icon="info" color="white" size="small" />
     </Button>
   </div>
 );
@@ -73,5 +73,8 @@ export const start = () => (
     <LayoutBox>
       <CellControlsInContext />
     </LayoutBox>
+    <Button shape="pill" wrapProps={{ className: 'absolute right-2 bottom-2' }}>
+      <IconFont icon="space-shuttle" size="medium" />
+    </Button>
   </>
 );
