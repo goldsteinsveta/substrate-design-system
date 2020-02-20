@@ -9,7 +9,7 @@ const BoxTop = tachyons('div')`
   bg-black
 `;
 
-const Div = tachyons('dic')``;
+const Div = tachyons('div')``;
 
 const BoxTabs = tachyons('div')`
   flex items-center
