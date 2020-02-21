@@ -19,15 +19,16 @@ const Title = tachyons('span')`
 `;
 const ItemInner = tachyons('li')`
   flex flex-column justify-between
-  w-100 w-50-m
+  w-100
   list 
   ph3 pv2
   br bb b--light-gray
 `;
 
-export function ItemStats({ title, value, subtitle, size, onClick }) {
+export function ItemStats({ children, title, value, subtitle, size, onClick }) {
   return (
     <ItemInner onClick={onClick} role="presentation">
+      {children}
       <div>
         <Title size={size}>{title}</Title>
         <Value size={size}>{value}</Value>
@@ -40,11 +41,12 @@ export function ItemStats({ title, value, subtitle, size, onClick }) {
 ItemStats.propTypes = {
   // TODO: isLoading
   // isLoading: PropTypes.bool,
-  title: PropTypes.node,
-  value: PropTypes.string,
+  title: PropTypes.string,
+  value: PropTypes.node,
   subtitle: PropTypes.string,
   size: PropTypes.oneOf(Object.keys(SIZES)),
   onClick: PropTypes.func,
+  children: PropTypes.node,
 };
 
 ItemStats.defaultProps = {
@@ -52,6 +54,7 @@ ItemStats.defaultProps = {
   title: '',
   value: '',
   subtitle: '',
-  size: SIZES.SMALL,
+  size: 'large',
   onClick: undefined,
+  children: null,
 };
