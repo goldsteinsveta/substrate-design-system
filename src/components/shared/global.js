@@ -123,6 +123,12 @@ export const bodyStyles = css`
     cursor: progress !important;
   }
 
+  .hXS {
+    height: 8px;
+  }
+  .wXS {
+    width: 8px;
+  }
   .box1000 {
     padding-left: ${spacing.max1000};
     padding-right: ${spacing.max1000};

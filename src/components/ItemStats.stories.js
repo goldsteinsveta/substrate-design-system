@@ -8,6 +8,7 @@ import { FlexList } from './layout/flex';
 import { ListItem } from './tooltip/ListItem';
 import { IconFont } from './IconFont';
 import { Button } from './Button';
+import { dvisRythm, dvisPercent } from './DataVisInline';
 
 export default {
   title: 'Design System/ItemStats',
@@ -51,8 +52,16 @@ export const ListItemStatsAsTooltip = () => {
           <IconFont icon="circle" size="small" />
         </ItemStats>
         <ItemStats title={<span className="f5 fw6">Kusama</span>} {...smallDarkMeasuredItemProps} />
-        <ItemStats title="Last Block" {...smallDarkMeasuredItemProps} />
-        <ItemStats title="Epoch" {...smallDarkMeasuredItemProps} />
+        <ItemStats
+          title={
+            <>
+              Last Block
+              {dvisRythm()}
+            </>
+          }
+          {...smallDarkMeasuredItemProps}
+        />
+        <ItemStats title={<>Epoch {dvisPercent()}</>} {...smallDarkMeasuredItemProps} />
       </FlexList>
     );
   };
