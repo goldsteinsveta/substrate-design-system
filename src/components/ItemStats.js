@@ -6,6 +6,10 @@ export const SIZES = {
   small: 'f5',
   large: 'f3',
 };
+export const COLORS = {
+  light: 'b--light-gray',
+  dark: 'bg-dark-gray white b--dark-gray',
+};
 
 const Value = tachyons('div')`
   mt1 fw6
@@ -22,12 +26,13 @@ const ItemInner = tachyons('li')`
   w-100
   list 
   ph3 pv2
-  br bb b--light-gray
+  br bb
+  ${props => COLORS[props.theme]}
 `;
 
-export function ItemStats({ children, title, value, subtitle, size, onClick }) {
+export function ItemStats({ children, title, value, subtitle, size, theme, onClick }) {
   return (
-    <ItemInner onClick={onClick} role="presentation">
+    <ItemInner onClick={onClick} role="presentation" theme={theme}>
       {children}
       <div>
         <Title size={size}>{title}</Title>
@@ -47,6 +52,7 @@ ItemStats.propTypes = {
   size: PropTypes.oneOf(Object.keys(SIZES)),
   onClick: PropTypes.func,
   children: PropTypes.node,
+  theme: PropTypes.oneOf(Object.keys(COLORS)),
 };
 
 ItemStats.defaultProps = {
@@ -57,4 +63,5 @@ ItemStats.defaultProps = {
   size: 'large',
   onClick: undefined,
   children: null,
+  theme: 'light',
 };

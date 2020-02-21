@@ -18,7 +18,8 @@ export default {
 
 export const KnobbedItemStats = () => {
   const size = select('size', ['small', 'large'], 'large');
-  return <ItemStats title="title" value="value" subtitle="subtitle" size={size} />;
+  const theme = select('theme', ['light', 'dark'], 'light');
+  return <ItemStats title="title" value="value" subtitle="subtitle" size={size} theme={theme} />;
 };
 
 export const ListItemStats = () => {
@@ -30,18 +31,26 @@ export const ListItemStats = () => {
     </FlexList>
   );
 };
+export const Themes = () => {
+  return (
+    <FlexList>
+      <ItemStats title="title" value="light" subtitle="subtitle" />
+      <ItemStats title="title" value="dark" subtitle="subtitle" theme="dark" />
+    </FlexList>
+  );
+};
 
 export const ListItemStatsAsTooltip = () => {
   const ListItemStatsNetwork = () => {
     return (
-      <FlexList>
-        <ItemStats>
-          <Button appearance="none">
+      <FlexList border="none">
+        <ItemStats theme="dark">
+          <Button shape="pill">
             <IconFont icon="hand-spock-o" size="medium" />
           </Button>
         </ItemStats>
-        <ItemStats title="title" value="value" subtitle="subtitle" />
-        <ItemStats title="title" value="value" subtitle="subtitle" />
+        <ItemStats title="title" value="value" subtitle="subtitle" theme="dark" />
+        <ItemStats title="title" value="value" subtitle="subtitle" theme="dark" />
       </FlexList>
     );
   };
