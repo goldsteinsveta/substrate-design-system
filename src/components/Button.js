@@ -28,6 +28,7 @@ const StyledButton = tachyons('a')`
   pointer
   dim
   boxFT
+  mh1
 
   ${props => APPEARANCES[props.appearance]}
   ${props => (props.disabled ? 'cur-na' : '')}
@@ -40,7 +41,7 @@ const StyledButton = tachyons('a')`
   ${props => (props.disabled ? 'cur-na' : '')}
 `;
 
-const ButtonWrap = tachyons('div')`inline-flex mh1`;
+const ButtonWrap = tachyons('div')`inline-flex`;
 
 export function Button({
   children,

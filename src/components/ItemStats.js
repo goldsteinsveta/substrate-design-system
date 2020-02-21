@@ -3,42 +3,49 @@ import PropTypes from 'prop-types';
 import tachyons from 'tachyons-components';
 
 export const SIZES = {
-  small: 'f5',
-  large: 'f3',
+  small: 'f4 fw1',
+  large: 'f3 fw6',
 };
 export const COLORS = {
   light: 'b--light-gray',
   dark: 'bg-dark-gray white b--dark-gray',
 };
+export const WIDTHS = {
+  even: 'w-100',
+  measure: 'w4',
+  min: 'w1',
+};
 
+const Title = tachyons('div')`
+  flex items-center justify-between
+  f7 code fw1
+`;
 const Value = tachyons('div')`
-  mt1 fw6
+  flex items-center justify-between mt1 mb3
   ${props => props.size && SIZES[props.size]}
 `;
 const Subtitle = tachyons('span')`
+  flex items-center justify-between
   f6 silver
 `;
-const Title = tachyons('span')`
-  f7 code
-`;
 const ItemInner = tachyons('li')`
-  flex flex-column justify-between
-  w-100
+  flex flex-column
+  ${props => props.width && WIDTHS[props.width]}
   list 
   ph3 pv2
   br bb
   ${props => COLORS[props.theme]}
 `;
 
-export function ItemStats({ children, title, value, subtitle, size, theme, onClick }) {
+export function ItemStats({ width, children, title, value, subtitle, size, theme, onClick }) {
   return (
-    <ItemInner onClick={onClick} role="presentation" theme={theme}>
-      {children}
+    <ItemInner onClick={onClick} role="presentation" theme={theme} width={width}>
+      {children && <div className="flex items-center">{children}</div>}
       <div>
-        <Title size={size}>{title}</Title>
-        <Value size={size}>{value}</Value>
+        {title && <Title size={size}>{title}</Title>}
+        {value && <Value size={size}>{value}</Value>}
       </div>
-      <Subtitle size={size}>{subtitle}</Subtitle>
+      {subtitle && <Subtitle size={size}>{subtitle}</Subtitle>}
     </ItemInner>
   );
 }
@@ -53,15 +60,17 @@ ItemStats.propTypes = {
   onClick: PropTypes.func,
   children: PropTypes.node,
   theme: PropTypes.oneOf(Object.keys(COLORS)),
+  width: PropTypes.oneOf(Object.keys(WIDTHS)),
 };
 
 ItemStats.defaultProps = {
   // isLoading: false,
-  title: '',
-  value: '',
-  subtitle: '',
+  title: null,
+  value: null,
+  subtitle: null,
   size: 'large',
   onClick: undefined,
   children: null,
   theme: 'light',
+  width: 'even',
 };

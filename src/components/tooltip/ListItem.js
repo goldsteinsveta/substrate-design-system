@@ -27,7 +27,6 @@ const ItemWrapper = styled.li`
 const ItemInner = styled.span`
   /* Layout */
   line-height: 21px;
-  padding: 0 0 0 16px;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -60,7 +59,7 @@ const ItemInner = styled.span`
   ${Right} {
     flex: none;
     text-align: right;
-    margin-left: 10px;
+    
     padding: 13px;
     background: ${color.dark};
   }

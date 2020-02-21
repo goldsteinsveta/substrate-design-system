@@ -3,16 +3,14 @@ import PropTypes from 'prop-types';
 import tachyons from 'tachyons-components';
 
 export const BORDERS = {
-  light: 'b--light-gray',
+  light: 'ba b--light-gray br2',
   none: '',
 };
 
 const List = tachyons('ul')`
   flex
-  mw-100
+  mw-100-l
   ma0 pa0 
-  ba
-  br2
   ${props => BORDERS[props.border]}
 `;
 
@@ -22,7 +20,6 @@ export function FlexList({ border, children }) {
 
 FlexList.propTypes = {
   children: PropTypes.node.isRequired,
-  // eslint-disable-next-line react/forbid-prop-types
   border: PropTypes.oneOf(Object.keys(BORDERS)),
 };
 

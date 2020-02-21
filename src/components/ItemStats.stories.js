@@ -25,9 +25,10 @@ export const KnobbedItemStats = () => {
 export const ListItemStats = () => {
   return (
     <FlexList>
-      <ItemStats title="title" value="value" subtitle="subtitle" />
-      <ItemStats title="title" value="value" subtitle="subtitle" />
-      <ItemStats title="title" value="value" subtitle="subtitle" />
+      <ItemStats title="total funds" value="17906,868 KSM" subtitle="~ 26’000’12 USD" />
+      <ItemStats title="at stake" value="20001,005 KSM" subtitle="~ 26000,12 USD" />
+      <ItemStats title="in the period of" value="365 Days" />
+      <ItemStats title="est. returns" value="365 Days" subtitle="~ 2600,12 USD" />
     </FlexList>
   );
 };
@@ -41,22 +42,37 @@ export const Themes = () => {
 };
 
 export const ListItemStatsAsTooltip = () => {
-  const ListItemStatsNetwork = () => {
+  const smallDarkMeasuredItemProps = { theme: 'dark', size: 'small', width: 'measure' };
+
+  const ListItemStatsNetworkCollapsed = () => {
     return (
       <FlexList border="none">
-        <ItemStats theme="dark">
+        <ItemStats theme="dark" width="min">
+          <IconFont icon="circle" size="small" />
+        </ItemStats>
+        <ItemStats title={<span className="f5 fw6">Kusama</span>} {...smallDarkMeasuredItemProps} />
+        <ItemStats title="Last Block" {...smallDarkMeasuredItemProps} />
+        <ItemStats title="Epoch" {...smallDarkMeasuredItemProps} />
+      </FlexList>
+    );
+  };
+  const ListItemStatsNetworkExpanded = () => {
+    return (
+      <FlexList border="none">
+        <ItemStats theme="dark" size="small" width="min" />
+        <ItemStats {...smallDarkMeasuredItemProps}>
           <Button shape="pill">
-            <IconFont icon="hand-spock-o" size="medium" />
+            <IconFont icon="hand-spock-o" />
           </Button>
         </ItemStats>
-        <ItemStats title="title" value="value" subtitle="subtitle" theme="dark" />
-        <ItemStats title="title" value="value" subtitle="subtitle" theme="dark" />
+        <ItemStats value="1.7s" subtitle="/ taget 6s" {...smallDarkMeasuredItemProps} />
+        <ItemStats value="value" subtitle="/ 600" {...smallDarkMeasuredItemProps} />
       </FlexList>
     );
   };
   return (
-    <WithTooltip placement="bottom-start" trigger="click" tooltip={ListItemStatsNetwork}>
-      <ListItem active title="Kusama" right={<IconFont icon="chevron-down" size="tiny" />} />
+    <WithTooltip placement="bottom-start" trigger="click" tooltip={ListItemStatsNetworkExpanded}>
+      <ListItem active title={<ListItemStatsNetworkCollapsed />} />
     </WithTooltip>
   );
 };
