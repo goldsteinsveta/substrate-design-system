@@ -43,15 +43,16 @@ export const Themes = () => {
 };
 
 export const ListItemStatsAsTooltip = () => {
-  const smallDarkMeasuredItemProps = { theme: 'dark', size: 'small', width: 'measure' };
+  const darkMeasuredItemProps = { theme: 'dark', size: 'small', width: 'measure' };
+  const darkMinItemProps = { theme: 'dark', size: 'small', width: 'min' };
 
   const ListItemStatsNetworkCollapsed = () => {
     return (
       <FlexList border="none">
-        <ItemStats theme="dark" width="min">
+        <ItemStats {...darkMinItemProps}>
           <IconFont icon="circle" size="small" />
         </ItemStats>
-        <ItemStats title={<span className="f5 fw6">Kusama</span>} {...smallDarkMeasuredItemProps} />
+        <ItemStats title={<span className="f5 fw6">Kusama</span>} {...darkMeasuredItemProps} />
         <ItemStats
           title={
             <>
@@ -59,9 +60,10 @@ export const ListItemStatsAsTooltip = () => {
               {dvisRythm()}
             </>
           }
-          {...smallDarkMeasuredItemProps}
+          {...darkMeasuredItemProps}
         />
-        <ItemStats title={<>Epoch {dvisPercent()}</>} {...smallDarkMeasuredItemProps} />
+        <ItemStats title={<>Epoch {dvisPercent()}</>} {...darkMeasuredItemProps} />
+        <ItemStats {...darkMinItemProps}>...</ItemStats>
       </FlexList>
     );
   };
@@ -69,13 +71,14 @@ export const ListItemStatsAsTooltip = () => {
     return (
       <FlexList border="none">
         <ItemStats theme="dark" size="small" width="min" />
-        <ItemStats {...smallDarkMeasuredItemProps}>
+        <ItemStats {...darkMeasuredItemProps}>
           <Button shape="pill">
             <IconFont icon="hand-spock-o" />
           </Button>
         </ItemStats>
-        <ItemStats value="1.7s" subtitle="/ taget 6s" {...smallDarkMeasuredItemProps} />
-        <ItemStats value="value" subtitle="/ 600" {...smallDarkMeasuredItemProps} />
+        <ItemStats value="1.7s" subtitle="/ taget 6s" {...darkMeasuredItemProps} />
+        <ItemStats value="value" subtitle="/ 600" {...darkMeasuredItemProps} />
+        <ItemStats {...darkMinItemProps} />
       </FlexList>
     );
   };

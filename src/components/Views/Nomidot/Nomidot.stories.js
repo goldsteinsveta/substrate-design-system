@@ -16,7 +16,11 @@ export default {
   excludeStories: /.*Data$/,
 };
 
-const tabsData = [<Button>Tab</Button>, <Button appearance="secondary">Tab2</Button>];
+const tabsData = [
+  <Button>Accounts</Button>,
+  <Button appearance="secondary">Stakes</Button>,
+  <Button appearance="secondary">Settings</Button>,
+];
 
 const contentRight = (
   <div className="flex items-center">

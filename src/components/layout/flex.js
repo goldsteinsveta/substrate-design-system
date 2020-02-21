@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import tachyons from 'tachyons-components';
 
 export const BORDERS = {
-  light: 'ba b--light-gray br2',
+  light: 'ba b--moon-gray br2',
   none: '',
 };
 

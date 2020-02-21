@@ -7,7 +7,7 @@ export const SIZES = {
   large: 'f3 fw6',
 };
 export const COLORS = {
-  light: 'b--light-gray',
+  light: 'bg-near-white b--moon-gray',
   dark: 'bg-dark-gray white b--dark-gray',
 };
 export const WIDTHS = {
