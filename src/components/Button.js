@@ -18,7 +18,7 @@ const SHAPES = {
 const SIZES = {
   tiny: 'bl br f8',
   small: 'ph1 pv1 f6 fw4',
-  medium: 'ph3 pv3 f5 fw6',
+  medium: 'ph3 pv3 f6 fw1',
 };
 
 const StyledButton = tachyons('a')`
@@ -28,6 +28,7 @@ const StyledButton = tachyons('a')`
   pointer
   dim
   boxFT
+  mh1
 
   ${props => APPEARANCES[props.appearance]}
   ${props => (props.disabled ? 'cur-na' : '')}
@@ -40,7 +41,7 @@ const StyledButton = tachyons('a')`
   ${props => (props.disabled ? 'cur-na' : '')}
 `;
 
-const ButtonWrap = tachyons('div')`inline-flex mh1`;
+const ButtonWrap = tachyons('div')`inline-flex`;
 
 export function Button({
   children,

@@ -123,6 +123,12 @@ export const bodyStyles = css`
     cursor: progress !important;
   }
 
+  .hXS {
+    height: 8px;
+  }
+  .wXS {
+    width: 8px;
+  }
   .box1000 {
     padding-left: ${spacing.max1000};
     padding-right: ${spacing.max1000};
@@ -132,6 +138,23 @@ export const bodyStyles = css`
       padding-left: 1.5em;
       padding-right: 1.5em;
     }
+  }
+
+  .substrate-tabsMenu {
+    position: relative;
+  }
+  .substrate-tabsMenu .button-wrap {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .substrate-tabsMenu:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0) 100%);
   }
 
   .boxFT[toggled='false'] .T,
