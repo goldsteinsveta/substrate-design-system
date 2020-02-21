@@ -134,6 +134,23 @@ export const bodyStyles = css`
     }
   }
 
+  .substrate-tabsMenu {
+    position: relative;
+  }
+  .substrate-tabsMenu .button-wrap {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .substrate-tabsMenu:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 4px;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.25) 0%, rgba(0, 0, 0, 0) 100%);
+  }
+
   .boxFT[toggled='false'] .T,
   .boxFT[toggled='true'] .F,
   .boxFT[toggled='false']:hover .F,

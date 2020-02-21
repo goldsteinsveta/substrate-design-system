@@ -18,7 +18,7 @@ const SHAPES = {
 const SIZES = {
   tiny: 'bl br f8',
   small: 'ph1 pv1 f6 fw4',
-  medium: 'ph3 pv3 f5 fw6',
+  medium: 'ph3 pv3 f6 fw1',
 };
 
 const StyledButton = tachyons('a')`

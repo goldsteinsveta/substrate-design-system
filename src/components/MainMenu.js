@@ -12,6 +12,7 @@ const BoxTop = tachyons('div')`
 const Div = tachyons('div')``;
 
 const BoxTabs = tachyons('div')`
+  substrate-tabsMenu
   flex items-center
   box1000 bg-near-white shadow-1
 `;
@@ -20,11 +21,11 @@ const BoxTabs = tachyons('div')`
 export function MainMenu({ tabs, contentLeft, contentRight }) {
   return (
     <>
+      <BoxTabs>{tabs}</BoxTabs>
       <BoxTop>
         <Div>{contentLeft}</Div>
         <Div>{contentRight}</Div>
       </BoxTop>
-      <BoxTabs>{tabs}</BoxTabs>
     </>
   );
 }
