@@ -1,3 +1,23 @@
+# v1.0.7 (Fri Feb 21 2020)
+
+#### 🐛  Bug Fix
+
+- New Stats Items [#19](https://github.com/goldsteinsveta/substrate-design-system/pull/19) ([@goldsteinsveta](https://github.com/goldsteinsveta))
+- typo [#18](https://github.com/goldsteinsveta/substrate-design-system/pull/18) ([@goldsteinsveta](https://github.com/goldsteinsveta))
+- Toggled css attribute [#16](https://github.com/goldsteinsveta/substrate-design-system/pull/16) ([@goldsteinsveta](https://github.com/goldsteinsveta))
+- fixes #13 [#15](https://github.com/goldsteinsveta/substrate-design-system/pull/15) ([@goldsteinsveta](https://github.com/goldsteinsveta))
+- Nomidot Components [#14](https://github.com/goldsteinsveta/substrate-design-system/pull/14) ([@goldsteinsveta](https://github.com/goldsteinsveta))
+
+#### ⚠️  Pushed to master
+
+- Update netlify.toml  ([@goldsteinsveta](https://github.com/goldsteinsveta))
+
+#### Authors: 1
+
+- [@goldsteinsveta](https://github.com/goldsteinsveta)
+
+---
+
 # v1.0.7 (Thu Feb 20 2020)
 
 #### 🐛  Bug Fix
