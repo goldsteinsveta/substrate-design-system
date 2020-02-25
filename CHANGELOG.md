@@ -1,3 +1,24 @@
+# v1.0.7 (Tue Feb 25 2020)
+
+#### 🐛  Bug Fix
+
+- tachyons at ListItems, ContextMenu [#20](https://github.com/goldsteinsveta/substrate-design-system/pull/20) ([@goldsteinsveta](https://github.com/goldsteinsveta))
+- New Stats Items [#19](https://github.com/goldsteinsveta/substrate-design-system/pull/19) ([@goldsteinsveta](https://github.com/goldsteinsveta))
+- typo [#18](https://github.com/goldsteinsveta/substrate-design-system/pull/18) ([@goldsteinsveta](https://github.com/goldsteinsveta))
+- Toggled css attribute [#16](https://github.com/goldsteinsveta/substrate-design-system/pull/16) ([@goldsteinsveta](https://github.com/goldsteinsveta))
+- fixes #13 [#15](https://github.com/goldsteinsveta/substrate-design-system/pull/15) ([@goldsteinsveta](https://github.com/goldsteinsveta))
+- Nomidot Components [#14](https://github.com/goldsteinsveta/substrate-design-system/pull/14) ([@goldsteinsveta](https://github.com/goldsteinsveta))
+
+#### ⚠️  Pushed to master
+
+- Update netlify.toml  ([@goldsteinsveta](https://github.com/goldsteinsveta))
+
+#### Authors: 1
+
+- [@goldsteinsveta](https://github.com/goldsteinsveta)
+
+---
+
 # v1.0.7 (Fri Feb 21 2020)
 
 #### 🐛  Bug Fix
