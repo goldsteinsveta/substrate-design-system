@@ -4,20 +4,22 @@ import { IconFont } from '../IconFont';
 import { AddressCard } from '../AddressCard';
 import { Button } from '../Button';
 
+import { ListItem } from '../tooltip/ListItem';
+
 export default {
   title: 'Apps/Nomidot/TableCell',
   excludeStories: /.*Data$/,
 };
 
 export const CellControls = () => {
-  const RowEdit = tachyons('div')`flex w-100 h-100 justify-end`;
-  const RowBond = tachyons('div')`flex w-100 h-100 justify-between items-center mv2`;
+  const RowEdit = tachyons('div')`flex w-100 h-100 nt1 justify-end`;
+  const RowBond = tachyons('div')`flex w-100 h-100 justify-between items-center mv3`;
   const RowSum = tachyons('div')`flex w-100 h-100 justify-center items-center`;
 
   const controlsEdit = () => {
     return (
       <>
-        <Button size="tiny" shape="pill" wrapProps={{ className: 'ma0' }}>
+        <Button size="tiny" shape="pill">
           <IconFont icon="times" size="tiny" />
         </Button>
         <Button size="tiny" shape="pill">
@@ -85,19 +87,21 @@ export const CellControls = () => {
 export const CellControlsInContext = () => (
   <table className="substrateTable">
     <thead>
-      <th>
-        Stash <IconFont icon="chevron-down" size="tiny" />
-      </th>
-      <th>Controller</th>
-      <th>Bond</th>
-      <th>
-        Est. Returns <IconFont icon="circle" size="tiny" />
-      </th>
-      <th>Funds</th>
-      <th>Transferable</th>
+      <tr>
+        <th>
+          Stash <IconFont icon="chevron-down" size="tiny" />
+        </th>
+        <th>Controller</th>
+        <th>Bond</th>
+        <th>
+          Est. Returns <IconFont icon="circle" size="tiny" />
+        </th>
+        <th>Funds</th>
+        <th>Transferable</th>
+      </tr>
     </thead>
     <tbody>
-      <tr>
+      <tr className="tr-stash">
         <td className="tl ph2">
           <AddressCard />
         </td>
@@ -115,6 +119,20 @@ export const CellControlsInContext = () => (
         <td />
         <td className="tl ph2">
           <AddressCard />
+        </td>
+        <td>xxx.x</td>
+        <td>x.x</td>
+      </tr>
+      <tr className="tr-stash">
+        <td className="tl ph2">
+          <AddressCard />
+        </td>
+        <td colSpan="3" className="f5 fw6 tc pa0">
+          <ListItem
+            title="to stake select controller"
+            appearance="secondary"
+            right={<IconFont icon="hand-rock-o" />}
+          />
         </td>
         <td>xxx.x</td>
         <td>x.x</td>

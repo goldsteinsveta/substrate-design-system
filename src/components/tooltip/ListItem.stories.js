@@ -1,138 +1,56 @@
 import React from 'react';
+import { withKnobs, text, select } from '@storybook/addon-knobs';
+import WithTooltip from './WithTooltip';
 
 import { ListItem } from './ListItem';
 import { IconFont } from '../IconFont';
-import { StoryLinkWrapper } from '../StoryLinkWrapper';
 
 export default {
   title: 'Design System/tooltip/ListItem',
-
-  decorators: [
-    storyFn => (
-      <div style={{ width: 200, border: '1px solid #ddd', margin: '3rem' }}>{storyFn()}</div>
-    ),
-  ],
-
+  decorators: [withKnobs],
   parameters: {
     component: ListItem,
   },
 };
 
+export const knobbedListItem = () => {
+  const appearance = select('appearance', ['primary', 'secondary', 'text'], 'primary');
+  const left = text('left', 'left');
+  const title = text('title', 'title');
+  const center = text('center', 'center');
+  const right = text('right', 'right');
+  return (
+    <ListItem appearance={appearance} left={left} center={center} right={right} title={title} />
+  );
+};
+
 export const all = () => (
-  <div>
-    <ListItem isLoading />
+  <>
     <ListItem title="Default" />
-    <ListItem title="lorem ipsum dolor sit amet consectatur" />
-    <ListItem title="Default icon" right={<IconFont icon="eye" size="tiny" />} />
-    <ListItem left="left" title="title" center="center" right="right" />
-    <ListItem active left="left" title="active" center="center" right="right" />
-    <ListItem
-      appearance="secondary"
-      active
-      left="left"
-      title="secondary active"
-      center="center"
-      right={<IconFont icon="eye" size="tiny" />}
-    />
-    <ListItem
-      active
-      left="left"
-      title="active icon"
-      center="center"
-      right={<IconFont icon="eye" size="tiny" />}
-    />
+    <ListItem title="Secondary" appearance="secondary" />
+    <ListItem title="Text" appearance="text" />
     <ListItem
       active
       left="✅"
       title="lorem ipsum dolor sit amet consectatur"
       center="center"
-      right={<IconFont icon="eye" size="tiny" />}
-    />
-    <ListItem disabled left="left" title="disabled" center="center" right="right" />
-  </div>
-);
-
-export const loading = () => <ListItem isLoading />;
-export const defaultStory = () => <ListItem title="Default" />;
-
-defaultStory.story = {
-  name: 'default',
-};
-
-export const longTitle = () => <ListItem title="lorem ipsum dolor sit amet consectatur" />;
-
-longTitle.story = {
-  name: 'long title',
-};
-
-export const defaultIcon = () => (
-  <ListItem title="Default icon" right={<IconFont icon="eye" size="tiny" />} />
-);
-
-defaultIcon.story = {
-  name: 'default icon',
-};
-
-export const activeIcon = () => (
-  <ListItem active title="active icon" right={<IconFont icon="eye" size="tiny" />} />
-);
-
-activeIcon.story = {
-  name: 'active icon',
-};
-
-export const wPositions = () => (
-  <ListItem left="left" title="title" center="center" right="right" />
-);
-
-wPositions.story = {
-  name: 'w/positions',
-};
-
-export const wPositionsActive = () => (
-  <ListItem active left="left" title="active" center="center" right="right" />
-);
-
-wPositionsActive.story = {
-  name: 'w/positions active',
-};
-
-export const wPositionsActiveLongTitle = () => (
-  <ListItem
-    active
-    left="✅"
-    title="lorem ipsum dolor sit amet consectatur"
-    center="center"
-    right={<IconFont icon="eye" size="tiny" />}
-  />
-);
-
-wPositionsActiveLongTitle.story = {
-  name: 'w/positions active long title',
-};
-
-export const disabled = () => (
-  <ListItem disabled left="left" title="disabled" center="center" right="right" />
-);
-
-export const withLinkWrapper = () => (
-  <>
-    <ListItem LinkWrapper={StoryLinkWrapper} isLoading href="http://www.google.com" />
-    <ListItem LinkWrapper={StoryLinkWrapper} title="Default" href="http://www.google.com" />
-    <ListItem
-      LinkWrapper={StoryLinkWrapper}
-      title="lorem ipsum dolor sit amet consectatur"
-      to="http://www.google.com"
-    />
-    <ListItem
-      LinkWrapper={StoryLinkWrapper}
-      title="Default icon"
-      right={<IconFont icon="eye" size="tiny" />}
-      to="http://www.google.com"
+      right={<IconFont icon="eye" />}
     />
   </>
 );
 
-withLinkWrapper.story = {
-  name: 'with LinkWrapper',
+export const ContextMenu = ({ ...rest }) => {
+  const appearance = 'secondary';
+
+  return (
+    <span {...rest}>
+      <WithTooltip
+        placement="bottom-start"
+        trigger="click"
+        tooltip={<ListItem appearance={appearance} title="network average" />}
+      >
+        <ListItem title="own stake" appearance={appearance} />
+      </WithTooltip>
+    </span>
+  );
 };

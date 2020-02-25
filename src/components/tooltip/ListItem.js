@@ -1,216 +1,69 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled, { css } from 'styled-components';
-import { color, typography } from '../shared/styles';
-import { inlineGlow } from '../shared/animation';
+import tachyons from 'tachyons-components';
 
-const Left = styled.span`
-  margin-right: 8px;
+export const APPEARANCES = {
+  primary: 'bg-dark-gray white',
+  secondary: 'bg-washed-red red',
+  text: 'bg-white red',
+};
+
+const ItemWrapper = tachyons('li')`
+  list dim
 `;
-const Title = styled.span`
-  font-weight: ${typography.weight.bold};
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+const ItemInner = tachyons('span')`
+  inline-flex items-center justify-between
+  h2
+  ${props => props.appearance && APPEARANCES[props.appearance]}
 `;
-const Center = styled.span``;
-const Right = styled.span``;
+const Item = tachyons('a')`inject-shadow`;
 
-const ItemWrapper = styled.li`
-  list-style: none;
-
-  &:not(:first-of-type) {
-    border-top: 1px solid ${color.mediumlight};
-  }
+const Left = tachyons('span')`ph1`;
+const Title = tachyons('span')`
+  ${props => (props.appearance === 'text' ? 'ph1' : 'ph2')}
+  code f5 fw1 truncate
 `;
-
-const ItemInner = styled.span`
-  /* Layout */
-  line-height: 21px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  background: ${color.darkest};
-  min-height: 40px;
-
-  ${Title} {
-    display: block;
-  }
-
-  ${Left}, ${Center}, ${Right} {
-    display: inline-flex;
-  }
-
-  ${Title}{
-    flex: 0 1 auto;
-    margin-right: auto;
-  }
-
-  ${Center} {
-    flex: 0 1 auto;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  ${Left}, ${Right} {
-    flex: 0 1 auto;
-  }
-
-  ${Right} {
-    flex: none;
-    text-align: right;
-    
-    padding: 13px;
-    background: ${color.dark};
-  }
+const Right = tachyons('span')`
+  flex items-center justify-center
+  w2 h2
+  f3
+  ${props => (props.appearance === 'primary' ? 'bg-black' : '')}
+  ${props => (props.appearance === 'secondary' ? 'bg-light-red white' : '')}
+  ${props => (props.appearance === 'text' ? 'bg-white' : '')}
 `;
 
-const linkStyles = css`
-  font-size: ${typography.size.s2}px;
-  transition: all 150ms ease-out;
-  color: ${color.light};
-  text-decoration: none;
-  display: block;
-
-  /* Styling */
-  ${Title} {
-    color: ${color.mediumlight};
-  }
-
-  ${Right} svg {
-    transition: all 200ms ease-out;
-    opacity: 0;
-    height: 12px;
-    width: 12px;
-    margin: 3px 0;
-    vertical-align: top;
-
-    path {
-      fill: ${color.mediumdark};
-    }
-  }
-
-  &:hover {
-    background: #e3f3ff;
-    cursor: pointer;
-
-    ${Right} svg {
-      opacity: 1;
-    }
-  }
-
-  ${props =>
-    props.active &&
-    css`
-      ${Title} {
-        font-weight: ${typography.weight.bold};
-      }
-      ${Title}, ${Center} {
-        color: ${props.activeColor};
-      }
-
-      ${Right} svg {
-        opacity: 1;
-        path {
-          fill: ${props.activeColor};
-        }
-      }
-    `};
-
-  ${props =>
-    props.isLoading &&
-    css`
-      ${Title} {
-        ${inlineGlow};
-        flex: 0 1 auto;
-        display: inline-block;
-      }
-    `};
-
-  ${props =>
-    props.disabled &&
-    css`
-      cursor: not-allowed !important;
-      ${Title}, ${Center} {
-        color: ${color.mediumdark};
-      }
-    `};
-`;
-
-// eslint-disable-next-line jsx-a11y/anchor-has-content
-const Item = styled(({ active, activeColor, isLoading, ...rest }) => <a {...rest} />)`
-  ${linkStyles}
-`;
-
-const buildStyledLinkWrapper = LinkWrapper => styled(
-  ({ active, isLoading, activeColor, ...linkWrapperRest }) => <LinkWrapper {...linkWrapperRest} />
-)`
-  ${linkStyles}
-`;
-
-export function ListItem({
-  appearance,
-  left,
-  title,
-  center,
-  right,
-  onClick,
-  LinkWrapper,
-  ...rest
-}) {
-  const listItemActiveColor = color[appearance];
-  const linkInner = (
-    <ItemInner onClick={onClick} role="presentation">
-      {left && <Left>{left}</Left>}
-      {title && <Title>{title}</Title>}
-      {center && <Center>{center}</Center>}
-      {right && <Right>{right}</Right>}
-    </ItemInner>
-  );
-
-  if (LinkWrapper) {
-    const StyledLinkWrapper = buildStyledLinkWrapper(LinkWrapper);
-
-    return (
-      <ItemWrapper>
-        <StyledLinkWrapper activeColor={listItemActiveColor} {...rest}>
-          {linkInner}
-        </StyledLinkWrapper>
-      </ItemWrapper>
-    );
-  }
-
+export function ListItem({ appearance, left, title, center, right, onClick, children }) {
   return (
     <ItemWrapper>
-      <Item activeColor={listItemActiveColor} {...rest}>
-        {linkInner}
+      <Item>
+        <ItemInner appearance={appearance} onClick={onClick} role="presentation">
+          {left && <Left>{left}</Left>}
+          {title && <Title appearance={appearance}>{title}</Title>}
+          {center && <Left>center</Left>}
+          {right && <Right appearance={appearance}>{right}</Right>}
+          {children}
+        </ItemInner>
       </Item>
     </ItemWrapper>
   );
 }
 
 ListItem.propTypes = {
-  appearance: PropTypes.oneOf(['primary', 'secondary']),
-  isLoading: PropTypes.bool,
+  appearance: PropTypes.oneOf(['primary', 'secondary', 'text']),
   left: PropTypes.node,
   title: PropTypes.node,
   center: PropTypes.node,
   right: PropTypes.node,
-  active: PropTypes.bool,
-  disabled: PropTypes.bool,
-  LinkWrapper: PropTypes.func,
   onClick: PropTypes.func,
+  children: PropTypes.node,
 };
 
 ListItem.defaultProps = {
   appearance: 'primary',
-  isLoading: false,
   left: null,
-  title: <span>Loading</span>,
+  title: null,
   center: null,
   right: null,
-  active: false,
-  disabled: false,
-  LinkWrapper: undefined,
   onClick: undefined,
+  children: null,
 };
