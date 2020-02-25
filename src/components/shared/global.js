@@ -109,6 +109,25 @@ export const bodyStyles = css`
     margin: 1rem 0;
   }
 
+  .hover-bg:hover {
+    background-color: #ffdbdb;
+  }
+
+  .inject-shadow {
+    display: inline-block;
+    position: relative;
+  }
+  .inject-shadow:after {
+    content: '';
+    height: 100%;
+    width: 100%;
+    display: block;
+    position: absolute;
+    top: 0;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.05);
+    pointer-events:none;
+  }
+
   .ani-glow {
     animation: ${glow} 1.5s ease-in-out infinite;
   }
@@ -194,6 +213,9 @@ export const bodyStyles = css`
     top: 0;
     bottom: 0;
     margin: auto;
+  }
+  .substrateTable .tr-stash td {
+    background: linear-gradient(0deg, rgba(255,255,255,0) 30%, rgba(0,0,0,0.02) 100%);
   }
 
   &.ReactModal__Body--open {

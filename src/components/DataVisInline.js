@@ -2,7 +2,7 @@ import React from 'react';
 
 export function dvisRythm() {
   return (
-    <div className="ml1">
+    <div className="ml1 inline-flex">
       <div className="hXS wXS br bg-near-white inline-flex ml1 br-pill" />
       <div className="hXS wXS br bg-silver inline-flex ml1 br-pill" />
     </div>

@@ -7,14 +7,22 @@ export const SIZES = {
   large: 'f3 fw6',
 };
 export const COLORS = {
-  light: 'bg-near-white b--moon-gray',
+  light: 'b--near-white',
   dark: 'bg-dark-gray white b--dark-gray',
 };
 export const WIDTHS = {
-  even: 'w-100',
-  measure: 'w4',
-  min: 'w1',
+  even: 'w-100 pa3',
+  measure: 'w4 pa2',
+  min: 'w2 pa2',
 };
+
+const ItemInner = tachyons('li')`
+  flex flex-column
+  ${props => props.width && WIDTHS[props.width]}
+  list 
+  br bb
+  ${props => COLORS[props.theme]}
+`;
 
 const Title = tachyons('div')`
   flex items-center justify-between
@@ -28,18 +36,20 @@ const Subtitle = tachyons('span')`
   flex items-center justify-between
   f6 silver
 `;
-const ItemInner = tachyons('li')`
-  flex flex-column
-  ${props => props.width && WIDTHS[props.width]}
-  list 
-  ph3 pv2
-  br bb
-  ${props => COLORS[props.theme]}
-`;
 
-export function ItemStats({ width, children, title, value, subtitle, size, theme, onClick }) {
+export function ItemStats({
+  width,
+  children,
+  title,
+  value,
+  subtitle,
+  size,
+  theme,
+  onClick,
+  ...rest
+}) {
   return (
-    <ItemInner onClick={onClick} role="presentation" theme={theme} width={width}>
+    <ItemInner onClick={onClick} role="presentation" theme={theme} width={width} {...rest}>
       {children && <div className="flex items-center">{children}</div>}
       <div>
         {title && <Title size={size}>{title}</Title>}
@@ -53,7 +63,7 @@ export function ItemStats({ width, children, title, value, subtitle, size, theme
 ItemStats.propTypes = {
   // TODO: isLoading
   // isLoading: PropTypes.bool,
-  title: PropTypes.string,
+  title: PropTypes.node,
   value: PropTypes.node,
   subtitle: PropTypes.string,
   size: PropTypes.oneOf(Object.keys(SIZES)),

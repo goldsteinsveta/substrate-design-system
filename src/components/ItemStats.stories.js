@@ -43,14 +43,24 @@ export const Themes = () => {
 };
 
 export const ListItemStatsAsTooltip = () => {
-  const darkMeasuredItemProps = { theme: 'dark', size: 'small', width: 'measure' };
-  const darkMinItemProps = { theme: 'dark', size: 'small', width: 'min' };
+  const darkMeasuredItemProps = {
+    theme: 'dark',
+    size: 'small',
+    width: 'measure',
+    className: 'justify-center',
+  };
+  const darkMinItemProps = {
+    theme: 'dark',
+    size: 'small',
+    width: 'min',
+    className: 'justify-center',
+  };
 
   const ListItemStatsNetworkCollapsed = () => {
     return (
       <FlexList border="none">
         <ItemStats {...darkMinItemProps}>
-          <IconFont icon="circle" size="small" />
+          <IconFont icon="circle" size="tiny" />
         </ItemStats>
         <ItemStats title={<span className="f5 fw6">Kusama</span>} {...darkMeasuredItemProps} />
         <ItemStats
@@ -84,7 +94,9 @@ export const ListItemStatsAsTooltip = () => {
   };
   return (
     <WithTooltip placement="bottom-start" trigger="click" tooltip={ListItemStatsNetworkExpanded}>
-      <ListItem active title={<ListItemStatsNetworkCollapsed />} />
+      <ListItem active>
+        <ListItemStatsNetworkCollapsed />
+      </ListItem>
     </WithTooltip>
   );
 };

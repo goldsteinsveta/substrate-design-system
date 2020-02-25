@@ -9,6 +9,7 @@ import { IconFont } from '../../IconFont';
 import { CellControlsInContext } from '../../tables/TableCell.stories';
 
 import { ListItemStats, ListItemStatsAsTooltip } from '../../ItemStats.stories';
+import { ContextMenu } from '../../tooltip/ListItem.stories';
 
 export default {
   title: 'Apps/Nomidot',
@@ -41,9 +42,14 @@ export const start = () => (
   <>
     <MainMenu contentLeft={<NomidotLogo />} contentRight={contentRight} tabs={tabsData} />
     <LayoutBox>
+      <h3 className="mb3">
+        Staking stats for
+        <ContextMenu className="mh2" />
+      </h3>
       <ListItemStats />
     </LayoutBox>
     <LayoutBox>
+      <h5 className="mb3">My accounts</h5>
       <CellControlsInContext />
     </LayoutBox>
     <Button shape="pill" wrapProps={{ className: 'absolute right-2 bottom-2' }}>
