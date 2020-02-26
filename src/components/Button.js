@@ -21,19 +21,25 @@ const SIZES = {
   medium: 'ph3 pv3 f6 fw1',
 };
 
+const WIDTHS = {
+  content: 'mh1',
+  full: 'w-100',
+};
+
 const StyledButton = tachyons('a')`
-  flex items-center
+  flex items-center justify-center
   white code 
   bg-black
   pointer
   dim
   boxFT
-  mh1
 
   ${props => APPEARANCES[props.appearance]}
-  ${props => (props.disabled ? 'cur-na' : '')}
   ${props => SHAPES[props.shape]}
   ${props => SIZES[props.size]}
+  ${props => WIDTHS[props.width]}
+  
+  ${props => (props.disabled ? 'cur-na' : '')}
   ${props => (props.size === 'tiny' && props.shape === 'pill' ? 'bt bb b--black' : '')}
   ${props => (props.size === 'tiny' && props.appearance === 'outline' ? 'pa1' : '')}
   ${props => (props.size === 'tiny' && props.appearance === 'outlineColor' ? 'pa1' : '')}
@@ -78,6 +84,7 @@ export function Button({
 Button.propTypes = {
   children: PropTypes.oneOfType([PropTypes.string, PropTypes.node]).isRequired,
   appearance: PropTypes.oneOf(Object.keys(APPEARANCES)),
+  width: PropTypes.oneOf(Object.keys(WIDTHS)),
   size: PropTypes.oneOf(Object.keys(SIZES)),
   shape: PropTypes.oneOf(Object.keys(SHAPES)),
   toggled: PropTypes.bool,
@@ -96,6 +103,7 @@ Button.defaultProps = {
   toggled: false,
   toggleTo: '',
   isDisabled: false,
+  width: 'content',
   size: 'medium',
   shape: 'rect',
   wrapProps: { className: 'button-wrap' },
