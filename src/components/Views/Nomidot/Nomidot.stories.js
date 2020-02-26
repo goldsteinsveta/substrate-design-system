@@ -1,15 +1,14 @@
 import React from 'react';
 import tachyons from 'tachyons-components';
 
-import { MainMenu } from '../../MainMenu';
-import { NomidotLogo } from './NomidotLogo';
 import { Button } from '../../Button';
 import { IconFont } from '../../IconFont';
 
-import { CellControlsInContext } from '../../tables/TableCell.stories';
+import { CellControlsInContext as TableCell } from '../../tables/TableCell.stories';
 
-import { ListItemStats, ListItemStatsAsTooltip } from '../../ItemStats.stories';
-import { ContextMenu } from '../../tooltip/ListItem.stories';
+import { ContentAndTabs as MainMenu } from '../../MainMenu.stories';
+import { ListItemStats as ItemStats } from '../../ItemStats.stories';
+import { ContextMenu as ListItem } from '../../tooltip/ListItem.stories';
 
 export default {
   title: 'Apps/Nomidot',
@@ -17,40 +16,22 @@ export default {
   excludeStories: /.*Data$/,
 };
 
-const tabsData = [
-  <Button>Accounts</Button>,
-  <Button appearance="secondary">Stakes</Button>,
-  <Button appearance="secondary">Settings</Button>,
-];
-
-const contentRight = (
-  <div className="flex items-center">
-    <ListItemStatsAsTooltip />
-    <Button wrapProps={{ className: 'nl1 nr1' }}>
-      <IconFont icon="chevron-down" size="tiny" />
-    </Button>
-    <Button className="ml2" appearance="secondary" shape="pill" size="small">
-      <IconFont icon="info" color="white" size="small" />
-    </Button>
-  </div>
-);
-
 // TODO: components for this kind of things
 const LayoutBox = tachyons('div')`center flex box1000 flex-column mv4`;
 
 export const start = () => (
   <>
-    <MainMenu contentLeft={<NomidotLogo />} contentRight={contentRight} tabs={tabsData} />
+    <MainMenu />
     <LayoutBox>
       <h3 className="mb3">
         Staking stats for
-        <ContextMenu className="mh2" />
+        <ListItem className="mh2" />
       </h3>
-      <ListItemStats />
+      <ItemStats />
     </LayoutBox>
     <LayoutBox>
       <h5 className="mb3">My accounts</h5>
-      <CellControlsInContext />
+      <TableCell />
     </LayoutBox>
     <Button shape="pill" wrapProps={{ className: 'absolute right-2 bottom-2' }}>
       <IconFont icon="space-shuttle" size="medium" />
