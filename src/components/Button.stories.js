@@ -16,7 +16,9 @@ export const KnobbedButton = () => {
 
   // select args: label, options, default, *groupID*
   const appearance = select('appearance', ['primary', 'secondary', 'outline'], 'primary');
+  const width = select('width', ['content', 'full'], 'content');
   const size = select('size', ['tiny', 'small', 'medium'], 'medium');
+  const shape = select('shape', ['rect', 'pill'], 'rect');
   const isDisabled = boolean('isDisabled', false);
   const isLoading = boolean('isLoading', false);
   const loadingText = text('loadingText', 'Loading...');
@@ -26,7 +28,9 @@ export const KnobbedButton = () => {
   return (
     <Button
       appearance={appearance}
+      width={width}
       size={size}
+      shape={shape}
       toggleTo={toggleTo}
       isDisabled={isDisabled}
       isLoading={isLoading}
