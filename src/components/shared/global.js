@@ -162,7 +162,7 @@ export const bodyStyles = css`
   .substrate-tabsMenu {
     position: relative;
   }
-  .substrate-tabsMenu .button-wrap {
+  .substrate-tabsMenu .boxFT {
     margin-left: 0;
     margin-right: 0;
   }

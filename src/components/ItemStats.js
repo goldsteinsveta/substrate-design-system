@@ -66,11 +66,11 @@ ItemStats.propTypes = {
   title: PropTypes.node,
   value: PropTypes.node,
   subtitle: PropTypes.string,
+  theme: PropTypes.oneOf(Object.keys(COLORS)),
   size: PropTypes.oneOf(Object.keys(SIZES)),
+  width: PropTypes.oneOf(Object.keys(WIDTHS)),
   onClick: PropTypes.func,
   children: PropTypes.node,
-  theme: PropTypes.oneOf(Object.keys(COLORS)),
-  width: PropTypes.oneOf(Object.keys(WIDTHS)),
 };
 
 ItemStats.defaultProps = {
@@ -78,9 +78,9 @@ ItemStats.defaultProps = {
   title: null,
   value: null,
   subtitle: null,
+  theme: 'light',
   size: 'large',
+  width: 'even',
   onClick: undefined,
   children: null,
-  theme: 'light',
-  width: 'even',
 };
