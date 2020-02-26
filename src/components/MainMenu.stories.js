@@ -5,9 +5,7 @@ import { MainMenu } from './MainMenu';
 import { Button } from './Button';
 import { IconFont } from './IconFont';
 
-import WithTooltip from './tooltip/WithTooltip';
-import { ListItem } from './tooltip/ListItem';
-import { StatsList } from './StatsList';
+import { ListItemStatsAsTooltip } from './ItemStats.stories';
 
 import { NomidotLogo } from './Views/Nomidot/NomidotLogo';
 
@@ -18,34 +16,27 @@ export default {
   decorators: [withKnobs],
 };
 
-const itemsData = [
-  { title: 'Last Block', value: '1.7s' },
-  { title: 'Epoch', value: '170' },
-  { title: 'Net Staked', value: '20982019 KSM' },
+const tabsData = [
+  <Button>Accounts</Button>,
+  <Button appearance="secondary">Stakes</Button>,
+  <Button appearance="secondary">Settings</Button>,
 ];
 
-const StatsData = () => <StatsList items={itemsData} />;
-
-const NetworkData = () => {
-  return (
-    <>
-      {/* TODO: should be own component */}
-      <WithTooltip placement="bottom-start" trigger="click" tooltip={StatsData}>
-        <ListItem
-          title="Kusama"
-          left={<IconFont color="green" icon="circle" size="tiny" />}
-          right={<IconFont icon="chevron-down" color="white" size="tiny" />}
-        />
-      </WithTooltip>
-    </>
-  );
-};
-
-export const tabsData = [<Button>Tab</Button>, <Button appearance="secondary">Tab2</Button>];
+const ContentRight = (
+  <div className="flex items-center">
+    <ListItemStatsAsTooltip />
+    <Button wrapProps={{ className: 'nl1 nr1' }}>
+      <IconFont icon="chevron-down" size="tiny" />
+    </Button>
+    <Button className="ml2" appearance="secondary" shape="pill" size="small">
+      <IconFont icon="info" color="white" size="small" />
+    </Button>
+  </div>
+);
 
 export const knobbedMainMenu = () => {
-  const contentLeft = text('ContentLeft', 'Logo');
-  const contentRight = text('ContentRight', 'Network');
+  const contentLeft = text('ContentLeft', 'ContentLeft');
+  const contentRight = text('ContentRight', 'ContentRight');
 
   const tabs = array('tabs titles', ['tab1', 'tab2']);
   const arrayOfButtons = [];
@@ -58,12 +49,12 @@ export const knobbedMainMenu = () => {
   return <MainMenu contentLeft={contentLeft} tabs={arrayOfButtons} contentRight={contentRight} />;
 };
 
-export const justStripe = () => <MainMenu contentLeft={<NomidotLogo />} />;
+export const ContentLeft = () => <MainMenu contentLeft={<NomidotLogo />} />;
 
-export const withContent = () => (
-  <MainMenu contentLeft={<NomidotLogo />} contentRight={<NetworkData />} />
-);
+export const ContentLeftAndRight = () => {
+  return <MainMenu contentLeft={<NomidotLogo />} contentRight={ContentRight} />;
+};
 
-export const withContentAndTabs = () => (
-  <MainMenu contentLeft={<NomidotLogo />} tabs={tabsData} contentRight="helloWorld" />
+export const ContentAndTabs = () => (
+  <MainMenu contentLeft={<NomidotLogo />} tabs={tabsData} contentRight={ContentRight} />
 );

@@ -20,7 +20,27 @@ export default {
 export const KnobbedItemStats = () => {
   const size = select('size', ['small', 'large'], 'large');
   const theme = select('theme', ['light', 'dark'], 'light');
-  return <ItemStats title="title" value="value" subtitle="subtitle" size={size} theme={theme} />;
+  const width = select('width', ['even', 'measure', 'min'], 'even');
+  return (
+    <FlexList border="none">
+      <ItemStats
+        title="title"
+        value="value"
+        subtitle="subtitle"
+        size={size}
+        width={width}
+        theme={theme}
+      />
+      <ItemStats
+        title="title"
+        value="value"
+        subtitle="subtitle"
+        size={size}
+        width={width}
+        theme={theme}
+      />
+    </FlexList>
+  );
 };
 
 export const ListItemStats = () => {
