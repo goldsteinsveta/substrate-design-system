@@ -4,7 +4,7 @@ import tachyons from 'tachyons-components';
 import { Button } from '../../Button';
 import { IconFont } from '../../IconFont';
 
-import { CellControlsInContext as TableCell } from '../../tables/TableCell.stories';
+import { TableCellControlsInContext as TableCell } from '../../tables/TableCell.stories';
 
 import { ContentAndTabs as MainMenu } from '../../MainMenu.stories';
 import { ListItemStats as ItemStats } from '../../ItemStats.stories';

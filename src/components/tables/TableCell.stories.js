@@ -1,90 +1,27 @@
 import React from 'react';
-import tachyons from 'tachyons-components';
+import { withKnobs, text, select } from '@storybook/addon-knobs';
+
+import { TableCellControls } from './TableCellControls';
+
 import { IconFont } from '../IconFont';
 import { AddressCard } from '../AddressCard';
-import { Button } from '../Button';
 
 import { ListItem } from '../tooltip/ListItem';
 
 export default {
-  title: 'Apps/Nomidot/TableCell',
+  title: 'Design System/TableCellControls',
   excludeStories: /.*Data$/,
+  component: TableCellControls,
+  decorators: [withKnobs],
 };
 
-export const CellControls = () => {
-  const RowEdit = tachyons('div')`flex w-100 h-100 nt1 justify-end`;
-  const RowBond = tachyons('div')`flex w-100 h-100 justify-between items-center mv3`;
-  const RowSum = tachyons('div')`flex w-100 h-100 justify-center items-center`;
-
-  const controlsEdit = () => {
-    return (
-      <>
-        <Button size="tiny" shape="pill">
-          <IconFont icon="times" size="tiny" />
-        </Button>
-        <Button size="tiny" shape="pill">
-          <IconFont icon="check" size="tiny" />
-        </Button>
-        <Button size="small" shape="pill" appearance="none" wrapProps={{ className: 'nt1' }}>
-          <IconFont icon="edit" size="small" />
-        </Button>
-      </>
-    );
-  };
-
-  const controlsBond = () => {
-    return (
-      <>
-        <Button
-          shape="pill"
-          size="small"
-          toggleTo={<IconFont icon="circle" size="small" />}
-          appearance="secondary"
-        >
-          <IconFont icon="hand-scissors-o" aria-label="identicon" size="small" />
-        </Button>
-        9477133.53
-        <Button
-          shape="pill"
-          size="small"
-          toggleTo={<IconFont icon="hand-paper-o" size="small" />}
-          appearance="secondary"
-        >
-          <IconFont icon="hand-rock-o" aria-label="identicon" size="small" />
-        </Button>
-      </>
-    );
-  };
-
-  const controlsAmount = () => {
-    return (
-      <>
-        <Button appearance="outlineColor" size="tiny">
-          25%
-        </Button>
-        <Button appearance="outlineColor" size="tiny">
-          50%
-        </Button>
-        <Button appearance="outlineColor" size="tiny">
-          75%
-        </Button>
-        <Button appearance="outlineColor" size="tiny">
-          100%
-        </Button>
-      </>
-    );
-  };
-
-  return (
-    <>
-      <RowEdit>{controlsEdit()}</RowEdit>
-      <RowBond>{controlsBond()}</RowBond>
-      <RowSum>{controlsAmount()}</RowSum>
-    </>
-  );
+export const KnobbedTableCellControls = () => {
+  const value = text('value', 'fetching value');
+  const mode = select('mode', ['idle', 'edit'], 'idle');
+  return <TableCellControls value={value} mode={mode} />;
 };
 
-export const CellControlsInContext = () => (
+export const TableCellControlsInContext = () => (
   <table className="substrateTable">
     <thead>
       <tr>
@@ -107,7 +44,29 @@ export const CellControlsInContext = () => (
         </td>
         <td />
         <td rowSpan="2" className="f5 fw6 center pa0">
-          {CellControls()}
+          <TableCellControls value="3726.392" />
+        </td>
+        <td rowSpan="2" className="f5 fw6 center ph4 pv1">
+          X.X
+        </td>
+        <td>xxx.x</td>
+        <td>x.x</td>
+      </tr>
+      <tr>
+        <td />
+        <td className="tl ph2">
+          <AddressCard />
+        </td>
+        <td>xxx.x</td>
+        <td>x.x</td>
+      </tr>
+      <tr className="tr-stash">
+        <td className="tl ph2">
+          <AddressCard />
+        </td>
+        <td />
+        <td rowSpan="2" className="f5 fw6 center pa0">
+          <TableCellControls mode="edit" value="3726.392" />
         </td>
         <td rowSpan="2" className="f5 fw6 center ph4 pv1">
           X.X
