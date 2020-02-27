@@ -52,7 +52,14 @@ export function BondControls({ mode, value, onChange }) {
       return (
         <>
           <div />
-          <Input center value={value} label="Input with value" hideLabel onChange={onChange} />
+          <Input
+            center
+            value={value}
+            label="Input with value"
+            hideLabel
+            onChange={onChange}
+            wrapClass="mb0"
+          />
           <div />
         </>
       );

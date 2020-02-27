@@ -1,249 +1,66 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled, { css } from 'styled-components';
-import { color, typography } from './shared/styles';
-import { jiggle } from './shared/animation';
+import tachyons from 'tachyons-components';
 import { IconFont } from './IconFont';
 
-// prettier-ignore
-const Label = styled.label`
-  font-weight: ${props => props.appearance !== 'code' && typography.weight.bold};
-  font-family: ${props => props.appearance === 'code' && typography.type.code };
-  font-size: ${props => props.appearance === 'code' ? typography.size.s1 : typography.size.s2 }px;
+const APPEARANCES = {
+  primary: {
+    Label: '',
+    InputWrapper: 'ba b--washed-red',
+  },
+  secondary: {
+    Label: '',
+    InputWrapper: 'ba b--near-white bg-near-white',
+  },
+  text: {
+    Label: '',
+    InputWrapper: 'b--none',
+  },
+  code: {
+    Label: 'code green',
+    InputWrapper: 'ba b--transparent bg-dark-gray light-green',
+  },
+};
+
+const SHAPES = {
+  pill: '',
+  rect: '',
+};
+
+const InputContainer = tachyons('div')`
+  mb3
+  ${props => props.wrapClass}
+  ${props => (props.orientation === 'vertical' ? 'flex-column' : 'flex items-center')}
 `;
-
-// prettier-ignore
-const LabelWrapper = styled.div`
-  margin-bottom: 0.33em;
-  
-  ${props => props.hideLabel && css`
-    border: 0px !important;
-    clip: rect(0 0 0 0) !important;
-    -webkit-clip-path: inset(100%) !important;
-    clip-path: inset(100%) !important;
-    height: 1px !important;
-    overflow: hidden !important;
-    padding: 0px !important;
-    position: absolute !important;
-    white-space: nowrap !important;
-    width: 1px !important;
-  `}
+const Label = tachyons('label')`
+  fw6 f7 ph2
+  ${props => props.appearance && APPEARANCES[props.appearance].Label}
+  ${props => (props.hideLabel ? 'dn' : '')}
 `;
-
-// prettier-ignore
-const InputText = styled.input.attrs({ type: 'text' })`
-  ::placeholder {
-    color: ${color.mediumdark};
-  }
-  font-weight: inherit;
-  appearance: none;
-  border:1px solid #ff725c;
-  box-sizing: border-box;
-  display: block;
-  outline: none;
-  width: 100%;
-  margin: 0;
-  text-align: ${props => props.center === true ? 'center' : '' };
-
-  &[disabled] {
-    cursor: not-allowed;
-    opacity: .5;
-  }
-
-  &:-webkit-autofill { -webkit-box-shadow: 0 0 0 3em ${color.lightest} inset; }
+const InputWrapper = tachyons('div')`
+  inline-flex relative 
+  w-100
+  ma0 pa2
+  ${props => props.appearance && APPEARANCES[props.appearance].InputWrapper}
+  ${props => (props.shape === 'pill' ? 'br-pill' : '')}
 `;
-
-const Error = styled.div`
-  position: absolute;
-  right: 0;
+const InputText = tachyons('input')`
+  input-reset
+  w-100
+  b--none bg-transparent dim
+  ${props => (props.appearance === 'code' ? 'code' : '')}
+  ${props => (props.disabled ? 'cur-na' : '')}
+  ${props => (props.error !== null ? 'fw6 red' : '')}
+  ${props => (props.center ? 'tc' : '')}
 `;
-
-// prettier-ignore
-const InputWrapper = styled.div`
-  display: inline-block;
-  position: relative;
-  vertical-align: top;
-  width: 100%;
-
-  ${InputText} {
-    background: ${color.lightest};
-    border-radius: 0;
-    color: ${color.darkest};
-    font-family: ${props => props.appearance === 'code' && typography.type.code };
-    font-size: ${props => props.appearance === 'code' && typography.size.s1}px;
-    line-height: 20px;
-    padding: 0.5em;
-
-    &:focus { box-shadow: ${color.primary} 0 0 0 1px inset; }
-
-    ${props => props.appearance === 'secondary' && css`
-      box-shadow: ${color.mediumlight} 0 0 0 1px inset;
-
-      &:focus { box-shadow: ${color.secondary} 0 0 0 1px inset; }
-    `}
-
-    ${props => props.appearance === 'tertiary' && css`
-      padding: 0;
-      border: none;
-      box-shadow: none;
-      background: none;
-
-      &:focus { box-shadow: none !important; }
-    `}
-
-    ${props => props.appearance === 'pill' && css`
-      font-size: ${typography.size.s1}px;
-      line-height: 16px;
-      padding: .5em 1em; //28
-      border-radius: 3em;
-      background: transparent;
-
-      box-shadow: ${color.medium} 0 0 0 1px inset;
-
-      &:focus { box-shadow: ${color.secondary} 0 0 0 1px inset; }
-    `}
-
-    ${props => props.appearance === 'code' && css`
-      font-size: ${typography.size.s2 -1 }px;
-      line-height: 16px;
-      font-family: ${typography.type.code};
-      border-radius: 2px;
-      background: rgba(0,0,0,.05);
-      padding: 3px 6px;
-
-      &:focus { box-shadow: ${color.secondary} 0 0 0 1px inset; }
-    `}
-  }
-
-  ${Error} {
-    position: absolute;
-    top: 50%;
-    right: 1px;
-    margin-left: 1px;
-    transform: translate3d(100%, -50%, 0);
-    transition: all 200ms ease-out;
-    font-family: ${props => props.appearance === 'code' ? typography.type.code : typography.type.primary } ;
-    font-size: ${typography.size.s1}px;
-    line-height: 1em;
-    opacity: 0;
-    pointer-events: none;
-
-    background: ${props =>
-      props.appearance !== 'tertiary' &&
-       'rgba(255,255,255,.9)' };
-    color: ${color.negative};
-
-    ${props => props.appearance === 'tertiary' && css` right: 0; `}
-    ${props => props.appearance === 'code' && css`
-      top: -4px;
-      right: auto;
-      left: 0;
-      border-radius: 4px;
-      padding: 6px;
-    `}
-  }
-
-  ${props => props.icon && css`
-    > i {
-      transition: all 150ms ease-out;
-      position: absolute;
-      top: 50%;
-      height: 1em;
-      width: 1em;
-  		font-size: ${props.appearance === 'pill' ? 0.75 : 1 }em;
-      margin: -.5em .5em auto;
-      z-index: 1;
-      opacity: 0.6;
-
-      background: transparent;
-
-      path {
-        transition: all 150ms ease-out;
-        fill: ${color.mediumdark};
-      }
-    }
-
-    ${InputText} {
-      padding-left: 2.75em;
-
-      ${props.appearance === 'pill' && css` padding-left: 2.4em; `};
-      ${props.appearance === 'tertiary' && css` padding-left: 1.75em; `};
-    }
-    > i { margin-left: ${props.appearance === 'tertiary' ? 0 : 0.8 }em; }
-    &:hover > i {
-      opacity: 1;
-    }
-
-  `}
-
-  ${props => props.error && css`
-    ${Error} {
-      color: ${color.negative};
-      background: none;
-      transform: translate3d(0%, -50%, 0);
-      opacity: 1;
-      padding: .25em 1.25em .25em .5em;
-    }
-
-    ${InputText}:hover + ${Error},
-    ${InputText}:focus + ${Error} {
-      opacity: 0;
-      transform: translate3d(100%, -50%, 0);
-      padding: 0;
-    }
-
-    ${props.focused && css`
-      ${Error} {
-        opacity: 0;
-        transform: translate3d(100%, -50%, 0);
-      }
-    `}
-
-    ${props.appearance === 'code' && css`
-      ${Error} {
-        opacity: 0;
-      }
-      ${InputText}:hover + ${Error},
-      ${InputText}:focus + ${Error} {
-        transform: translate3d(0%, -100%, 0);
-        opacity: 1;
-        padding: .25em 1.25em .25em .5em;
-      }
-    `}
-
-    ${props.appearance !== 'tertiary' && css`
-      ${InputText} {
-          box-shadow: ${color.negative} 0 0 0 1px inset;
-          &:focus { box-shadow: ${color.negative} 0 0 0 1px inset !important;  }
-      }
-    `};
-
-    i {
-      animation: ${jiggle} 700ms ease-out;
-      path { fill: ${color.negative}; }
-    }
-  `}
+const Error = tachyons('div')`
+  absolute 
+  flex items-center 
+  h-100 right-1 top-0 bottom-0 
+  f7 red
 `;
-// prettier-ignore
-const InputContainer = styled.div`
-  ${props => props.orientation === 'horizontal' && css`
-    display: table-row;
-
-    ${LabelWrapper}, ${InputWrapper} {
-      display: table-cell;
-    }
-
-    ${LabelWrapper} {
-      width: 1px;
-      padding-right: 20px;
-      vertical-align: middle;
-    }
-
-    ${InputWrapper} {
-      width: auto;
-    }
-
-  `}
+const ErrorMessage = tachyons('span')`
+  ${props => (props.appearance === 'code' ? 'code' : '')}
 `;
 
 export function Input({
@@ -255,9 +72,10 @@ export function Input({
   icon,
   error,
   appearance,
-  className,
-  focused,
+  wrapClass,
   lastErrorValue,
+  center,
+  shape,
   ...props
 }) {
   const errorId = `${id}-error`;
@@ -269,29 +87,32 @@ export function Input({
   }
 
   return (
-    <InputContainer orientation={orientation} className={className}>
-      <LabelWrapper hideLabel={hideLabel}>
-        <Label htmlFor={id} appearance={appearance}>
-          {label}
-        </Label>
-      </LabelWrapper>
-
+    <InputContainer orientation={orientation} appearance={appearance} wrapClass={wrapClass}>
+      <Label htmlFor={id} appearance={appearance} hideLabel={hideLabel}>
+        {label}
+      </Label>
       <InputWrapper
         error={errorMessage}
         data-error={error}
         icon={icon}
         appearance={appearance}
-        focused={focused}
+        shape={shape}
       >
-        {icon && <IconFont size="small" icon={icon} aria-hidden />}
+        {icon && <IconFont size="small" icon={icon} aria-hidden mr2 />}
         <InputText
+          type="text"
           id={id}
           value={value}
           aria-describedby={errorId}
           aria-invalid={!!error}
+          appearance={appearance}
+          error={error}
+          center={center}
           {...props}
         />
-        <Error id={errorId}>{error}</Error>
+        <Error id={errorId}>
+          <ErrorMessage appearance={appearance}>{error}</ErrorMessage>
+        </Error>
       </InputWrapper>
     </InputContainer>
   );
@@ -300,27 +121,29 @@ export function Input({
 Input.propTypes = {
   id: PropTypes.string.isRequired,
   value: PropTypes.string,
-  appearance: PropTypes.oneOf(['default', 'secondary', 'tertiary', 'pill', 'code']),
+  appearance: PropTypes.oneOf(Object.keys(APPEARANCES)),
+  shape: PropTypes.oneOf(Object.keys(SHAPES)),
+  center: PropTypes.bool,
   label: PropTypes.string.isRequired,
   hideLabel: PropTypes.bool,
   orientation: PropTypes.oneOf(['vertical', 'horizontal']),
   icon: PropTypes.string,
   error: PropTypes.string,
-  className: PropTypes.string,
-  focused: PropTypes.bool,
   lastErrorValue: PropTypes.string,
-  center: PropTypes.bool,
+  focused: PropTypes.bool,
+  wrapClass: PropTypes.string,
 };
 
 Input.defaultProps = {
   value: '',
-  appearance: 'default',
+  appearance: 'primary',
+  shape: 'rect',
   hideLabel: false,
   orientation: 'vertical',
   icon: null,
   error: null,
-  className: null,
   focused: false,
   lastErrorValue: null,
   center: false,
+  wrapClass: null,
 };
