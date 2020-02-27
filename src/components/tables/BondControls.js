@@ -4,6 +4,7 @@ import tachyons from 'tachyons-components';
 
 import { IconFont } from '../IconFont';
 import { Button } from '../Button';
+import { Input } from '../Input';
 
 const MODES = {
   idle: '',
@@ -13,18 +14,19 @@ const MODES = {
 const ControlsWrap = tachyons('span')`hide-child`;
 const RowEdit = tachyons('div')`
   flex justify-end
-  w-100 h1
+  w-100 
+  h2
 `;
 const RowBond = tachyons('div')`
   flex justify-between items-center
   w-100 h-100
-  mv3
 `;
 const RowSum = tachyons('div')`
-  flex w-100 h1 justify-center items-center
+  flex w-100 justify-center items-center
+  h2
 `;
 
-export function TableCellControls({ mode, value }) {
+export function BondControls({ mode, value, onChange }) {
   const controlsEdit = () => {
     if (mode === 'edit') {
       return (
@@ -48,11 +50,11 @@ export function TableCellControls({ mode, value }) {
   const controlsBond = () => {
     if (mode === 'edit') {
       return (
-        <input
-          type="text"
-          value={value}
-          className="b--black-10 ba br2 center fw6 input-reset pv1 red tc"
-        />
+        <>
+          <div />
+          <Input center value={value} label="Input with value" hideLabel onChange={onChange} />
+          <div />
+        </>
       );
     }
     return (
@@ -108,12 +110,14 @@ export function TableCellControls({ mode, value }) {
   );
 }
 
-TableCellControls.propTypes = {
+BondControls.propTypes = {
   value: PropTypes.string,
   mode: PropTypes.oneOf(Object.keys(MODES)),
+  onChange: PropTypes.func,
 };
 
-TableCellControls.defaultProps = {
+BondControls.defaultProps = {
   value: 'fetching value',
   mode: 'idle',
+  onChange: null,
 };

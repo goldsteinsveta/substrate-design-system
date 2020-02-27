@@ -1,7 +1,7 @@
 import React from 'react';
 import { withKnobs, text, select } from '@storybook/addon-knobs';
 
-import { TableCellControls } from './TableCellControls';
+import { BondControls } from './BondControls';
 
 import { IconFont } from '../IconFont';
 import { AddressCard } from '../AddressCard';
@@ -9,19 +9,19 @@ import { AddressCard } from '../AddressCard';
 import { ListItem } from '../tooltip/ListItem';
 
 export default {
-  title: 'Design System/TableCellControls',
+  title: 'Design System/BondControls',
   excludeStories: /.*Data$/,
-  component: TableCellControls,
+  component: BondControls,
   decorators: [withKnobs],
 };
 
-export const KnobbedTableCellControls = () => {
+export const KnobbedBondControls = () => {
   const value = text('value', 'fetching value');
   const mode = select('mode', ['idle', 'edit'], 'idle');
-  return <TableCellControls value={value} mode={mode} />;
+  return <BondControls value={value} mode={mode} />;
 };
 
-export const TableCellControlsInContext = () => (
+export const BondControlsInContext = () => (
   <table className="substrateTable">
     <thead>
       <tr>
@@ -44,7 +44,7 @@ export const TableCellControlsInContext = () => (
         </td>
         <td />
         <td rowSpan="2" className="f5 fw6 center pa0">
-          <TableCellControls value="3726.392" />
+          <BondControls value="3726.392" />
         </td>
         <td rowSpan="2" className="f5 fw6 center ph4 pv1">
           X.X
@@ -66,7 +66,7 @@ export const TableCellControlsInContext = () => (
         </td>
         <td />
         <td rowSpan="2" className="f5 fw6 center pa0">
-          <TableCellControls mode="edit" value="3726.392" />
+          <BondControls mode="edit" value="3726.392" />
         </td>
         <td rowSpan="2" className="f5 fw6 center ph4 pv1">
           X.X
