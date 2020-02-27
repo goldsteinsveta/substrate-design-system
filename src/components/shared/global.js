@@ -109,6 +109,11 @@ export const bodyStyles = css`
     margin: 1rem 0;
   }
 
+  input {
+    color: inherit;
+    font-family: inherit;
+  }
+
   .hover-bg:hover {
     background-color: #ffdbdb;
   }
