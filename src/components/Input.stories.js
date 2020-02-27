@@ -11,7 +11,7 @@ export default {
 };
 
 export const allInputs = () => (
-  <form style={{ background: '#EEEEEE', padding: '3em' }}>
+  <form style={{ padding: '3em' }}>
     <Input
       id="Default"
       value="Default"

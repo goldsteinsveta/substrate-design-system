@@ -34,15 +34,16 @@ const LabelWrapper = styled.div`
 const InputText = styled.input.attrs({ type: 'text' })`
   ::placeholder {
     color: ${color.mediumdark};
-    font-weight: ${typography.weight.bold};
   }
+  font-weight: inherit;
   appearance: none;
-  border:none;
+  border:1px solid #ff725c;
   box-sizing: border-box;
   display: block;
   outline: none;
   width: 100%;
   margin: 0;
+  text-align: ${props => props.center === true ? 'center' : '' };
 
   &[disabled] {
     cursor: not-allowed;
@@ -69,9 +70,9 @@ const InputWrapper = styled.div`
     border-radius: 0;
     color: ${color.darkest};
     font-family: ${props => props.appearance === 'code' && typography.type.code };
-    font-size: ${props => props.appearance === 'code' ? typography.size.s1 : typography.size.s2 }px;
+    font-size: ${props => props.appearance === 'code' && typography.size.s1}px;
     line-height: 20px;
-    padding: .715em 1em; //40
+    padding: 0.5em;
 
     &:focus { box-shadow: ${color.primary} 0 0 0 1px inset; }
 
@@ -308,6 +309,7 @@ Input.propTypes = {
   className: PropTypes.string,
   focused: PropTypes.bool,
   lastErrorValue: PropTypes.string,
+  center: PropTypes.bool,
 };
 
 Input.defaultProps = {
@@ -320,4 +322,5 @@ Input.defaultProps = {
   className: null,
   focused: false,
   lastErrorValue: null,
+  center: false,
 };
