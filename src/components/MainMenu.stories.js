@@ -16,10 +16,14 @@ export default {
   decorators: [withKnobs],
 };
 
-const tabsData = [
+const tabsNomidotData = [
   <Button>Accounts</Button>,
   <Button appearance="secondary">Stakes</Button>,
   <Button appearance="secondary">Settings</Button>,
+];
+const tabsLichenData = [
+  <Button>Accounts</Button>,
+  <Button appearance="secondary">Send Funds</Button>,
 ];
 
 const ContentRight = (
@@ -55,6 +59,13 @@ export const ContentLeftAndRight = () => {
   return <MainMenu contentLeft={<NomidotLogo />} contentRight={ContentRight} />;
 };
 
-export const ContentAndTabs = () => (
-  <MainMenu contentLeft={<NomidotLogo />} tabs={tabsData} contentRight={ContentRight} />
+export const ContentAndTabsNomidot = () => (
+  <MainMenu contentLeft={<NomidotLogo />} tabs={tabsNomidotData} contentRight={ContentRight} />
+);
+ContentAndTabsNomidot.story = {
+  name: 'Content And Tabs',
+};
+
+export const ContentAndTabsLichenData = () => (
+  <MainMenu contentLeft="Lichen" tabs={tabsLichenData} contentRight={ContentRight} />
 );

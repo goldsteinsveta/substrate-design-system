@@ -6,12 +6,11 @@ import { IconFont } from '../../IconFont';
 
 import { BondControlsInContext as BondTables } from '../../tables/BondControls.stories';
 
-import { ContentAndTabsNomidot as MainMenu } from '../../MainMenu.stories';
-import { ListItemStats as ItemStats } from '../../ItemStats.stories';
+import { ContentAndTabsLichenData as MainMenu } from '../../MainMenu.stories';
 import { ContextMenu as ListItem } from '../../tooltip/ListItem.stories';
 
 export default {
-  title: 'Apps/Nomidot',
+  title: 'Apps/Lichen',
   component: MainMenu,
   excludeStories: /.*Data$/,
 };
@@ -24,13 +23,9 @@ export const start = () => (
     <MainMenu />
     <LayoutBox>
       <h3 className="mb3">
-        Staking stats for
+        Your Accounts
         <ListItem className="mh2" />
       </h3>
-      <ItemStats />
-    </LayoutBox>
-    <LayoutBox>
-      <h5 className="mb3">My accounts</h5>
       <BondTables />
     </LayoutBox>
     <Button shape="pill" wrapProps={{ className: 'absolute right-2 bottom-2' }}>
