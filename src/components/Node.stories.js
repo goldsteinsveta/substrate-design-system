@@ -1,15 +1,16 @@
 import React from 'react';
 import { withKnobs, object } from '@storybook/addon-knobs';
-import { NodeList } from './NodeList';
+import { NodeSelector } from './NodeSelector';
+import { NodeConnector } from './NodeConnector';
 
 export default {
-  title: 'Design System/Node',
-  component: NodeList,
+  title: 'Design System/Node/NodeSelector',
+  component: NodeSelector,
   decorators: [withKnobs],
 };
 
-export const knobbedNodeList = () => {
-  const nodeData = object('nodeData', [
+export const knobbedNodeSelector = () => {
+  const nodes = object('nodes', [
     {
       title: 'Kusama',
       current: true,
@@ -23,14 +24,18 @@ export const knobbedNodeList = () => {
       current: false,
     },
   ]);
-  return <NodeList nodeData={nodeData} />;
+  return <NodeSelector nodes={nodes} />;
 };
 
-export const knobbedNodeLists = () => {
-  const nodeData1 = object('nodeData', [
+export const knobbedNodeSelectors = () => {
+  const nodes1 = object('nodes – 1', [
+    {
+      title: 'Polkadot',
+      current: true,
+    },
     {
       title: 'Kusama',
-      current: true,
+      current: false,
     },
     {
       title: 'Westend',
@@ -41,7 +46,7 @@ export const knobbedNodeLists = () => {
       current: false,
     },
   ]);
-  const nodeData2 = object('nodeData – 2', [
+  const nodes2 = object('nodes – 2', [
     {
       title: 'Light Node',
       current: true,
@@ -57,9 +62,9 @@ export const knobbedNodeLists = () => {
   ]);
   return (
     <div className="NodeWrap flex items-center">
-      <NodeList nodeData={nodeData1} />
-      <span className="Connection bb h-100 w-50" />
-      <NodeList nodeData={nodeData2} />
+      <NodeSelector nodes={nodes1} />
+      <NodeConnector />
+      <NodeSelector nodes={nodes2} />
     </div>
   );
 };
