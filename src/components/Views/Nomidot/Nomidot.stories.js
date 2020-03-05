@@ -4,7 +4,7 @@ import tachyons from 'tachyons-components';
 import { Button } from '../../Button';
 import { IconFont } from '../../IconFont';
 
-import { BondControlsInContext as BondTables } from '../../tables/BondControls.stories';
+import { BondControlsInContext as BondTables } from '../../Tables/BondControls.stories';
 
 import { ContentAndTabs as MainMenu } from '../../MainMenu.stories';
 import { ListItemStats as ItemStats } from '../../ItemStats.stories';
