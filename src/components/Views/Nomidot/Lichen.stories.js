@@ -6,7 +6,7 @@ import { IconFont } from '../../IconFont';
 
 import { BondControlsInContext as BondTables } from '../../tables/BondControls.stories';
 
-import { ContentAndTabsLichenData as MainMenu } from '../../MainMenu.stories';
+import { ContentAndTabsLichen as MainMenu } from '../../MainMenu.stories';
 import { ContextMenu as ListItem } from '../../tooltip/ListItem.stories';
 
 export default {

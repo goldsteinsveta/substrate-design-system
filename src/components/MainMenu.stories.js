@@ -6,6 +6,7 @@ import { Button } from './Button';
 import { IconFont } from './IconFont';
 
 import { ListItemStatsAsTooltip } from './ItemStats.stories';
+import { NodeSelectorsLichen } from './NodeSelector.stories';
 
 import { NomidotLogo } from './Views/Nomidot/NomidotLogo';
 
@@ -62,10 +63,7 @@ export const ContentLeftAndRight = () => {
 export const ContentAndTabsNomidot = () => (
   <MainMenu contentLeft={<NomidotLogo />} tabs={tabsNomidotData} contentRight={ContentRight} />
 );
-ContentAndTabsNomidot.story = {
-  name: 'Content And Tabs',
-};
 
-export const ContentAndTabsLichenData = () => (
-  <MainMenu contentLeft="Lichen" tabs={tabsLichenData} contentRight={ContentRight} />
+export const ContentAndTabsLichen = () => (
+  <MainMenu contentLeft="Lichen" tabs={tabsLichenData} contentRight={<NodeSelectorsLichen />} />
 );

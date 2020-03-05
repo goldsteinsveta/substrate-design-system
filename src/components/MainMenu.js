@@ -23,8 +23,10 @@ export function MainMenu({ tabs, contentLeft, contentRight }) {
     <>
       <BoxTabs>{tabs}</BoxTabs>
       <BoxTop>
-        <Div>{contentLeft}</Div>
-        <Div>{contentRight}</Div>
+        <Div w-50>{contentLeft}</Div>
+        <Div w-100 flex justify-end>
+          {contentRight}
+        </Div>
       </BoxTop>
     </>
   );

@@ -1,5 +1,5 @@
 import React from 'react';
-import { withKnobs, object } from '@storybook/addon-knobs';
+import { withKnobs, object, select } from '@storybook/addon-knobs';
 import { NodeSelector } from './NodeSelector';
 import { NodeConnector } from './NodeConnector';
 
@@ -10,6 +10,7 @@ export default {
 };
 
 export const knobbedNodeSelector = () => {
+  const appearance = select('appearance', ['primary', 'secondary'], 'secondary');
   const nodes = object('nodes', [
     {
       title: 'Kusama',
@@ -24,11 +25,11 @@ export const knobbedNodeSelector = () => {
       current: false,
     },
   ]);
-  return <NodeSelector nodes={nodes} />;
+  return <NodeSelector nodes={nodes} appearance={appearance} />;
 };
 
-export const knobbedNodeSelectors = () => {
-  const nodes1 = object('nodes – 1', [
+export const NodeSelectorsLichen = () => {
+  const nodes1 = [
     {
       title: 'Polkadot',
       current: true,
@@ -45,8 +46,8 @@ export const knobbedNodeSelectors = () => {
       title: 'Chaos Net',
       current: false,
     },
-  ]);
-  const nodes2 = object('nodes – 2', [
+  ];
+  const nodes2 = [
     {
       title: 'Light Node',
       current: true,
@@ -59,10 +60,11 @@ export const knobbedNodeSelectors = () => {
       title: 'Web3',
       current: false,
     },
-  ]);
+  ];
   return (
-    <div className="NodeWrap flex items-center">
-      <NodeSelector nodes={nodes1} />
+    // TODO: NodeSelectorList
+    <div className="NodeWrap w-100 flex items-center">
+      <NodeSelector nodes={nodes1} appearance="primary" />
       <NodeConnector />
       <NodeSelector nodes={nodes2} />
     </div>
