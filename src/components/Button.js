@@ -5,6 +5,7 @@ import tachyons from 'tachyons-components';
 const APPEARANCES = {
   primary: '',
   secondary: 'bg-light-gray near-black',
+  color: 'bg-washed-red red',
   outline: 'ba bg-transparent black',
   outlineColor: 'ba bg-transparent blue b--blue',
   none: 'bg-transparent black',
@@ -16,14 +17,15 @@ const SHAPES = {
 };
 
 const SIZES = {
+  inherit: 'ph3 pv2 fw1 mh2',
   tiny: 'bl br f8',
   small: 'ph1 pv1 f6 fw4',
   medium: 'ph3 pv3 f6 fw1',
 };
 
 const WIDTHS = {
-  content: 'mh1',
-  full: 'w-100',
+  content: 'mh1 inline-flex',
+  full: 'w-100 block',
 };
 
 const StyledButton = tachyons('a')`
@@ -37,7 +39,6 @@ const StyledButton = tachyons('a')`
   ${props => APPEARANCES[props.appearance]}
   ${props => SHAPES[props.shape]}
   ${props => SIZES[props.size]}
-  ${props => WIDTHS[props.width]}
   
   ${props => (props.disabled ? 'cur-na' : '')}
   ${props => (props.size === 'tiny' && props.shape === 'pill' ? 'bt bb b--black' : '')}
@@ -47,7 +48,9 @@ const StyledButton = tachyons('a')`
   ${props => (props.disabled ? 'cur-na' : '')}
 `;
 
-const ButtonWrap = tachyons('div')`inline-flex`;
+const ButtonWrap = tachyons('div')`
+  ${props => WIDTHS[props.width]}
+`;
 
 export function Button({
   children,
@@ -57,6 +60,7 @@ export function Button({
   isLoading,
   loadingText,
   isDisabled,
+  width,
   ...props
 }) {
   let buttonInner = !isLoading ? children : loadingText || 'Loading...';
@@ -72,7 +76,7 @@ export function Button({
 
   return (
     <span className="boxFT" toggled={toggled ? 'true' : 'false'}>
-      <ButtonWrap {...wrapProps}>
+      <ButtonWrap {...wrapProps} width={width}>
         <StyledButton isloading={isLoading ? 'true' : undefined} disabled={isDisabled} {...props}>
           {buttonInner}
         </StyledButton>

@@ -13,15 +13,13 @@ export default {
 export const KnobbedButton = () => {
   const children = text('Button Content', 'Click Me!');
   const toggleTo = text('toggleTo', '');
-
-  // select args: label, options, default, *groupID*
   const appearance = select(
     'appearance',
-    ['primary', 'secondary', 'outline', 'outlineColor', 'none'],
+    ['primary', 'secondary', 'color', 'outline', 'outlineColor', 'none'],
     'primary'
   );
   const width = select('width', ['content', 'full'], 'content');
-  const size = select('size', ['tiny', 'small', 'medium'], 'medium');
+  const size = select('size', ['tiny', 'small', 'medium', 'inherit'], 'medium');
   const shape = select('shape', ['rect', 'pill'], 'rect');
   const isDisabled = boolean('isDisabled', false);
   const isLoading = boolean('isLoading', false);
