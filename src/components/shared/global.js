@@ -223,6 +223,24 @@ export const bodyStyles = css`
     background: linear-gradient(0deg, rgba(255,255,255,0) 30%, rgba(0,0,0,0.02) 100%);
   }
 
+  table.fundsTable {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  table.fundsTable tbody tr {
+    transition: box-shadow 0.2s;
+  }
+  table.fundsTable tbody tr:hover {
+    box-shadow: 0 -8px 8px 1px rgba(180, 180, 180, 0.2);
+  }
+  table.fundsTable tbody td:last-child {
+    opacity: 0.35;
+    transition: opacity 0.2s;
+  }
+  table.fundsTable tbody tr:hover td:last-child {
+    opacity: 1;
+  }
+
   &.ReactModal__Body--open {
     overflow: hidden;
     &.hide-intercom #intercom-container {

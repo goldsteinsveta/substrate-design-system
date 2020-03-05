@@ -15,7 +15,11 @@ export const KnobbedButton = () => {
   const toggleTo = text('toggleTo', '');
 
   // select args: label, options, default, *groupID*
-  const appearance = select('appearance', ['primary', 'secondary', 'outline'], 'primary');
+  const appearance = select(
+    'appearance',
+    ['primary', 'secondary', 'outline', 'outlineColor', 'none'],
+    'primary'
+  );
   const width = select('width', ['content', 'full'], 'content');
   const size = select('size', ['tiny', 'small', 'medium'], 'medium');
   const shape = select('shape', ['rect', 'pill'], 'rect');

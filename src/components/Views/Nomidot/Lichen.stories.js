@@ -4,7 +4,7 @@ import tachyons from 'tachyons-components';
 import { Button } from '../../Button';
 import { IconFont } from '../../IconFont';
 
-import { BondControlsInContext as BondTables } from '../../tables/BondControls.stories';
+import { FundsControlsInContext as FundsTable } from '../../tables/FundsControls.stories';
 
 import { ContentAndTabsLichen as MainMenu } from '../../MainMenu.stories';
 import { ContextMenu as ListItem } from '../../tooltip/ListItem.stories';
@@ -26,7 +26,7 @@ export const start = () => (
         Your Accounts
         <ListItem className="mh2" />
       </h3>
-      <BondTables />
+      <FundsTable />
     </LayoutBox>
     <Button shape="pill" wrapProps={{ className: 'absolute right-2 bottom-2' }}>
       <IconFont icon="space-shuttle" size="medium" />
