@@ -19,16 +19,19 @@ const BoxTabs = tachyons('div')`
 
 // Either pass the full list of users, or a userCount if known
 export function MainMenu({ tabs, contentLeft, contentRight }) {
+  // todo padding height
   return (
-    <>
-      <BoxTabs>{tabs}</BoxTabs>
-      <BoxTop>
-        <Div w-50>{contentLeft}</Div>
-        <Div w-100 flex justify-end>
-          {contentRight}
-        </Div>
-      </BoxTop>
-    </>
+    <div className="h4">
+      <div className="fixed w-100 top-0 z-max">
+        <BoxTabs>{tabs}</BoxTabs>
+        <BoxTop>
+          <Div w-50>{contentLeft}</Div>
+          <Div w-100 flex justify-end>
+            {contentRight}
+          </Div>
+        </BoxTop>
+      </div>
+    </div>
   );
 }
 
