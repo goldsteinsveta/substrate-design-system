@@ -3,17 +3,47 @@ import tachyons from 'tachyons-components';
 
 import { Button } from '../../Button';
 import { IconFont } from '../../IconFont';
+import WithModal from '../../modal/WithModal';
+import { Identicon } from '../../Identicon';
+import { Input } from '../../Input';
 
 import { FundsControlsInContext as FundsTable } from '../../tables/FundsControls.stories';
-
 import { ContentAndTabsLichen as MainMenu } from '../../MainMenu.stories';
-import { ContextMenu as ListItem } from '../../tooltip/ListItem.stories';
 
 export default {
   title: 'Apps/Lichen',
   component: MainMenu,
   excludeStories: /.*Data$/,
 };
+
+// TODO: component
+// eslint-disable-next-line react/prop-types
+const ModalContents = ({ onClose }) => (
+  <>
+    <h2>
+      <span className="mr2">
+        <Identicon />
+      </span>
+      Add Account
+    </h2>
+    <Input appearance="secondary" label="name" />
+    <Button appearance="none">New Account</Button>
+    <Button appearance="none">JSON</Button>
+    <Button appearance="none">Signer</Button>
+    <Button appearance="none">Mnemonic</Button>
+
+    <Button
+      appearance="primary"
+      onClick={onClose}
+      role="button"
+      tabIndex="0"
+      shape="pill"
+      width="full"
+    >
+      Next
+    </Button>
+  </>
+);
 
 // TODO: components for this kind of things
 const LayoutBox = tachyons('div')`center flex box1000 flex-column mv4`;
@@ -24,7 +54,13 @@ export const start = () => (
     <LayoutBox>
       <h3 className="mb3">
         Your Accounts
-        <ListItem className="mh2" />
+        <WithModal startOpen modal={ModalContents}>
+          {({ onOpen }) => (
+            <Button appearance="color" size="inherit" onClick={onOpen} role="button" tabIndex="0">
+              Add
+            </Button>
+          )}
+        </WithModal>
       </h3>
       <FundsTable />
     </LayoutBox>
