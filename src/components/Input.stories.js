@@ -24,6 +24,7 @@ export const KnobbedInput = () => {
   const error = text('error', null);
   const lastErrorValue = text('lastErrorValue', null);
   const wrapClass = text('wrapClass', null);
+  const onlyMimic = boolean('onlyMimic', false);
 
   return (
     <Input
@@ -39,17 +40,53 @@ export const KnobbedInput = () => {
       error={error}
       lastErrorValue={lastErrorValue}
       wrapClass={wrapClass}
+      onlyMimic={onlyMimic}
     />
   );
 };
 
-export const CheckMnemonic = () => {
+export const NewMnemonic = () => {
+  const phrase = [
+    'sell',
+    'trim',
+    'expose',
+    'impact',
+    'page',
+    'junk',
+    'correct',
+    'unfair',
+    'cram',
+    'power',
+    'genre',
+    'civil',
+  ];
+  const NewMnemonicInputProps = {
+    appearance: 'secondary',
+    wrapClass: 'red code inline-flex items-center mr3',
+    orientation: 'horisontal',
+    onlyMimic: true,
+  };
   return (
     <>
-      <Input appearance="secondary" label="1&nbsp;" wrapClass="red" orientation="horisontal" />
-      <Input appearance="secondary" label="10" wrapClass="red" orientation="horisontal" />
-      <Input appearance="secondary" label="7&nbsp;" wrapClass="red" orientation="horisontal" />
-      <Input appearance="secondary" label="5&nbsp;" wrapClass="red" orientation="horisontal" />
+      {phrase.map((word, i) => {
+        return <Input value={word} {...NewMnemonicInputProps} label={i.toString()} />;
+      })}
+    </>
+  );
+};
+
+export const CheckMnemonic = () => {
+  const phrase = ['sell', 'trim', 'expose', 'impact'];
+  const NewMnemonicInputProps = {
+    appearance: 'secondary',
+    wrapClass: 'red code',
+    orientation: 'horisontal',
+  };
+  return (
+    <>
+      {phrase.map((word, i) => {
+        return <Input {...NewMnemonicInputProps} label={i.toString()} />;
+      })}
     </>
   );
 };
