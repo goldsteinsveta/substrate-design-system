@@ -26,7 +26,9 @@ const ModalContents = ({ onClose }) => (
       </span>
       Add Account
     </h2>
-    <Input appearance="secondary" label="name" />
+
+    <Input appearance="underline" label="name" />
+
     <Button appearance="none">New Account</Button>
     <Button appearance="none">JSON</Button>
     <Button appearance="none">Signer</Button>

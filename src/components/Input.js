@@ -10,7 +10,11 @@ const APPEARANCES = {
   },
   secondary: {
     Label: '',
-    InputWrapper: 'ba b--near-white bg-near-white',
+    InputWrapper: 'bb b--near-white bg-near-white',
+  },
+  underline: {
+    Label: '',
+    InputWrapper: 'bb bl-0 bt-0 br-0 bw1 b--black bg-near-white',
   },
   text: {
     Label: '',
@@ -33,14 +37,14 @@ const InputContainer = tachyons('div')`
   ${props => (props.orientation === 'vertical' ? 'flex-column' : 'flex items-center')}
 `;
 const Label = tachyons('label')`
-  fw6 f7 ph2
+  fw6 f7 mr2 code
   ${props => props.appearance && APPEARANCES[props.appearance].Label}
   ${props => (props.hideLabel ? 'dn' : '')}
 `;
 const InputWrapper = tachyons('div')`
   inline-flex relative 
-  w-100
   ma0 pa2
+  ${props => (props.orientation === 'vertical' ? 'w-100' : '')}
   ${props => props.appearance && APPEARANCES[props.appearance].InputWrapper}
   ${props => (props.shape === 'pill' ? 'br-pill' : '')}
 `;
@@ -97,6 +101,7 @@ export function Input({
         icon={icon}
         appearance={appearance}
         shape={shape}
+        orientation={orientation}
       >
         {icon && <IconFont size="small" icon={icon} aria-hidden mr2 />}
         <InputText

@@ -10,10 +10,14 @@ export default {
 
 export const KnobbedInput = () => {
   const value = text('value', 'hello world');
-  const appearance = select('appearance', ['primary', 'secondary', 'text', 'code'], 'primary');
+  const appearance = select(
+    'appearance',
+    ['primary', 'secondary', 'underline', 'text', 'code'],
+    'primary'
+  );
   const shape = select('shape', ['rect', 'pill'], 'rect');
   const center = boolean('center', false);
-  const label = text('lable', 'input label');
+  const label = text('label', 'input label');
   const hideLabel = boolean('hideLabel', false);
   const orientation = select('orientation', ['vertical', 'horizontal'], 'vertical');
   const icon = text('icon', 'envelope');
@@ -36,5 +40,16 @@ export const KnobbedInput = () => {
       lastErrorValue={lastErrorValue}
       wrapClass={wrapClass}
     />
+  );
+};
+
+export const CheckMnemonic = () => {
+  return (
+    <>
+      <Input appearance="secondary" label="1&nbsp;" wrapClass="red" orientation="horisontal" />
+      <Input appearance="secondary" label="10" wrapClass="red" orientation="horisontal" />
+      <Input appearance="secondary" label="7&nbsp;" wrapClass="red" orientation="horisontal" />
+      <Input appearance="secondary" label="5&nbsp;" wrapClass="red" orientation="horisontal" />
+    </>
   );
 };
