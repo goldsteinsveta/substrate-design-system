@@ -19,13 +19,13 @@ export const KnobbedButton = () => {
     'primary'
   );
   const width = select('width', ['content', 'full'], 'content');
-  const size = select('size', ['tiny', 'small', 'medium', 'inherit'], 'medium');
+  const size = select('size', ['tiny', 'small', 'medium', 'large', 'inherit'], 'medium');
   const shape = select('shape', ['rect', 'pill'], 'rect');
   const isDisabled = boolean('isDisabled', false);
   const isLoading = boolean('isLoading', false);
   const loadingText = text('loadingText', 'Loading...');
 
-  const wrapClass = text('wrapClass', '');
+  const wrapClass = text('wrapClass', 'absolute left-0 right-0 flex justify-center');
 
   return (
     <Button

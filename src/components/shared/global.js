@@ -132,6 +132,20 @@ export const bodyStyles = css`
     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.05);
     pointer-events:none;
   }
+  .inject-ghost {
+    position: relative;
+  }
+  .inject-ghost:before {
+    content: '';
+    position: absolute;
+    display: block;
+    bottom: -0.5em;
+    height: 1em;
+    width: 90%;
+    background-color: rgba(0, 0, 0, 0.7);
+    filter: blur(1rem);
+    pointer-events: none;
+  }
 
   .ani-glow {
     animation: ${glow} 1.5s ease-in-out infinite;

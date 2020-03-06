@@ -41,11 +41,12 @@ const ModalContents = ({ onClose }) => (
 
     <Button
       appearance="primary"
+      size="large"
       onClick={onClose}
       role="button"
       tabIndex="0"
       shape="pill"
-      width="full"
+      wrapClass="flex w-100 justify-center"
     >
       Next
     </Button>
@@ -71,7 +72,7 @@ export const start = () => (
       </h3>
       <FundsTable />
     </LayoutBox>
-    <Button shape="pill" wrapProps={{ className: 'absolute right-2 bottom-2' }}>
+    <Button shape="pill" wrapClass="absolute right-2 bottom-2">
       <IconFont icon="space-shuttle" size="medium" />
     </Button>
   </>

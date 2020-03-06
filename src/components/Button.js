@@ -21,6 +21,7 @@ const SIZES = {
   tiny: 'bl br f8',
   small: 'ph1 pv1 f6 fw4',
   medium: 'ph3 pv3 f6 fw1',
+  large: 'f4 fw6 pv3 ph5 inject-ghost',
 };
 
 const WIDTHS = {
