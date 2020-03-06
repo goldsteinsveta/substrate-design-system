@@ -9,6 +9,7 @@ import { Input } from '../../Input';
 
 import { FundsControlsInContext as FundsTable } from '../../tables/FundsControls.stories';
 import { ContentAndTabsLichen as MainMenu } from '../../MainMenu.stories';
+import { FormFrameNewMnemonic } from '../../FormFrame.stories';
 
 export default {
   title: 'Apps/Lichen',
@@ -33,6 +34,10 @@ const ModalContents = ({ onClose }) => (
     <Button appearance="none">JSON</Button>
     <Button appearance="none">Signer</Button>
     <Button appearance="none">Mnemonic</Button>
+
+    <div className="mt2 mb4">
+      <FormFrameNewMnemonic />
+    </div>
 
     <Button
       appearance="primary"
