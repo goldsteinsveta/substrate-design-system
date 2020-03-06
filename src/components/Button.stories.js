@@ -1,5 +1,5 @@
 import React from 'react';
-import { withKnobs, text, select, boolean, object } from '@storybook/addon-knobs';
+import { withKnobs, text, select, boolean } from '@storybook/addon-knobs';
 
 import { Button } from './Button';
 import { IconFont } from './IconFont';
@@ -25,7 +25,7 @@ export const KnobbedButton = () => {
   const isLoading = boolean('isLoading', false);
   const loadingText = text('loadingText', 'Loading...');
 
-  const wrapProps = object('wrapProps', { className: 'w-100 justify-center' });
+  const wrapClass = text('wrapClass', '');
 
   return (
     <Button
@@ -37,7 +37,7 @@ export const KnobbedButton = () => {
       isDisabled={isDisabled}
       isLoading={isLoading}
       loadingText={loadingText}
-      wrapProps={wrapProps}
+      wrapClass={wrapClass}
     >
       {children}
     </Button>

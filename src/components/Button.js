@@ -24,7 +24,7 @@ const SIZES = {
 };
 
 const WIDTHS = {
-  content: 'mh1 inline-flex',
+  content: 'inline-flex',
   full: 'w-100 block',
 };
 
@@ -54,7 +54,7 @@ const ButtonWrap = tachyons('div')`
 
 export function Button({
   children,
-  wrapProps,
+  wrapClass,
   toggled,
   toggleTo,
   isLoading,
@@ -76,7 +76,7 @@ export function Button({
 
   return (
     <span className="boxFT" toggled={toggled ? 'true' : 'false'}>
-      <ButtonWrap {...wrapProps} width={width}>
+      <ButtonWrap className={wrapClass} width={width}>
         <StyledButton isloading={isLoading ? 'true' : undefined} disabled={isDisabled} {...props}>
           {buttonInner}
         </StyledButton>
@@ -97,7 +97,7 @@ Button.propTypes = {
   loadingText: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
   isDisabled: PropTypes.bool,
   // eslint-disable-next-line react/forbid-prop-types
-  wrapProps: PropTypes.object,
+  wrapClass: PropTypes.object,
 };
 
 Button.defaultProps = {
@@ -110,5 +110,5 @@ Button.defaultProps = {
   width: 'content',
   size: 'medium',
   shape: 'rect',
-  wrapProps: { className: 'button-wrap' },
+  wrapClass: { className: 'button-wrap' },
 };
