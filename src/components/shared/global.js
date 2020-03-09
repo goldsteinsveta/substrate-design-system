@@ -289,8 +289,7 @@ export const bodyStyles = css`
 
 // Allow design system consumers to access font settings but control how and
 // where they load the font.
-export const fontUrl =
-  'https://fonts.googleapis.com/css?family=Nunito+Sans:400,700,800,900&display=swap';
+export const fontUrl = 'https://fonts.googleapis.com/css?family=Heebo:400,700,800,900&display=swap';
 
 export const GlobalStyle = createGlobalStyle`
   body {
