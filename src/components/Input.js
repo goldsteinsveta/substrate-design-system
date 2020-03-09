@@ -10,7 +10,11 @@ const APPEARANCES = {
   },
   secondary: {
     Label: '',
-    InputWrapper: 'ba b--near-white bg-near-white',
+    InputWrapper: 'bb b--near-white bg-near-white',
+  },
+  underline: {
+    Label: '',
+    InputWrapper: 'bb bl-0 bt-0 br-0 bw1 b--black bg-near-white',
   },
   text: {
     Label: '',
@@ -30,21 +34,29 @@ const SHAPES = {
 const InputContainer = tachyons('div')`
   mb3
   ${props => props.wrapClass}
-  ${props => (props.orientation === 'vertical' ? 'flex-column' : 'flex items-center')}
 `;
 const Label = tachyons('label')`
-  fw6 f7 ph2
+  fw6 f7 mr1
   ${props => props.appearance && APPEARANCES[props.appearance].Label}
   ${props => (props.hideLabel ? 'dn' : '')}
 `;
 const InputWrapper = tachyons('div')`
   inline-flex relative 
-  w-100
   ma0 pa2
+  ${props => (props.orientation === 'vertical' ? 'w-100' : '')}
   ${props => props.appearance && APPEARANCES[props.appearance].InputWrapper}
   ${props => (props.shape === 'pill' ? 'br-pill' : '')}
 `;
 const InputText = tachyons('input')`
+  input-reset
+  w-100
+  b--none bg-transparent dim
+  ${props => (props.appearance === 'code' ? 'code' : '')}
+  ${props => (props.disabled ? 'cur-na' : '')}
+  ${props => (props.error !== null ? 'fw6 red' : '')}
+  ${props => (props.center ? 'tc' : '')}
+`;
+const onlyMimicInputText = tachyons('span')`
   input-reset
   w-100
   b--none bg-transparent dim
@@ -76,6 +88,7 @@ export function Input({
   lastErrorValue,
   center,
   shape,
+  onlyMimic,
   ...props
 }) {
   const errorId = `${id}-error`;
@@ -85,6 +98,38 @@ export function Input({
       errorMessage = null;
     }
   }
+
+  const InputField = () => {
+    if (onlyMimic) {
+      return (
+        <onlyMimicInputText
+          id={id}
+          value={value}
+          aria-describedby={errorId}
+          aria-invalid={!!error}
+          appearance={appearance}
+          error={error}
+          center={center}
+          {...props}
+        >
+          {value}
+        </onlyMimicInputText>
+      );
+    }
+    return (
+      <InputText
+        type="text"
+        id={id}
+        value={value}
+        aria-describedby={errorId}
+        aria-invalid={!!error}
+        appearance={appearance}
+        error={error}
+        center={center}
+        {...props}
+      />
+    );
+  };
 
   return (
     <InputContainer orientation={orientation} appearance={appearance} wrapClass={wrapClass}>
@@ -97,19 +142,10 @@ export function Input({
         icon={icon}
         appearance={appearance}
         shape={shape}
+        orientation={orientation}
       >
         {icon && <IconFont size="small" icon={icon} aria-hidden mr2 />}
-        <InputText
-          type="text"
-          id={id}
-          value={value}
-          aria-describedby={errorId}
-          aria-invalid={!!error}
-          appearance={appearance}
-          error={error}
-          center={center}
-          {...props}
-        />
+        <InputField />
         <Error id={errorId}>
           <ErrorMessage appearance={appearance}>{error}</ErrorMessage>
         </Error>
@@ -132,6 +168,7 @@ Input.propTypes = {
   lastErrorValue: PropTypes.string,
   focused: PropTypes.bool,
   wrapClass: PropTypes.string,
+  onlyMimic: PropTypes.string,
 };
 
 Input.defaultProps = {
@@ -146,4 +183,5 @@ Input.defaultProps = {
   lastErrorValue: null,
   center: false,
   wrapClass: null,
+  onlyMimic: false,
 };

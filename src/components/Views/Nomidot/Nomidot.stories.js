@@ -6,7 +6,7 @@ import { IconFont } from '../../IconFont';
 
 import { BondControlsInContext as BondTables } from '../../tables/BondControls.stories';
 
-import { ContentAndTabs as MainMenu } from '../../MainMenu.stories';
+import { ContentAndTabsNomidot as MainMenu } from '../../MainMenu.stories';
 import { ListItemStats as ItemStats } from '../../ItemStats.stories';
 import { ContextMenu as ListItem } from '../../tooltip/ListItem.stories';
 

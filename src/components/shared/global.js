@@ -132,6 +132,20 @@ export const bodyStyles = css`
     box-shadow: 0 0 1rem rgba(0, 0, 0, 0.05);
     pointer-events:none;
   }
+  .inject-ghost {
+    position: relative;
+  }
+  .inject-ghost:before {
+    content: '';
+    position: absolute;
+    display: block;
+    bottom: -0.5em;
+    height: 1em;
+    width: 90%;
+    background-color: rgba(0, 0, 0, 0.7);
+    filter: blur(1rem);
+    pointer-events: none;
+  }
 
   .ani-glow {
     animation: ${glow} 1.5s ease-in-out infinite;
@@ -223,6 +237,33 @@ export const bodyStyles = css`
     background: linear-gradient(0deg, rgba(255,255,255,0) 30%, rgba(0,0,0,0.02) 100%);
   }
 
+  table.fundsTable {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  table.fundsTable tbody tr {
+    transition: box-shadow 0.2s;
+  }
+  table.fundsTable tbody tr:not(.row-total):hover {
+    box-shadow: 0 -8px 8px 1px rgba(180, 180, 180, 0.2);
+  }
+  table.fundsTable tbody tr:not(.row-total) td:last-child {
+    opacity: 0.35;
+    transition: opacity 0.2s;
+  }
+  table.fundsTable tbody tr:hover td:last-child {
+    opacity: 1;
+  }
+
+  .row-total > * {
+    border-top: 0.1rem solid red;
+  }
+
+  table.transactionTable th {
+    text-align: right;
+    color: red;
+  }
+
   &.ReactModal__Body--open {
     overflow: hidden;
     &.hide-intercom #intercom-container {
@@ -248,8 +289,7 @@ export const bodyStyles = css`
 
 // Allow design system consumers to access font settings but control how and
 // where they load the font.
-export const fontUrl =
-  'https://fonts.googleapis.com/css?family=Nunito+Sans:400,700,800,900&display=swap';
+export const fontUrl = 'https://fonts.googleapis.com/css?family=Heebo:400,700,800,900&display=swap';
 
 export const GlobalStyle = createGlobalStyle`
   body {
