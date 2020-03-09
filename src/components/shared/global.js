@@ -244,15 +244,24 @@ export const bodyStyles = css`
   table.fundsTable tbody tr {
     transition: box-shadow 0.2s;
   }
-  table.fundsTable tbody tr:hover {
+  table.fundsTable tbody tr:not(.row-total):hover {
     box-shadow: 0 -8px 8px 1px rgba(180, 180, 180, 0.2);
   }
-  table.fundsTable tbody td:last-child {
+  table.fundsTable tbody tr:not(.row-total) td:last-child {
     opacity: 0.35;
     transition: opacity 0.2s;
   }
   table.fundsTable tbody tr:hover td:last-child {
     opacity: 1;
+  }
+
+  .row-total > * {
+    border-top: 0.1rem solid red;
+  }
+
+  table.transactionTable th {
+    text-align: right;
+    color: red;
   }
 
   &.ReactModal__Body--open {

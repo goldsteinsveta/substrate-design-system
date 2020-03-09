@@ -5,6 +5,7 @@ import { FormFrame } from './FormFrame';
 import { Button } from './Button';
 import { IconFont } from './IconFont';
 import { NewMnemonic } from './Input.stories';
+import { TransactionControlsInContext } from './tables/TransactionControls.stories';
 
 export default {
   title: 'Design System/forms/FormFrame',
@@ -27,5 +28,22 @@ export const FormFrameNewMnemonic = () => {
     <FormFrame tabs={tabs} actionButtons={actionButtons}>
       <NewMnemonic />
     </FormFrame>
+  );
+};
+
+export const FormFrameTransfer = () => {
+  const actionButtons = [
+    <Button appearance="secondary">
+      <IconFont icon="download" size="small" />
+    </Button>,
+  ];
+  const tabs = [<Button>Transaction</Button>];
+
+  return (
+    <div className="mw6">
+      <FormFrame tabs={tabs} actionButtons={actionButtons}>
+        <TransactionControlsInContext />
+      </FormFrame>
+    </div>
   );
 };

@@ -5,8 +5,8 @@ import ReactModal from 'react-modal';
 
 const Card = tachyons('div')`
   absolute 
-  w-50-l w-70-m w-90-s 
-  top-0 pv4 ph5 
+  w-50-l w-90-m w-90-s 
+  top-0 pa4 ph5 
   bg-white shadow-4 
 `;
 const CardWrapper = tachyons('div')`
@@ -14,6 +14,7 @@ const CardWrapper = tachyons('div')`
   absolute
   bottom-0 left-0 right-0 top-0
 `;
+const CloseArea = tachyons('div')`w-100 h-100`;
 
 export function Modal({ isOpen, onClose, children }) {
   const actions = {
@@ -48,7 +49,8 @@ export function Modal({ isOpen, onClose, children }) {
         },
       }}
     >
-      <CardWrapper onClick={onClose}>
+      <CardWrapper>
+        <CloseArea onClick={onClose} />
         <Card>{Children.only(children(actions))}</Card>
       </CardWrapper>
     </ReactModal>

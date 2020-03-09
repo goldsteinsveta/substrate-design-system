@@ -13,7 +13,7 @@ export default {
 const buttonProps = {
   appearance: 'outlineColor',
   size: 'small',
-  wrapProps: { className: 'mr2' },
+  wrapClass: 'mh2',
 };
 
 export const FundsControlsInContext = () => (
@@ -57,6 +57,15 @@ export const FundsControlsInContext = () => (
           <Button {...buttonProps}>Import</Button>
           <Button {...buttonProps}>Forget</Button>
         </td>
+      </tr>
+      <tr className="row-total">
+        <td>
+          <h3 className="pl3 ml4 pv2">Total</h3>
+        </td>
+        <td>xxx.x</td>
+        <td>xxx.x</td>
+        <td>...</td>
+        <td>X</td>
       </tr>
     </tbody>
   </table>

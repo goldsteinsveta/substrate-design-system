@@ -9,7 +9,7 @@ import { Input } from '../../Input';
 
 import { FundsControlsInContext as FundsTable } from '../../tables/FundsControls.stories';
 import { ContentAndTabsLichen as MainMenu } from '../../MainMenu.stories';
-import { FormFrameNewMnemonic } from '../../FormFrame.stories';
+import { FormFrameNewMnemonic, FormFrameTransfer } from '../../FormFrame.stories';
 
 export default {
   title: 'Apps/Lichen',
@@ -62,7 +62,7 @@ export const start = () => (
     <LayoutBox>
       <h3 className="mb3">
         Your Accounts
-        <WithModal startOpen modal={ModalContents}>
+        <WithModal modal={ModalContents}>
           {({ onOpen }) => (
             <Button appearance="color" size="inherit" onClick={onOpen} role="button" tabIndex="0">
               Add
@@ -71,6 +71,34 @@ export const start = () => (
         </WithModal>
       </h3>
       <FundsTable />
+    </LayoutBox>
+    <Button shape="pill" wrapClass="absolute right-2 bottom-2">
+      <IconFont icon="space-shuttle" size="medium" />
+    </Button>
+  </>
+);
+
+export const transfer = () => (
+  <>
+    <MainMenu />
+    <LayoutBox>
+      <h3>Transfer Funds</h3>
+
+      <div className="flex">
+        <div className="w-100">
+          <p className="f6 mw6 code mb4">
+            Copy Your Mnemonic Somewhere Safe. If someone gets hold of this mnemonic they could
+            drain your account
+          </p>
+          <Input appearance="underline" label="sum" center />
+          <Input appearance="underline" label="from" />
+          <Input appearance="underline" label="to" />
+          <Input appearance="underline" label="fee" center />
+        </div>
+        <div className="w-70 pl4">
+          <FormFrameTransfer />
+        </div>
+      </div>
     </LayoutBox>
     <Button shape="pill" wrapClass="absolute right-2 bottom-2">
       <IconFont icon="space-shuttle" size="medium" />
