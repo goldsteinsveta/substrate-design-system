@@ -34,6 +34,17 @@ export const color = {
   darkest: '#333333',
   black: '#000000',
 
+  // Grey Hues
+  grey01: '#F7F8FC',
+  grey02: '#F5F6FA',
+  grey03: '#EBF0F5',
+  grey04: '#DDE4ED',
+  grey05: '#A6ACB3',
+  grey06: '#777B80',
+  grey07: '#53595C',
+  grey08: '#3C4042',
+  grey09: '#2E2F30',
+
   border: 'rgba(0,0,0,.1)',
 
   // Status
